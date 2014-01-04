@@ -1,0 +1,18 @@
+######################################
+#FIRST Robotics C++ .gitignore
+#Team 1073
+######################################
+ 
+#Robot Builder Temporary Files
+*~
+~*
+ 
+#Exclude PPC603 and PPC32 from directories from WindRiver
+PPC603gnu/
+PPC603/
+PPC32/
+ 
+#Operating system stuff that we don't want to track
+.DS_STORE
+Thumbs.db
+Desktop.ini
