@@ -10,12 +10,12 @@
 
 ##Areas we might want to work
 
-* **Autonomous** - Anish, Aaron, Evin, Joel
-* **VI/Dashboard** - Dylan, Derek, MattW, Nick, Keenan
+* **Autonomous / Vision** - Anish, Aaron, Evin, Joel, Greg
+* **Dashboard** - Dylan, Derek, MattW, Nick, Keenan
 * **DriveTrain** - Cody, Derek, MattW
 * **Feeder** - Devin, Evin, Nick, MattT
 * **Game Piece Manipulator** - Evin, Greg, Keenan, MattT
-* **Systems** - Devin, Evin
+* **Systems** - Devin, Evin, Greg
 
 ##Install Order
 1.) Chrome
