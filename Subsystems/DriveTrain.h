@@ -21,5 +21,10 @@ private:
 	bool isFieldOriented;
 	bool isFinesseMode;
 	bool isTankDriveMode;
+	
+	float rb;
+	float rf;
+	float lb;
+	float lf;
 };
 #endif

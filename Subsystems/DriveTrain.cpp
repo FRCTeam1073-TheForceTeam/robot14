@@ -6,7 +6,7 @@ Do not mix this code with any other version of RobotBuilder! */
 #define high DoubleSolenoid::kForward
 #define off DoubleSolenoid::kOff
 #define low DoubleSolenoid::kReverse
-const float twistConst = .8;
+const float TWIST_CONSTANT = .8;
 static const float DEADZONE = .02;
 static const float TWIST_DEADZONE = .01;
 static const float MECANUM_CONSTANT = 1.4142; //square root of 2, since it's going to be used a lot
@@ -50,13 +50,13 @@ void DriveTrain::MecanumDriveAction(float joyX, float joyY, float joystickTwist)
 	if(isTankDriveMode)	//tank mode should work now
 			joystickMagnitude = -joyY;
 		
-		rightFront = joystickMagnitude * (cos(actualAngle) - sin(actualAngle));
-		rightBack = joystickMagnitude * (cos(actualAngle) + sin(actualAngle));
-		leftFront = joystickMagnitude * (cos(actualAngle) + sin(actualAngle));
-		leftBack = joystickMagnitude * (cos(actualAngle) - sin(actualAngle));
+		rf = joystickMagnitude * (cos(actualAngle) - sin(actualAngle));
+		rb = joystickMagnitude * (cos(actualAngle) + sin(actualAngle));
+		lf = joystickMagnitude * (cos(actualAngle) + sin(actualAngle));
+		lb = joystickMagnitude * (cos(actualAngle) - sin(actualAngle));
 		
-		rightFront += joystickTwist * TWIST_CONSTANT;
-		rightBack += joystickTwist * TWIST_CONSTANT; 
-		leftFront -= joystickTwist * TWIST_CONSTANT;
-		leftBack -= joystickTwist * TWIST_CONSTANT;
+		rf += joystickTwist * TWIST_CONSTANT;
+		rb += joystickTwist * TWIST_CONSTANT; 
+		lf -= joystickTwist * TWIST_CONSTANT;
+		lb -= joystickTwist * TWIST_CONSTANT;
 }
