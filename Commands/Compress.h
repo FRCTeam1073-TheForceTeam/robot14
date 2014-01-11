@@ -2,8 +2,8 @@
 Do not mix this code with any other version of RobotBuilder! */
 
 
-#ifndef SWITCHGEAR_H
-#define SWITCHGEAR_H
+#ifndef COMPRESS_H
+#define COMPRESS_H
 
 
 #include "Commands/Subsystem.h"
@@ -11,16 +11,14 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "WPILib.h"
 #include "../WPILibExtensions/WPILibExtensions.h"
 
-class SwitchGear: public Command {
+class Compress: public Command {
 public:
-	SwitchGear();
+	Compress();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
-private:
-	bool readyToSwitch;
 };
 
 #endif
