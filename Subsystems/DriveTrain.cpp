@@ -50,10 +50,10 @@ void DriveTrain::MecanumDriveAction(float joyX, float joyY, float joystickTwist)
 	if(isTankDriveMode)	//tank mode should work now
 			joystickMagnitude = -joyY;
 		
-		rf = joystickMagnitude * (cos(actualAngle) - sin(actualAngle));
-		rb = joystickMagnitude * (cos(actualAngle) + sin(actualAngle));
-		lf = joystickMagnitude * (cos(actualAngle) + sin(actualAngle));
-		lb = joystickMagnitude * (cos(actualAngle) - sin(actualAngle));
+		float rf = joystickMagnitude * (cos(actualAngle) - sin(actualAngle));
+		float rb = joystickMagnitude * (cos(actualAngle) + sin(actualAngle));
+		float lf = joystickMagnitude * (cos(actualAngle) + sin(actualAngle));
+		float lb = joystickMagnitude * (cos(actualAngle) - sin(actualAngle));
 		
 		rf += joystickTwist * TWIST_CONSTANT;
 		rb += joystickTwist * TWIST_CONSTANT; 
