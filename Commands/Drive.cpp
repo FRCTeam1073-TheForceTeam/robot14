@@ -14,7 +14,7 @@ void Drive::Initialize() {
 }
 // Called repeatedly when this Command is scheduled to run
 void Drive::Execute() {
-	Robot::driveTrain->MecanumDriveAction(Robot::oi->getLeftStick()->GetX(), Robot::oi->getLeftStick()->GetY(), Robot::oi->getLeftStick()->GetZ());
+	Robot::driveTrain->MecanumDriveAction(Robot::oi->getDriveStick()->GetX(), Robot::oi->getDriveStick()->GetY(), Robot::oi->getDriveStick()->GetZ());
 }
 // Make this return true when this Command no longer needs to run execute()
 bool Drive::IsFinished() {

@@ -18,6 +18,5 @@ public:
 	void InitDefaultCommand();
 	void MecanumDriveAction(float joyX, float joyY, float joystickTwist);
 private:
-
 };
 #endif

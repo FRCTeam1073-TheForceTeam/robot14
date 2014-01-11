@@ -155,7 +155,7 @@ Children:
 - Name: Operator Interface
   Base: OI
   Children:
-  - Name: Left Stick
+  - Name: Drive Stick
     Base: Joystick
     Children:
     - Name: SwitchGearButton
@@ -175,7 +175,7 @@ Children:
           validators: null
           value: '1'
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
-          name: Joystick, validators: null, value: Left Stick}
+          name: Joystick, validators: null, value: Drive Stick}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: [whileHeld, whenPressed, whenReleased]
           default: whileHeld
@@ -189,7 +189,7 @@ Children:
         name: Number
         validators: &id004 [Joystick]
         value: '1'
-  - Name: Right Stick
+  - Name: Operator Stick
     Base: Joystick
     Children: []
     Properties:
