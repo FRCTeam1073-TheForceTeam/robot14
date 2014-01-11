@@ -18,9 +18,6 @@ public:
 	void InitDefaultCommand();
 	void MecanumDriveAction(float joyX, float joyY, float joystickTwist);
 private:
-	// these don't get used...
-	bool isFieldOriented;
-	bool isFinesseMode;
-	bool isTankDriveMode;
+
 };
 #endif
