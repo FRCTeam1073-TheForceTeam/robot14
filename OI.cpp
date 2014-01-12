@@ -16,6 +16,7 @@ OI::OI() {
 	operatorStick = new SmartJoystick(2);
 	
 	driveStick = new SmartJoystick(1);
+	driveStick->ToggleInvertYAxis();
 	
 	switchGearButton = new JoystickButton(driveStick, 1);
 	switchGearButton->WhenPressed(new SwitchGear());
