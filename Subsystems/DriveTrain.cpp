@@ -29,17 +29,17 @@ void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joys
 	
 	double angle = atan2(joystickX, joystickY);
 	float joystickMagnitude = sqrt((joystickX * joystickX) + (joystickY * joystickY));
-	float ccTwist = 1;
-	float twist = 1;
-	if (joystickTwist < 0.1)
-		twist = joystickTwist + TWIST_CONSTANT;
-	else if (joystickTwist > -0.1)
-		ccTwist = joystickTwist + TWIST_CONSTANT;
+	float twist = 0;
+	float ccTwist = 0;
+	if (joystickTwist > 0)
+		twist = joystickTwist * TWIST_CONSTANT;
+	else if (joystickTwist < 0)
+		ccTwist = joystickTwist * TWIST_CONSTANT;
 	
-	float leftFrontVal = (ccTwist *joystickMagnitude*(cos(angle)+sin(angle)))/(2*sqrt(2));
-	float rightFrontVal = (twist * joystickMagnitude*(cos(angle)-sin(angle)))/(2*sqrt(2));
-	float leftBackVal= (ccTwist * joystickMagnitude*(cos(angle)-sin(angle)))/(2*sqrt(2));
-	float rightBackVal = (twist * joystickMagnitude*(cos(angle)+sin(angle)))/(2*sqrt(2));
+	float leftFrontVal = (ccTwist + joystickMagnitude*(cos(angle)+sin(angle)))/(2*sqrt(2));
+	float rightFrontVal = (twist + joystickMagnitude*(cos(angle)-sin(angle)))/(2*sqrt(2));
+	float leftBackVal= (ccTwist + joystickMagnitude*(cos(angle)-sin(angle)))/(2*sqrt(2));
+	float rightBackVal = (twist + joystickMagnitude*(cos(angle)+sin(angle)))/(2*sqrt(2));
 	
 	if (joystickMagnitude < 1.001 && joystickMagnitude > -1.001)
 	{
@@ -49,10 +49,10 @@ void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joys
 		rightBackVal = twist -1;
 	}
 	
-	/*leftFront->Set(leftFrontVal);
+	leftFront->Set(leftFrontVal);
 	rightFront->Set(rightFrontVal);
 	leftBack->Set(leftBackVal);
-	rightBack->Set(rightBackVal);*/
+	rightBack->Set(rightBackVal);
 	
 	printf("Right Front:%f", rightFrontVal);
 	printf("Left Front:%f", leftFrontVal);
