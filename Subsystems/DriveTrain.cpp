@@ -29,25 +29,14 @@ void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joys
 	
 	double angle = atan2(joystickX, joystickY);
 	float joystickMagnitude = sqrt((joystickX * joystickX) + (joystickY * joystickY));
-	float twist = 0;
-	float ccTwist = 0;
-	if (joystickTwist > 0)
-		twist = joystickTwist * TWIST_CONSTANT;
-	else if (joystickTwist < 0)
-		ccTwist = joystickTwist * TWIST_CONSTANT;
+	float ccTwist = joystickTwist * TWIST_CONSTANT;
+	float twist = -joystickTwist * TWIST_CONSTANT;
 	
 	float leftFrontVal = (ccTwist + joystickMagnitude*(cos(angle)+sin(angle)))/(2*sqrt(2));
 	float rightFrontVal = (twist + joystickMagnitude*(cos(angle)-sin(angle)))/(2*sqrt(2));
 	float leftBackVal= (ccTwist + joystickMagnitude*(cos(angle)-sin(angle)))/(2*sqrt(2));
 	float rightBackVal = (twist + joystickMagnitude*(cos(angle)+sin(angle)))/(2*sqrt(2));
 	
-	if (joystickMagnitude < 1.001 && joystickMagnitude > -1.001)
-	{
-		leftFrontVal = ccTwist -1;
-		rightFrontVal = twist -1;
-		leftBackVal = ccTwist -1;
-		rightBackVal = twist -1;
-	}
 	
 	leftFront->Set(leftFrontVal);
 	rightFront->Set(rightFrontVal);
