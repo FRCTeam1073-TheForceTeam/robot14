@@ -17,6 +17,9 @@ public:
 	DriveTrain();
 	void InitDefaultCommand();
 	void MecanumDriveAction(float joyX, float joyY, float joystickTwist);
+	void ToggleOrientation();
+	bool IsFieldOrientation(); 
 private:
+	bool isFieldOrientation;
 };
 #endif
