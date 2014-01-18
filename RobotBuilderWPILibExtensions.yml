@@ -20,7 +20,7 @@ Children:
           default: '2'
           name: CAN ID
           validators: &id002 [CANID]
-          value: '5'
+          value: '4'
     - Name: Left Back
       Base: Smart CAN Jaguar
       Children: []
@@ -30,7 +30,7 @@ Children:
           default: '2'
           name: CAN ID
           validators: *id002
-          value: '4'
+          value: '3'
     - Name: Right Front
       Base: Smart CAN Jaguar
       Children: []
@@ -40,7 +40,7 @@ Children:
           default: '2'
           name: CAN ID
           validators: *id002
-          value: '3'
+          value: '5'
     - Name: Left Front
       Base: Smart CAN Jaguar
       Children: []
