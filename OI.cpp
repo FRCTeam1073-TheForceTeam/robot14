@@ -18,7 +18,7 @@ OI::OI() {
 	driveStick = new SmartJoystick(1);
 	
 	toggleJoystickMode = new JoystickButton(driveStick, 2);
-	toggleJoystickMode->WhileHeld(new ToggleNormalCubicJoystickMode());
+	toggleJoystickMode->WhenPressed(new ToggleNormalCubicJoystickMode());
 	switchGearButton = new JoystickButton(driveStick, 1);
 	switchGearButton->WhenPressed(new SwitchGear());
      
