@@ -8,7 +8,6 @@ SmartCANJaguar* RobotMap::driveTrainLeftBack = NULL;
 SmartCANJaguar* RobotMap::driveTrainRightFront = NULL;
 SmartCANJaguar* RobotMap::driveTrainLeftFront = NULL;
 SmartGyro* RobotMap::driveTrainGyro = NULL;
-DoubleSolenoid* RobotMap::launcherDoubleSolenoid = NULL;
 DoubleSolenoid* RobotMap::shifterDoubleSolenoid = NULL;
 Compressor* RobotMap::airCompressorCompressor = NULL;
 DigitalInput* RobotMap::airCompressorLowPressureSwitch = NULL;
@@ -31,9 +30,6 @@ void RobotMap::init() {
 	driveTrainGyro = new SmartGyro(1, 1);
 	lw->AddSensor("Drive Train", "Gyro", driveTrainGyro);
 	driveTrainGyro->SetSensitivity(0.007);
-	launcherDoubleSolenoid = new DoubleSolenoid(1, 3, 4);      
-	
-	
 	shifterDoubleSolenoid = new DoubleSolenoid(1, 1, 2);      
 	
 	

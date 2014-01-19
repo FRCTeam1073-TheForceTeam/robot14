@@ -18,7 +18,6 @@ public:
 	static SmartCANJaguar* driveTrainRightFront;
 	static SmartCANJaguar* driveTrainLeftFront;
 	static SmartGyro* driveTrainGyro;
-	static DoubleSolenoid* launcherDoubleSolenoid;
 	static DoubleSolenoid* shifterDoubleSolenoid;
 	static Compressor* airCompressorCompressor;
 	static DigitalInput* airCompressorLowPressureSwitch;
