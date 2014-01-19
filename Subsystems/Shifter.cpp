@@ -1,4 +1,4 @@
-/* FIRST Team 1073's RobotBuilder (0.0.2) for WPILibExtensions ---
+/* FIRST Team 1073's RobaotBuilder (0.0.2) for WPILibExtensions ---
 Do not mix this code with any other version of RobotBuilder! */
 #include "Shifter.h"
 #include "../Robotmap.h"
