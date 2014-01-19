@@ -17,4 +17,3 @@ void AirCompressor::InitDefaultCommand() {
 bool AirCompressor::IsHighPressure() {
 	return LimitPressed(compressor->GetPressureSwitchValue());
 }
-
