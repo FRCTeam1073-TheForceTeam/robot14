@@ -84,7 +84,7 @@ Children:
           default: '1'
           name: Output Module (Solenoid)
           validators: [Solenoid]
-          value: '2'
+          value: '1'
         Output Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
           choices: ['1', '2', '3', '4', '5', '6', '7', '8']
           default: '1'
@@ -112,7 +112,7 @@ Children:
           default: '1'
           name: Forward Channel (Solenoid)
           validators: [Solenoid]
-          value: '1'
+          value: '2'
         Forward Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
           choices: ['1', '2']
           default: '1'
@@ -130,7 +130,7 @@ Children:
           default: '1'
           name: Reverse Channel (Solenoid)
           validators: [Solenoid]
-          value: '2'
+          value: '3'
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Default Command, type: Command, validators: null, value: None}
@@ -258,31 +258,7 @@ Children:
         value: '1'
   - Name: Operator Stick
     Base: Joystick
-    Children:
-    - Name: LaunchBallButton
-      Base: Joystick Button
-      Children: []
-      Properties:
-        Command: !!robotbuilder.data.properties.TypeSelectionProperty
-          default: None
-          name: Command
-          type: Command
-          validators: *id003
-          value: Launch Ball
-        Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id004
-          default: '1'
-          name: Button
-          validators: null
-          value: '1'
-        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
-          name: Joystick, validators: null, value: Operator Stick}
-        When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id005
-          default: whileHeld
-          name: When to Run
-          validators: null
-          value: whileHeld
+    Children: []
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
         choices: *id006
