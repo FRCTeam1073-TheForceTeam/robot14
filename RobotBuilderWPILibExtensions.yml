@@ -315,7 +315,7 @@ Children:
         name: Requires, type: Subsystem, validators: null, value: Drive Train}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: false}
-  - Name: Lauch Ball
+  - Name: Launch Ball
     Base: Command
     Children: []
     Properties:
