@@ -10,14 +10,16 @@ void LaunchBall::Initialize() {
 	Robot::launcher->OpenTank();
 }
 void LaunchBall::Execute() {
-	
+	puts("You're launching the ball");
 }
 bool LaunchBall::IsFinished() {
-	return true;
+	return false;
 }
 void LaunchBall::End() {
+	puts("you're done launching the ball");
 	Robot::launcher->CloseTank();
 }
 void LaunchBall::Interrupted() {
+	puts("you're interrupting the command");
 	End();
 }
