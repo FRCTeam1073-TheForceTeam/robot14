@@ -2,8 +2,8 @@
 Do not mix this code with any other version of RobotBuilder! */
 
 
-#ifndef LAUNCH_BALL_H
-#define LAUNCH_BALL_H
+#ifndef LAUCH_BALL_H
+#define LAUCH_BALL_H
 
 
 #include "Commands/Subsystem.h"
@@ -11,9 +11,9 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "WPILib.h"
 #include "../WPILibExtensions/WPILibExtensions.h"
 
-class LaunchBall: public Command {
+class LauchBall: public Command {
 public:
-	LaunchBall();
+	LauchBall();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
