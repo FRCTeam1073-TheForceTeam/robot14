@@ -9,8 +9,7 @@ ToggleNormalCubicJoystickMode::ToggleNormalCubicJoystickMode() {
 	
 }
 void ToggleNormalCubicJoystickMode::Initialize() {
-	if (isCubic)  normalJoysticks->Start();
-	else cubicJoysticks->Start();
+	(isCubic ? normalJoysticks: cubicJoysticks)->Start();
 	isCubic = !isCubic;
 }
 void ToggleNormalCubicJoystickMode::Execute() {}
