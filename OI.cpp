@@ -5,7 +5,7 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "SmartDashboard/SmartDashboard.h"
 #include "Commands/AutonomousCommand.h"
 #include "Commands/Drive.h"
-#include "Commands/LauchBall.h"
+#include "Commands/LaunchBall.h"
 #include "Commands/PickUpBall.h"
 #include "Commands/SwitchGear.h"
 #include "Commands/ToggleDriveOrientation.h"
@@ -27,7 +27,7 @@ OI::OI() {
      
         // SmartDashboard Buttons
 	SmartDashboard::PutData("Autonomous Command", new AutonomousCommand());
-	SmartDashboard::PutData("Lauch Ball", new LauchBall());
+	SmartDashboard::PutData("Launch Ball", new LaunchBall());
 	SmartDashboard::PutData("SwitchGear", new SwitchGear());
 	SmartDashboard::PutData("ToggleNormalCubicJoystickMode", new ToggleNormalCubicJoystickMode());
 	SmartDashboard::PutData("ToggleDriveOrientation", new ToggleDriveOrientation());

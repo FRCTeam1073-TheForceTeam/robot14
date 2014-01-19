@@ -39,7 +39,6 @@ void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joys
 	float ccTwist = joystickTwist * TWIST_CONSTANT;
 	float twist = -joystickTwist * TWIST_CONSTANT;
 	double actAngle = joyAngle; 
-
 	if (isFieldOrientation) {
 		float robAngle = gyro->GetAngle();
 		actAngle -= robAngle;
