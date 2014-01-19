@@ -53,9 +53,11 @@ void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joys
 	leftBack->Set(leftBackVal);
 	rightBack->Set(rightBackVal);
 	
+	/*
+	
 	printf("Gyro Angle:%f\tActual Angle:%f\n", gyro->GetAngle(), actAngle);
 	
-	/*
+	
 	printf("Right Front:%f", rightFrontVal);
 	printf("Left Front:%f", leftFrontVal);
 	printf("Right Back:%f", rightBackVal);
