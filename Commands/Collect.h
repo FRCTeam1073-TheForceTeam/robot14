@@ -2,8 +2,8 @@
 Do not mix this code with any other version of RobotBuilder! */
 
 
-#ifndef PICKUPBALL_H
-#define PICKUPBALL_H
+#ifndef COLLECT_H
+#define COLLECT_H
 
 
 #include "Commands/Subsystem.h"
@@ -11,9 +11,9 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "WPILib.h"
 #include "../WPILibExtensions/WPILibExtensions.h"
 
-class PickUpBall: public Command {
+class Collect: public Command {
 public:
-	PickUpBall();
+	Collect();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
