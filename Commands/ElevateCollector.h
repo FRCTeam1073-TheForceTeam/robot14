@@ -13,13 +13,16 @@ Do not mix this code with any other version of RobotBuilder! */
 
 class ElevateCollector: public Command {
 public:
+	ElevateCollector(bool dir);
 	ElevateCollector();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
-	void Collect(bool direction);
+private:
+	void Construct(bool dir);
+	bool dir;
 };
 
 #endif

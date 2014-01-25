@@ -47,7 +47,4 @@ void Robot::TeleopPeriodic() {
 void Robot::TestPeriodic() {
 	lw->Run();
 }
-
-
-
 START_ROBOT_CLASS(Robot);

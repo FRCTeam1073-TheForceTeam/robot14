@@ -21,9 +21,42 @@ void Collector::InitDefaultCommand() {
 void Collector::Run() {
 	//Collector code here... Take in a bool to decide between purge/collect?
 }
+void Collector::Elevate(bool dir){
+	if(dir && CanMoveElevatorUp())
+		angleAdjuster->Set(1.0f);
+	else if(!dir && CanMoveElevatorDown())
+		angleAdjuster->Set(-1.0f);
+}
 bool Collector::IsMaxHeight() {
 	return LimitPressed(highLimit);
 }
 bool Collector::IsMinHeight() {
 	return LimitPressed(lowLimit);
+}
+bool Collector::CanMoveElevatorUp() {
+    return CanMoveElevator(true);
+}
+bool Collector::CanMoveElevatorDown() {
+    return CanMoveElevator(false);
+}
+// this is private 
+bool Collector::CanMoveElevator(bool dir) {
+	//false = down, true = up
+	bool limit;
+	if(!dir)
+		limit = LimitPressed(lowLimit);
+	else
+		limit = LimitPressed(highLimit);
+	return limit || elevationEncoder->IsStall();
+}
+void Collector::Collect(bool dir){
+	//false = purge, true = collect
+	if(dir){
+		rightRoller->Set(-1.0f);
+		leftRoller->Set(1.0f);
+	}
+	else if(!dir){
+		rightRoller->Set(1.0f);
+		leftRoller->Set(-1.0f);
+	}
 }

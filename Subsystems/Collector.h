@@ -21,5 +21,11 @@ public:
 	void Run();
 	bool IsMaxHeight();
 	bool IsMinHeight();
+	bool CanMoveElevatorUp();
+	bool CanMoveElevatorDown();
+	void Elevate(bool dir);
+	void Collect(bool dir);
+private:
+	bool CanMoveElevator(bool dir);
 };
 #endif
