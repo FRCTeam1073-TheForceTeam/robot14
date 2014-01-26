@@ -2,8 +2,8 @@
 Do not mix this code with any other version of RobotBuilder! */
 
 
-#ifndef AUTONOMOUS_COMMAND_H
-#define AUTONOMOUS_COMMAND_H
+#ifndef AUTONOMOUSLAUNCHCOMMAND_H
+#define AUTONOMOUSLAUNCHCOMMAND_H
 
 
 #include "Commands/Subsystem.h"
@@ -11,14 +11,16 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "WPILib.h"
 #include "../WPILibExtensions/WPILibExtensions.h"
 
-class AutonomousCommand: public Command {
+class AutonomousLaunchCommand: public Command {
 public:
-	AutonomousCommand();
+	AutonomousLaunchCommand();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
+private:
+	static const float shootertimeval = 3.0; 
 };
 
 #endif

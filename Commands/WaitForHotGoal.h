@@ -2,8 +2,8 @@
 Do not mix this code with any other version of RobotBuilder! */
 
 
-#ifndef AUTONOMOUSDRIVECOMMAND_H
-#define AUTONOMOUSDRIVECOMMAND_H
+#ifndef WAITFORHOTGOAL_H
+#define WAITFORHOTGOAL_H
 
 
 #include "Commands/Subsystem.h"
@@ -11,17 +11,16 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "WPILib.h"
 #include "../WPILibExtensions/WPILibExtensions.h"
 
-class AutonomousDriveCommand: public Command {
+class WaitForHotGoal: public Command {
 public:
-	AutonomousDriveCommand();
+	WaitForHotGoal();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
 private:
-	static const float timeval = 2.5; //MAGIC NUMBERS FTW
+	static const float waitval = 4;
 };
-
 
 #endif
