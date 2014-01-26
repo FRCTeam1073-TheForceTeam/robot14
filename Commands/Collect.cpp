@@ -20,7 +20,6 @@ void Collect::Execute() {
 bool Collect::IsFinished() {
 	return false;
 }
-
 void Collect::End() {
 	Robot::collector->StopRollers();
 }
