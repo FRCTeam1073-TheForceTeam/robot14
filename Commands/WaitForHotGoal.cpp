@@ -20,8 +20,8 @@ void WaitForHotGoal::Execute() {
 bool WaitForHotGoal::IsFinished() {
 	bool isHot= Robot :: vision-> IsHot();
 	return isHot || IsTimedOut();
-	
 }
+
 // Called once after isFinished returns true
 void WaitForHotGoal::End() {
 	
