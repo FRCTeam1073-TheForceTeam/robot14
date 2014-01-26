@@ -9,3 +9,11 @@ rem initialize it - only has to happen once
 git submodule init
 rem and if you already have it, get the latest and greatest
 git submodule update
+
+
+echo making sure robot14 has the latest WPILibExtensions submodule index
+rem will pull the latest extensions, commit index if this is what you want
+cd WPILibExtensions
+git checkout master
+git pull
+cd ..
