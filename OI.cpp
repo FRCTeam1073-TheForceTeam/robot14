@@ -10,6 +10,7 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "Commands/Drive.h"
 #include "Commands/ElevateCollector.h"
 #include "Commands/LaunchBall.h"
+#include "Commands/SendToDashboard.h"
 #include "Commands/SwitchGear.h"
 #include "Commands/ToggleDriveOrientation.h"
 #include "Commands/ToggleNormalCubicJoystickMode.h"
