@@ -21,5 +21,6 @@ void Dashboard14::InitDefaultCommand() {
 void Dashboard14::SendData()
 {
 	SmartDashboard::PutNumber("Battery", DriverStation::GetInstance()->GetBatteryVoltage());
+	SmartDashboard::PutNumber("TimeCounterWidget", DriverStation::GetInstance()->GetMatchTime());
 	
 }
