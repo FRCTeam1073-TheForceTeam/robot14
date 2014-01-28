@@ -20,6 +20,8 @@ public:
 	void ToggleOrientation();
 	bool IsFieldOrientation(); 
 private:
+	int rampIteration;
+	double DriveRamp(float magnitude);
 	bool isFieldOrientation;
 };
 #endif
