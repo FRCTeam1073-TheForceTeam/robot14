@@ -20,7 +20,8 @@ public:
 	virtual void End();
 	virtual void Interrupted();
 private:
-	static const float timeval = 2.5; //MAGIC NUMBERS FTW
+	static const float timeval = 2.5;
+	static const float autonomousValue = .82; //adjust for speed and distance in autonomous
 };
 
 
