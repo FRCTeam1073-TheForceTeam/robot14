@@ -11,19 +11,12 @@ AutonomousDriveCommand::AutonomousDriveCommand() {
 }
 // Called just before this Command runs the first time
 void AutonomousDriveCommand::Initialize() {
-	printf("Driving Foreward for 2.5 Seconds");
+	Robot::driveTrain->MecanumDriveAction(0, autonomousValue, 0);
+	printf("Driving Foreward for 2.5 Seconds \n");
 }
 // Called repeatedly when this Command is scheduled to run
 void AutonomousDriveCommand::Execute() {
-	float leftBack = RobotMap::disableautonomous ? 0: -.82;
-	float rightBack = RobotMap::disableautonomous ? 0: .82;
-	float leftFront = RobotMap::disableautonomous ? 0: -.82;
-	float rightFront = RobotMap::disableautonomous ? 0: .82;
-    Robot::driveTrain->leftBack->Set(leftBack); //left values are negative
-	Robot::driveTrain->rightBack->Set(rightBack); //PERFECT VALUES (for mobile base, move 15 feet): speed: .82   time: 2.5 seconds
-	Robot::driveTrain->leftFront->Set(leftFront);
-	Robot::driveTrain->rightFront->Set(rightFront);
-	
+
 }
 // Make this return true when this Command no longer needs to run execute()
 bool AutonomousDriveCommand::IsFinished() {
@@ -31,11 +24,9 @@ bool AutonomousDriveCommand::IsFinished() {
 }
 // Called once after isFinished returns true
 void AutonomousDriveCommand::End() {
-	Robot::driveTrain->leftBack->Set(0);
-	Robot::driveTrain->rightBack->Set(0);
-	Robot::driveTrain->leftFront->Set(0);
-	Robot::driveTrain->rightFront->Set(0);
-	printf(" Stopping after 2.5 Seconds");
+	Robot::driveTrain->StopMotors();
+	printf(" Stopping after 2.5 Seconds \n");
+
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run

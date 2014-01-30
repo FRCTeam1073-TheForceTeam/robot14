@@ -83,6 +83,12 @@ void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joys
 	printf("Joysick X:%f Joystick Y:%f Twist:%f\n",joystickX,joystickY, joystickTwist);
 	*/
 }
+void DriveTrain::StopMotors(){
+	leftFront->Set(0);
+	rightFront->Set(0);
+	leftBack->Set(0);
+	rightBack->Set(0);
+	}
 double DriveTrain::DriveRamp(float magnitude){
 	return (double)(magnitude * rampIteration * TIMES_PER_SEC);
 }
