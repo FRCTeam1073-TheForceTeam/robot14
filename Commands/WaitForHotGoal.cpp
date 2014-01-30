@@ -23,7 +23,6 @@ bool WaitForHotGoal::IsFinished() {
 			IsTimedOut() ? "true" : "false" );
 	return isHot || IsTimedOut();
 }
-
 // Called once after isFinished returns true
 void WaitForHotGoal::End() {
 	
