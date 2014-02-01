@@ -16,7 +16,6 @@ void AutonomousDriveCommand::Initialize() {
 }
 // Called repeatedly when this Command is scheduled to run
 void AutonomousDriveCommand::Execute() {
-
 }
 // Make this return true when this Command no longer needs to run execute()
 bool AutonomousDriveCommand::IsFinished() {
@@ -26,7 +25,6 @@ bool AutonomousDriveCommand::IsFinished() {
 void AutonomousDriveCommand::End() {
 	Robot::driveTrain->StopMotors();
 	printf(" Stopping after 2.5 Seconds \n");
-
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run

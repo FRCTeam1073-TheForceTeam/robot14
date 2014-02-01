@@ -17,7 +17,6 @@ void Dashboard14::InitDefaultCommand() {
 }
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
-
 void Dashboard14::SendData()
 {
 	SmartDashboard::PutNumber("Battery", DriverStation::GetInstance()->GetBatteryVoltage());
@@ -26,7 +25,7 @@ void Dashboard14::SendData()
 	DriverStation::GetInstance()->IsAutonomous();
 	DriverStation::GetInstance()->IsDisabled();
 	// the code starts doing stuff again here
-	SmartDashboard::PutNumber("PSI Gauge", Robot::airCompressor->GetPressurePSI);
+	//SmartDashboard::PutNumber("PSI Gauge", Robot::airCompressor->GetPressurePSI);
 	SmartDashboard::PutBoolean("Gear Shifter", Robot::shifter->IsLowGear());
 	
 	
