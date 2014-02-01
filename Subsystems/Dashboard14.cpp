@@ -24,14 +24,14 @@ void Dashboard14::SendData()
 	SmartDashboard::PutNumber("TimeCounterWidget", DriverStation::GetInstance()->GetMatchTime());
 	// this code doesn't do anything
 	// the code starts doing stuff again here
-	//SmartDashboard::PutNumber("PSI Gauge", Robot::airCompressor->GetPressurePSI);
+	SmartDashboard::PutNumber("PSI Gauge", Robot::airCompressor->GetPressurePSI());
 	SmartDashboard::PutBoolean("Gear Shifter", Robot::shifter->IsLowGear());
 	
-	if(Robot::airCompressor->IsHighPressure() /* && good distance*/)
+	if(!Robot::airCompressor->IsLowPressure() /* && good distance*/)
 	{
 		SmartDashboard::PutNumber("Shooter Ready", 1);
 	}
-	else if(Robot:: airCompressor->IsHighPressure() /* && !good distance*/)
+	else if(!Robot:: airCompressor->IsLowPressure() /* && !good distance*/)
 	{
 		SmartDashboard::PutNumber("Shooter Ready", 0);
 	}
