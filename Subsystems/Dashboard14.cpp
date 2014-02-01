@@ -2,6 +2,7 @@
 Do not mix this code with any other version of RobotBuilder! */
 #include "Dashboard14.h"
 #include "../Robot.h"
+#include "../RobotMap.cpp"
 #include "../Robot.cpp"
 #include "../Robotmap.h"
 #include "../Commands/SendToDashboard.h"
@@ -25,25 +26,25 @@ void Dashboard14::SendData()
 	SmartDashboard::PutNumber("TimeCounterWidget", DriverStation::GetInstance()->GetMatchTime());
 	// this code doesn't do anything
 	// the code starts doing stuff again here
-	SmartDashboard::PutNumber("PSI Gauge", Robot::AirCompressor::GetPressurePSI);
+	//SmartDashboard::PutNumber("PSI Gauge", Robot::airCompressor->GetPressurePSI);
 	SmartDashboard::PutBoolean("Gear Shifter", Robot::shifter->IsLowGear());
 	
-	if(Robot::AirCompressor::GetPressurePSI > 60 /* && good distance*/)
-	{
-		SmartDashboard::PutNumber("Shooter Ready", 1);
-	}
-	else if(Robot::AirCompressor::GetPressurePSI > 60 /* && !good distance*/)
-	{
-		SmartDashboard::PutNumber("Shooter Ready", 0);
-	}
-	else if(Robot::AirCompressor::GetPressurePSI < 60 /* && good distance*/)
-	{
-		SmartDashboard::PutNumber("Shooter Ready", -1);
-	}
-	else
-	{
-		SmartDashboard::PutNumber("Shooter Ready", -2);
-	}
+	//if(Robot::airCompressor->IsHighPressure /* && good distance*/)
+	//{
+	//	SmartDashboard::PutNumber("Shooter Ready", 1);
+	//}
+	//else if(Robot:: airCompressor->IsHighPressure /* && !good distance*/)
+	//{
+	//	SmartDashboard::PutNumber("Shooter Ready", 0);
+	//}
+	//else if(Robot::airCompressor->IsLowPressure /* && good distance*/)
+	//{
+	//	SmartDashboard::PutNumber("Shooter Ready", -1);
+	//}
+	//else
+	//{
+	//	SmartDashboard::PutNumber("Shooter Ready", -2);
+	//}
 	
 	
 }
