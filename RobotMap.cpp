@@ -71,7 +71,6 @@ void RobotMap::init() {
 	launcherLowPressureSwitch = new AnalogPressureTransducer(1, 3);
 	ConfigureMoreThings();
 }
-
 void RobotMap::ConfigureMoreThings() {
 #if 0 // this should be debugged
 	// Sync Groups wow whoa 

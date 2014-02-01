@@ -17,7 +17,6 @@ void Dashboard14::InitDefaultCommand() {
 }
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
-
 void Dashboard14::SendData()
 {
 	SmartDashboard::PutNumber("Battery", DriverStation::GetInstance()->GetBatteryVoltage());
