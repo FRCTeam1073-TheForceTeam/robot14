@@ -27,22 +27,22 @@ void Dashboard14::SendData()
 	//SmartDashboard::PutNumber("PSI Gauge", Robot::airCompressor->GetPressurePSI);
 	SmartDashboard::PutBoolean("Gear Shifter", Robot::shifter->IsLowGear());
 	
-	//if(Robot::airCompressor->IsHighPressure /* && good distance*/)
-	//{
-	//	SmartDashboard::PutNumber("Shooter Ready", 1);
-	//}
-	//else if(Robot:: airCompressor->IsHighPressure /* && !good distance*/)
-	//{
-	//	SmartDashboard::PutNumber("Shooter Ready", 0);
-	//}
-	//else if(Robot::airCompressor->IsLowPressure /* && good distance*/)
-	//{
-	//	SmartDashboard::PutNumber("Shooter Ready", -1);
-	//}
-	//else
-	//{
-	//	SmartDashboard::PutNumber("Shooter Ready", -2);
-	//}
+	if(Robot::airCompressor->IsHighPressure() /* && good distance*/)
+	{
+		SmartDashboard::PutNumber("Shooter Ready", 1);
+	}
+	else if(Robot:: airCompressor->IsHighPressure() /* && !good distance*/)
+	{
+		SmartDashboard::PutNumber("Shooter Ready", 0);
+	}
+	else if(Robot::airCompressor->IsLowPressure() /* && good distance*/)
+	{
+		SmartDashboard::PutNumber("Shooter Ready", -1);
+	}
+	else
+	{
+		SmartDashboard::PutNumber("Shooter Ready", -2);
+	}
 	
 	
 }
