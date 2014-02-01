@@ -80,3 +80,4 @@ void RobotMap::ConfigureMoreThings() {
 	driveTrainRightBack->SetSyncGroup(SYNCGROUP_DRIVE_TRAIN);
 	driveTrainRightFront->SetSyncGroup(SYNCGROUP_DRIVE_TRAIN);
 }
+

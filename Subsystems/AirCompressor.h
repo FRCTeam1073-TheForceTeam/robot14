@@ -15,10 +15,7 @@ public:
 	AirCompressor();
 	void InitDefaultCommand();
 	bool IsHighPressure();
-	
-	
-	float GetVoltage;
-	float GetPressurePSI;
+	float GetPressurePSI();
 	
 };
 #endif
