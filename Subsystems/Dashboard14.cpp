@@ -2,8 +2,6 @@
 Do not mix this code with any other version of RobotBuilder! */
 #include "Dashboard14.h"
 #include "../Robot.h"
-#include "../RobotMap.cpp"
-#include "../Robot.cpp"
 #include "../Robotmap.h"
 #include "../Commands/SendToDashboard.h"
 Dashboard14::Dashboard14() : Subsystem("Dashboard14") {
