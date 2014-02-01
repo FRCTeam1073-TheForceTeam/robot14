@@ -21,8 +21,7 @@ public:
 	void ToggleOrientation();
 	bool IsFieldOrientation(); 
 private:
-	int rampIteration;
-	double DriveRamp(float magnitude);
 	bool isFieldOrientation;
+	float oldX, oldY, oldTwist;
 };
 #endif
