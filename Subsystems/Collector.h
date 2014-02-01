@@ -19,7 +19,6 @@ public:
 	SmartCANJaguarSeries* rollers;
 	Collector();
 	void InitDefaultCommand();
-	void Run();
 	bool IsMaxHeight();
 	bool IsMinHeight();
 	bool CanMoveElevatorUp();
