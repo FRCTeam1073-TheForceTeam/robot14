@@ -25,7 +25,7 @@ void Dashboard14::SendData()
 	DriverStation::GetInstance()->IsAutonomous();
 	DriverStation::GetInstance()->IsDisabled();
 	// the code starts doing stuff again here
-	SmartDashboard::PutNumber("PSI Gauge", Robot::airCompressor->GetPressurePSI);
+	//SmartDashboard::PutNumber("PSI Gauge", Robot::airCompressor->GetPressurePSI);
 	SmartDashboard::PutBoolean("Gear Shifter", Robot::shifter->IsLowGear());
 	
 	
