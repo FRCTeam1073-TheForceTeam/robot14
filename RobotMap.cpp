@@ -69,15 +69,4 @@ void RobotMap::init() {
 	driveTrainGyro->SetGyroMode(SmartGyro::radians);
 	// don't have hardware
 	launcherLowPressureSwitch = new AnalogPressureTransducer(1, 3);
-	ConfigureMoreThings();
-}
-
-void RobotMap::ConfigureMoreThings() {
-#if 0 // this should be debugged
-	// Sync Groups wow whoa 
-	driveTrainLeftBack->SetSyncGroup(SYNCGROUP_DRIVE_TRAIN);
-	driveTrainLeftFront->SetSyncGroup(SYNCGROUP_DRIVE_TRAIN);
-	driveTrainRightBack->SetSyncGroup(SYNCGROUP_DRIVE_TRAIN);
-	driveTrainRightFront->SetSyncGroup(SYNCGROUP_DRIVE_TRAIN);
-#endif
 }

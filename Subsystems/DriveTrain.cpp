@@ -66,22 +66,12 @@ void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joys
 	rampIteration++;
 	puts("Ramping complete.");
 	//end ramping
-	leftFront->Set(leftFrontVal);
-	rightFront->Set(rightFrontVal);
-	leftBack->Set(leftBackVal);
-	rightBack->Set(rightBackVal);
-	
-	/*
-	
-	printf("Gyro Angle:%f\tActual Angle:%f\n", gyro->GetAngle(), actAngle);
-	
-	
-	printf("Right Front:%f", rightFrontVal);
-	printf("Left Front:%f", leftFrontVal);
-	printf("Right Back:%f", rightBackVal);
-	printf("Left Back:%f", leftBackVal);
-	printf("Joysick X:%f Joystick Y:%f Twist:%f\n",joystickX,joystickY, joystickTwist);
-	*/
+	SmartCANJaguar::SyncMask DriveSyncGroup = SmartCANJaguar::kGroup1;
+	leftFront->Set(leftFrontVal, DriveSyncGroup);
+	rightFront->Set(rightFrontVal, DriveSyncGroup);
+	leftBack->Set(leftBackVal, DriveSyncGroup);
+	rightBack->Set(rightBackVal, DriveSyncGroup);
+	SmartCANJaguar::UpdateSyncGroup(DriveSyncGroup);
 }
 void DriveTrain::StopMotors(){
 	leftFront->Set(0);

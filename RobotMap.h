@@ -2,7 +2,6 @@
 Do not mix this code with any other version of RobotBuilder! */
 #ifndef ROBOTMAP_H
 #define ROBOTMAP_H
-#include "HardwareIncludes.h"
 #include "WPILib.h"
 #include "WPILibExtensions/WPILibExtensions.h"
 /**
@@ -33,6 +32,5 @@ public:
 	static AnalogPressureTransducer* launcherLowPressureSwitch;
 	static void init();
 private:
-	static void ConfigureMoreThings(); // use for configuring more things that RobotBuilder can't quite do
 };
 #endif
