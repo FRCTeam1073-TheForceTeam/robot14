@@ -10,7 +10,6 @@ const float EXECUTE_INTVL = 20; //ms
 const float FULL_RAMP_TIME = 1000; //ms
 const float ONE_RAMP_MAX = EXECUTE_INTVL / FULL_RAMP_TIME;
 const float TWIST_CONSTANT = 0.8f;
-static const float MECANUM_CONSTANT = 1.4142; //square root of 2, since it's going to be used a lot
 
 #define absMin(a,b) (fabs(b)<fabs(a) ? (b) : (a))
 DriveTrain::DriveTrain() : Subsystem("DriveTrain") {
@@ -41,17 +40,26 @@ void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joys
 	//Ramp
 		float newX, newY, newTwist;
 		if(fabs(joystickX) > fabs(oldX)){
-			newX = absMin(joystickX, oldX + ONE_RAMP_MAX);
+			if(joystickX < 0){
+				newX = absMin(joystickX, oldX - ONE_RAMP_MAX);
+			}
+			else newX = absMin(joystickX, oldX + ONE_RAMP_MAX);
 		}
 		else newX = joystickX;
 		
 		if(fabs(joystickY) > fabs(oldY)){
-			newY = absMin(joystickY, oldY + ONE_RAMP_MAX);
+			if(joystickY < 0){
+				newY = absMin(joystickY, oldY - ONE_RAMP_MAX);
+			}
+			else newY = absMin(joystickY, oldY + ONE_RAMP_MAX);
 		}
 		else newY = joystickY;
 		
 		if(fabs(joystickTwist) > fabs(oldTwist)){
-			newTwist = absMin(joystickTwist, oldTwist + ONE_RAMP_MAX);
+			if(joystickTwist < 0){
+				newTwist = absMin(joystickTwist, oldTwist - ONE_RAMP_MAX);
+			}
+			else newTwist = absMin(joystickTwist, oldTwist + ONE_RAMP_MAX);
 		}
 		else newTwist = joystickTwist;
 		
@@ -79,13 +87,14 @@ void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joys
 	float rightFrontVal = (twist + joystickMagnitude*(cos(actAngle)-sin(actAngle)));
 	float leftBackVal= -1 * (ccTwist + joystickMagnitude*(cos(actAngle)-sin(actAngle)));
 	float rightBackVal = (twist + joystickMagnitude*(cos(actAngle)+sin(actAngle)));
-	
+
 	SmartCANJaguar::SyncMask DriveSyncGroup = SmartCANJaguar::kGroup1;
 	leftFront->Set(leftFrontVal, DriveSyncGroup);
 	rightFront->Set(rightFrontVal, DriveSyncGroup);
 	leftBack->Set(leftBackVal, DriveSyncGroup);
 	rightBack->Set(rightBackVal, DriveSyncGroup);
 	SmartCANJaguar::UpdateSyncGroup(DriveSyncGroup);
+
 }
 void DriveTrain::StopMotors(){
 	leftFront->Set(0);
