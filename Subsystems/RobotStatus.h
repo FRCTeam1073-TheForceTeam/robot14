@@ -14,7 +14,7 @@ public:
 	void InitDefaultCommand();
 	typedef enum StatusCode
 	{
-		
+		LAUNCHER_SHOOTING,
 		LAUNCHER_READY,
 		LAUNCHER_UNREADY,
 		LAUNCHER_ERROR,
