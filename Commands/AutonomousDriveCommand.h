@@ -21,7 +21,7 @@ public:
 	virtual void Interrupted();
 private:
 	static const float timeval = 2.5;
-	static const float autonomousValue = .82; //adjust for speed and distance in autonomous
+	static const float autonomousValue = 0.82; //adjust for speed and distance in autonomous
 };
 
 

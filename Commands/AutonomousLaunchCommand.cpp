@@ -12,9 +12,9 @@ AutonomousLaunchCommand::AutonomousLaunchCommand() {
 // Called just before this Command runs the first time
 void AutonomousLaunchCommand::Initialize() {
 	printf(" Launching Ball");
-	if(!RobotMap::disableautonomous){
+	//if(!RobotMap::disableautonomous){
 		Robot::launcher->OpenTank();
-	}
+	//}
 }
 // Called repeatedly when this Command is scheduled to run
 void AutonomousLaunchCommand::Execute() {

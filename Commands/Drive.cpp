@@ -10,7 +10,7 @@ Drive::Drive() {
 }
 // Called just before this Command runs the first time
 void Drive::Initialize() {
-	
+	printf("Drive command initialized\n");
 }
 // Called repeatedly when this Command is scheduled to run
 void Drive::Execute() {
@@ -27,4 +27,5 @@ void Drive::End() {
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
 void Drive::Interrupted() {
+	printf("Drive command interrupted\n");
 }

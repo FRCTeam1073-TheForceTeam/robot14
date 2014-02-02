@@ -11,11 +11,12 @@ AutonomousDriveCommand::AutonomousDriveCommand() {
 }
 // Called just before this Command runs the first time
 void AutonomousDriveCommand::Initialize() {
-	Robot::driveTrain->MecanumDriveAction(0, autonomousValue, 0);
-	printf("Driving Foreward for 2.5 Seconds \n");
+
+	printf("Driving Forward for 2.5 Seconds \n");
 }
 // Called repeatedly when this Command is scheduled to run
 void AutonomousDriveCommand::Execute() {
+	Robot::driveTrain->MecanumDriveAction(0, autonomousValue, 0);
 }
 // Make this return true when this Command no longer needs to run execute()
 bool AutonomousDriveCommand::IsFinished() {
@@ -24,6 +25,7 @@ bool AutonomousDriveCommand::IsFinished() {
 // Called once after isFinished returns true
 void AutonomousDriveCommand::End() {
 	Robot::driveTrain->StopMotors();
+	Robot::driveTrain->MecanumDriveAction(0,0,0);//use both because ramping needs zeros to stop
 	printf(" Stopping after 2.5 Seconds \n");
 }
 // Called when another command which requires one or more of the same

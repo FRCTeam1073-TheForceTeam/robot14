@@ -37,6 +37,7 @@ bool DriveTrain::IsFieldOrientation(){
 }
 void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joystickTwist) {
 	
+	printf("MecanumDriveAction\n");
 	//Ramp
 		float newX, newY, newTwist;
 		if(fabs(joystickX) > fabs(oldX)){
@@ -97,8 +98,10 @@ void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joys
 
 }
 void DriveTrain::StopMotors(){
+	SmartCANJaguar::SyncMask DriveSyncGroup = SmartCANJaguar::kGroup1;
 	leftFront->Set(0);
 	rightFront->Set(0);
 	leftBack->Set(0);
 	rightBack->Set(0);
-	}
+	SmartCANJaguar::UpdateSyncGroup(DriveSyncGroup);
+}

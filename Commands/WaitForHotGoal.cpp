@@ -18,9 +18,8 @@ void WaitForHotGoal::Execute() {
 }
 // Make this return true when this Command no longer needs to run execute()
 bool WaitForHotGoal::IsFinished() {
-	bool isHot= Robot :: vision-> IsHot();
-	printf( "isHot = %s, timedOut = %s\n", isHot ? "true" : "false",
-			IsTimedOut() ? "true" : "false" );
+	bool isHot = Robot::vision->IsHot();
+	printf( "isHot = %s, timedOut = %s\n", isHot ? "true" : "false", IsTimedOut() ? "true" : "false" );
 	return isHot || IsTimedOut();
 }
 // Called once after isFinished returns true
