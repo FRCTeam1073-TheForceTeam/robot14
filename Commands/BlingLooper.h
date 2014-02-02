@@ -1,0 +1,26 @@
+/* FIRST Team 1073's RobotBuilder (0.0.2) for WPILibExtensions ---
+Do not mix this code with any other version of RobotBuilder! */
+
+
+#ifndef BLINGLOOPER_H
+#define BLINGLOOPER_H
+
+
+#include "Commands/Subsystem.h"
+#include "../Robot.h"
+#include "WPILib.h"
+#include "../WPILibExtensions/WPILibExtensions.h"
+
+class BlingLooper: public Command {
+public:
+	BlingLooper();
+	virtual void Initialize();
+	virtual void Execute();
+	virtual bool IsFinished();
+	virtual void End();
+	virtual void Interrupted();
+private:
+	
+};
+
+#endif
