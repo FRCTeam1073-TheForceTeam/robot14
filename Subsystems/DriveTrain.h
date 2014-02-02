@@ -20,6 +20,7 @@ public:
 	void StopMotors();
 	void ToggleOrientation();
 	bool IsFieldOrientation(); 
+	void ToggleForwardDirection();
 private:
 	bool isFieldOrientation;
 	float oldX, oldY, oldTwist;
