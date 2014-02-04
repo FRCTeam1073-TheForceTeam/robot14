@@ -12,6 +12,8 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "Commands/ElevateCollector.h"
 #include "Commands/LaunchBall.h"
 #include "Commands/SendToDashboard.h"
+#include "Commands/ShiftHighGear.h"
+#include "Commands/ShiftLowGear.h"
 #include "Commands/ToggleDriveOrientation.h"
 #include "Commands/ToggleForwardDirection.h"
 #include "Commands/ToggleNormalCubicJoystickMode.h"
@@ -40,8 +42,14 @@ OI::OI() {
 	toggleJoystickMode->WhenPressed(new ToggleNormalCubicJoystickMode());
 	toggleDriveMode = new JoystickButton(driveStick, 3);
 	toggleDriveMode->WhenPressed(new ToggleDriveOrientation());
+	highGear = new JoystickButton(driveStick, 6);
+	highGear->WhenPressed(new ShiftHighGear());
+	lowGear = new JoystickButton(driveStick, 4);
+	lowGear->WhenPressed(new ShiftLowGear());
      
         // SmartDashboard Buttons
+	SmartDashboard::PutData("ShiftLowGear", new ShiftLowGear());
+	SmartDashboard::PutData("ShiftHighGear", new ShiftHighGear());
 	SmartDashboard::PutData("Collect", new Collect());
 	SmartDashboard::PutData("Launch Ball", new LaunchBall());
 	SmartDashboard::PutData("BlingLooper", new BlingLooper());
