@@ -70,9 +70,5 @@ void RobotMap::init() {
 	driveTrainGyro->SetGyroMode(SmartGyro::radians);
 	// don't have hardware
 	launcherLowPressureSwitch = new AnalogPressureTransducer(1, 3);
-<<<<<<< HEAD
-=======
 	bling = new SPI(new DigitalOutput(1,3), new DigitalOutput(1,2));
-	
->>>>>>> ba6c2689cfed43166c6b33e70b8ef43da936d342
 }
