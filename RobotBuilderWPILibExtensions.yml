@@ -668,10 +668,6 @@ Properties:
     validators: null, value: 1073}
   Export Commands: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Commands, validators: null, value: true}
-<<<<<<< HEAD
-  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\cowan_000\NetBeansProjects',
-=======
-  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\team1073\NetBeansProjects',
->>>>>>> ba6c2689cfed43166c6b33e70b8ef43da936d342
-    extension: null, folder: true, name: Java Project Directory, validators: null,
-    value: 'C:\Users\team1073\NetBeansProjects'}
+  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\Keenan
+      Troddyn\NetBeansProjects', extension: null, folder: true, name: Java Project Directory,
+    validators: null, value: 'C:\WindRiver\workspace'}
