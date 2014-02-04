@@ -2,12 +2,6 @@
 Do not mix this code with any other version of RobotBuilder! */
 #include "Collect.h"
 Collect::Collect(bool dir) {
-	Construct(dir);
-}
-Collect::Collect(){
-	Construct(true);
-}
-void Collect::Construct(bool dir){
 	this->dir = dir;
 	Requires(Robot::collector);
 }
