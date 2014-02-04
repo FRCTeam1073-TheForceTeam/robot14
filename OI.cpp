@@ -6,6 +6,7 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "Commands/AutonomousCommmandGroup.h"
 #include "Commands/AutonomousDriveCommand.h"
 #include "Commands/AutonomousLaunchCommand.h"
+#include "Commands/BlingLooper.h"
 #include "Commands/Collect.h"
 #include "Commands/Drive.h"
 #include "Commands/ElevateCollector.h"
@@ -46,6 +47,7 @@ OI::OI() {
         // SmartDashboard Buttons
 	SmartDashboard::PutData("Collect", new Collect());
 	SmartDashboard::PutData("Launch Ball", new LaunchBall());
+	SmartDashboard::PutData("BlingLooper", new BlingLooper());
 	SmartDashboard::PutData("SwitchGear", new SwitchGear());
 	SmartDashboard::PutData("ToggleNormalCubicJoystickMode", new ToggleNormalCubicJoystickMode());
 	SmartDashboard::PutData("ToggleDriveOrientation", new ToggleDriveOrientation());
