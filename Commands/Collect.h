@@ -13,8 +13,7 @@ Do not mix this code with any other version of RobotBuilder! */
 
 class Collect: public Command {
 public:
-	Collect(bool dir);
-	Collect();
+	Collect(bool dir = true);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
@@ -22,7 +21,6 @@ public:
 	virtual void Interrupted();
 private:
 	bool dir;
-	void Construct(bool dir);
 };
 
 #endif
