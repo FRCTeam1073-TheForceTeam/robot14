@@ -10,12 +10,11 @@ SmartCANJaguar* RobotMap::driveTrainRightFront = NULL;
 SmartCANJaguar* RobotMap::driveTrainLeftFront = NULL;
 SmartGyro* RobotMap::driveTrainGyro = NULL;
 Solenoid* RobotMap::launcherSolenoid = NULL;
-Servo* RobotMap::collectorAngleAdjuster = NULL;
 DigitalInput* RobotMap::collectorHighLimit = NULL;
 DigitalInput* RobotMap::collectorLowLimit = NULL;
-StallableAnalogEncoder* RobotMap::collectorElevationEncoder = NULL;
 SpeedController* RobotMap::collectorLeftRoller = NULL;
 SpeedController* RobotMap::collectorRightRoller = NULL;
+SmartCANJaguar* RobotMap::collectorAngleAdjuster = NULL;
 DoubleSolenoid* RobotMap::shifterDoubleSolenoid = NULL;
 Compressor* RobotMap::airCompressorCompressor = NULL;
 StallableAnalogEncoder* RobotMap::robotRangeFinderUltrasonicSensor = NULL;
@@ -43,23 +42,20 @@ void RobotMap::init() {
 	launcherSolenoid = new Solenoid(1, 1);
 	lw->AddActuator("Launcher", "Solenoid", launcherSolenoid);
 	
-	collectorAngleAdjuster = new Servo(1, 1);
-	lw->AddActuator("Collector", "Angle Adjuster", collectorAngleAdjuster);
-	
 	collectorHighLimit = new DigitalInput(1, 13);
 	lw->AddSensor("Collector", "High Limit", collectorHighLimit);
 	
 	collectorLowLimit = new DigitalInput(1, 14);
 	lw->AddSensor("Collector", "Low Limit", collectorLowLimit);
 	
-	collectorElevationEncoder = new StallableAnalogEncoder(1, 2);
-	lw->AddSensor("Collector", "ElevationEncoder", collectorElevationEncoder);
-	
 	collectorLeftRoller = new Talon(1, 2);
 	lw->AddActuator("Collector", "Left Roller", (Talon*) collectorLeftRoller);
 	
 	collectorRightRoller = new Talon(1, 3);
 	lw->AddActuator("Collector", "Right Roller", (Talon*) collectorRightRoller);
+	
+	collectorAngleAdjuster = new SmartCANJaguar(6);
+	
 	
 	shifterDoubleSolenoid = new DoubleSolenoid(1, 2, 3);      
 	
