@@ -74,8 +74,6 @@ void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joys
 		oldTwist = newTwist;
 	//Ramp Done
 	
-	//TODO Needs adjustment to scaling and possibly other things
-	
 	double joyAngle = atan2(newX, newY);
 	float joystickMagnitude = sqrt((newX * newX) + (newY * newY));
 	if(newTwist < 0.05 && newTwist > -0.05){
@@ -100,6 +98,11 @@ void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joys
 	rightBack->Set(rightBackVal, DriveSyncGroup);
 	SmartCANJaguar::UpdateSyncGroup(DriveSyncGroup);
 }
+/*float DriveTrain::ReturnGyroScaled(){  //returns a gyro value scaled similiarly to that of the joystick twist, so a full rotation (360 degrees) = 1 
+	float gyroDegrees = (gyro->GetAngle()/(3.141592654));
+	float gyroScaled = gyroDegrees/360; 
+}
+*/
 void DriveTrain::StopMotors(){
 	SmartCANJaguar::SyncMask DriveSyncGroup = SmartCANJaguar::kGroup1;
 	leftFront->Set(0);
@@ -108,3 +111,4 @@ void DriveTrain::StopMotors(){
 	rightBack->Set(0);
 	SmartCANJaguar::UpdateSyncGroup(DriveSyncGroup);
 }
+
