@@ -700,6 +700,6 @@ Properties:
     validators: null, value: 1073}
   Export Commands: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Commands, validators: null, value: true}
-  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\exhum_000\NetBeansProjects',
+  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\WindRiver\workspace',
     extension: null, folder: true, name: Java Project Directory, validators: null,
     value: 'C:\WindRiver\workspace'}
