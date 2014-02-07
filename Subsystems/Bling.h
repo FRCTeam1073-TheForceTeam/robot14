@@ -32,5 +32,6 @@ private:
 	void PixelColor(int R, int G, int B);
 	void RainbowColor(int pos, int* R, int* G, int* B);
 	void TurnMeOn();
+	static void InitializeBackgroundTask();
 };
 #endif
