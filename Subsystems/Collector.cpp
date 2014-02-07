@@ -40,7 +40,7 @@ bool Collector::CanMoveElevator(bool dir) {
 		limit = LimitPressed(lowLimit);
 	else
 		limit = LimitPressed(highLimit);
-	return limit || elevationEncoder->IsStall();
+	return limit || angleAdjuster->IsStall();
 }
 void Collector::Collect(bool dir){
 	//false = purge, true = collect
