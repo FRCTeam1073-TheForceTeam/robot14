@@ -21,7 +21,8 @@ public:
 	void ToggleOrientation();
 	bool IsFieldOrientation(); 
 	void ToggleForwardDirection();
-private:
+//	float ReturnGyroScaled();
+private: 
 	bool isFieldOrientation;
 	float oldX, oldY, oldTwist;
 };

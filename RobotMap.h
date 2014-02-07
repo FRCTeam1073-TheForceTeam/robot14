@@ -20,12 +20,11 @@ public:
 	static SmartCANJaguar* driveTrainLeftFront;
 	static SmartGyro* driveTrainGyro;
 	static Solenoid* launcherSolenoid;
-	static Servo* collectorAngleAdjuster;
 	static DigitalInput* collectorHighLimit;
 	static DigitalInput* collectorLowLimit;
-	static StallableAnalogEncoder* collectorElevationEncoder;
 	static SpeedController* collectorLeftRoller;
 	static SpeedController* collectorRightRoller;
+	static SmartCANJaguar* collectorAngleAdjuster;
 	static DoubleSolenoid* shifterDoubleSolenoid;
 	static Compressor* airCompressorCompressor;
 	static StallableAnalogEncoder* robotRangeFinderUltrasonicSensor;
