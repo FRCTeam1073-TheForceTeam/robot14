@@ -14,10 +14,13 @@ public:
 	void InitDefaultCommand();
 	typedef enum StatusCode
 	{
+		HAPPY,
+		LAUNCHER_ERROR,
+		SHIFT_ERROR,
+		SHIFT_HIGH,
+		SHIFT_LOW,
 		LAUNCHER_SHOOTING,
 		LAUNCHER_READY,
-		LAUNCHER_UNREADY,
-		LAUNCHER_ERROR,
 		LAST_ERROR
 		
 	} StatusCode;

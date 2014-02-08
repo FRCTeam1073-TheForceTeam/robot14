@@ -13,10 +13,11 @@ public:
 	void InitDefaultCommand();
 	typedef enum Color
 	{
+		HAPPY,
 		RAINBOWEXPLOSION,
 		GREEN,
-		ORANGE,
-		RED
+		RED,
+		FLASH,
 	} BlingColor;
 	void SetColor(BlingColor colorCode);
 	void Execute();
