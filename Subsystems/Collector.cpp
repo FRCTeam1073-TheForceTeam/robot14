@@ -22,7 +22,7 @@ void Collector::Elevate(bool goUp){
 
 // We can move the elevator if there's a stall?
 bool Collector::CanMoveElevator() {
-	return elevationEncoder->IsStall();
+	return !(elevationEncoder->IsStall());
 }
 void Collector::Collect(bool feedIn){
 	//false = purge, true = collect
