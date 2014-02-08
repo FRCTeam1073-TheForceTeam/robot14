@@ -40,10 +40,11 @@ void DriveTrain::ToggleOrientation(){
 bool DriveTrain::IsFieldOrientation(){
 	return isFieldOrientation;
 }
+
 void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joystickTwist) {
 	
-	printf("MecanumDriveAction\n");
-	//Ramp
+	//printf("MecanumDriveAction\n");
+	//Ramp  uncomment when fixed
 		float newX, newY, newTwist;
 		if(fabs(joystickX) > fabs(oldX)){
 			if(joystickX < 0){
@@ -74,6 +75,12 @@ void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joys
 		oldTwist = newTwist;
 	//Ramp Done
 	
+	/*float newX = joystickX;
+	float newY = joystickY;
+	float newTwist = joystickTwist;
+	//cheap ramping fix above, delete when ramping works 
+	printf("Joystick Y Value: %f \n", newY);
+	*/
 	double joyAngle = atan2(newX, newY);
 	float joystickMagnitude = sqrt((newX * newX) + (newY * newY));
 	if(newTwist < 0.05 && newTwist > -0.05){
@@ -86,7 +93,6 @@ void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joys
 		float robAngle = (gyro->GetAngle())*(PI/180.0f);
 		actAngle -= robAngle;
 	}
-	
 	float leftFrontVal = -1 * (ccTwist + joystickMagnitude*(cos(actAngle)+sin(actAngle)));
 	float rightFrontVal = (twist + joystickMagnitude*(cos(actAngle)-sin(actAngle)));
 	float leftBackVal= -1 * (ccTwist + joystickMagnitude*(cos(actAngle)-sin(actAngle)));
@@ -96,7 +102,8 @@ void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joys
 	rightFront->Set(rightFrontVal, DriveSyncGroup);
 	leftBack->Set(leftBackVal, DriveSyncGroup);
 	rightBack->Set(rightBackVal, DriveSyncGroup);
-	SmartCANJaguar::UpdateSyncGroup(DriveSyncGroup);
+	SmartCANJaguar::UpdateSyncGroup(DriveSyncGroup); 
+	//printf("LeftFront Value: %f, Right Front Value: %f, Left Back Val: %f, Right Back Val: %f \n", leftFrontVal, rightFrontVal, leftBackVal, rightBackVal);
 }
 /*float DriveTrain::ReturnGyroScaled(){  //returns a gyro value scaled similiarly to that of the joystick twist, so a full rotation (360 degrees) = 1 
 	float gyroDegrees = (gyro->GetAngle()/(3.141592654));
