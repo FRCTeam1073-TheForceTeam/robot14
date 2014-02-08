@@ -44,7 +44,7 @@ bool DriveTrain::IsFieldOrientation(){
 void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joystickTwist) {
 	
 	//printf("MecanumDriveAction\n");
-	/*Ramp      uncomment when fixed
+	//Ramp  uncomment when fixed
 		float newX, newY, newTwist;
 		if(fabs(joystickX) > fabs(oldX)){
 			if(joystickX < 0){
@@ -74,12 +74,13 @@ void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joys
 		oldY = newY;
 		oldTwist = newTwist;
 	//Ramp Done
-	*/
-	float newX = joystickX;
+	
+	/*float newX = joystickX;
 	float newY = joystickY;
 	float newTwist = joystickTwist;
 	//cheap ramping fix above, delete when ramping works 
 	printf("Joystick Y Value: %f \n", newY);
+	*/
 	double joyAngle = atan2(newX, newY);
 	float joystickMagnitude = sqrt((newX * newX) + (newY * newY));
 	if(newTwist < 0.05 && newTwist > -0.05){
