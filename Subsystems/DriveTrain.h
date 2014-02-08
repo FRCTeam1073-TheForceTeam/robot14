@@ -20,7 +20,7 @@ public:
 	void StopMotors();
 	void ToggleOrientation();
 	bool IsFieldOrientation(); 
-	void ToggleForwardDirection();
+	void ToggleForwardDirection(); 
 //	float ReturnGyroScaled();
 private: 
 	bool isFieldOrientation;
