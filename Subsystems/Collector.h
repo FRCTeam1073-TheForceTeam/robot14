@@ -17,8 +17,8 @@ public:
 	SmartCANJaguarSeries* rollers;
 	Collector();
 	void InitDefaultCommand();
-	void Elevate(bool dir);
-	void Collect(bool dir);
+	void Elevate(bool goUp);
+	void Collect(bool feedIn);
 	void StopRollers();
 private:
 	bool CanMoveElevator();
