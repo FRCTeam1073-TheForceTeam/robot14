@@ -37,7 +37,7 @@ OI::OI() {
 	
 	forwardDirectionButton = new JoystickButton(driveStick, 2);
 	forwardDirectionButton->WhenPressed(new ToggleForwardDirection());
-	toggleJoystickMode = new JoystickButton(driveStick, 2);
+	toggleJoystickMode = new JoystickButton(driveStick, 11);
 	toggleJoystickMode->WhenPressed(new ToggleNormalCubicJoystickMode());
 	toggleDriveMode = new JoystickButton(driveStick, 3);
 	toggleDriveMode->WhenPressed(new ToggleDriveOrientation());
