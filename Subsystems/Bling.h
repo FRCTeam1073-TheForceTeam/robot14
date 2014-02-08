@@ -22,16 +22,19 @@ public:
 	void Execute();
 private:
 	SPI* blong;
-	void RainbowExplosion();
+	void rainbowExplosion();
 	BlingColor code;
 	int forCounter;
 	int iCounter;
-	void LightNth(int ledNumber, int red, int green, int blue);
-	void PixelOff();
-	void ClearStrip();
-	void PixelColor(int R, int G, int B);
-	void RainbowColor(int pos, int* R, int* G, int* B);
+	void lightNth(int ledNumber, int red, int green, int blue);
+	void dispClear();
+	void clearStrip();
+	void dispColor(int R, int G, int B);
+	void rainbowColor(int pos);
 	void TurnMeOn();
 	static void InitializeBackgroundTask();
+	int R, G, B;
+	void magicFunction();
+	const static int num_pixels = 64;
 };
 #endif
