@@ -185,7 +185,6 @@ void Bling::RainbowColor(int pos, int* R, int* G, int* B) {
   }
 }
 void Bling::TurnMeOn(){
-	puts("in turn me on");
 	const int val = 0xF3 - 128;
 	for (int i = 0; i < 2; i++)
 		PixelColor(val,0,0);

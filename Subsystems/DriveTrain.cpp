@@ -42,7 +42,7 @@ bool DriveTrain::IsFieldOrientation(){
 }
 void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joystickTwist) {
 	
-	printf("MecanumDriveAction\n");
+//	printf("MecanumDriveAction\n");
 	//Ramp
 		float newX, newY, newTwist;
 		if(fabs(joystickX) > fabs(oldX)){

@@ -28,6 +28,6 @@ bool RobotRangeFinder::InRange() {
 }
 int RobotRangeFinder::GetDistance() {
 	float voltage = ultrasonicSensor ->GetVoltage();
-	printf("Voltage: %f %d cm\n", voltage, (int)(voltage/VoltsPerCM));
+	// printf("Voltage: %f %d cm\n", voltage, (int)(voltage/VoltsPerCM));
 	return (int)(voltage/VoltsPerCM);
 }

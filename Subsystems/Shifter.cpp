@@ -21,6 +21,8 @@ void Shifter::SetHighGear() { Set(false); }
 void Shifter::Set(bool lowGear) {
 	this->lowGear = lowGear;
 	doubleSolenoid->Set(lowGear ? high : low);
+	printf("Your current gear is");
+	puts(lowGear ? "low" : "high");
 }
 bool Shifter::IsLowGear() {
 	return lowGear;

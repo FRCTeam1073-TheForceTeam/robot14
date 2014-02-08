@@ -19,7 +19,6 @@ void Collector::Elevate(bool goUp){
 		angleAdjuster->Set(goUp ? 1.0f : -1.0f);
 	}
 }
-
 // We can move the elevator if there's a stall?
 bool Collector::CanMoveElevator() {
 	return !(elevationEncoder->IsStall());
