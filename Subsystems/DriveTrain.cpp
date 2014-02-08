@@ -103,7 +103,7 @@ void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joys
 	leftBack->Set(leftBackVal, DriveSyncGroup);
 	rightBack->Set(rightBackVal, DriveSyncGroup);
 	SmartCANJaguar::UpdateSyncGroup(DriveSyncGroup); 
-	printf("LeftFront Value: %f, Right Front Value: %f, Left Back Val: %f, Right Back Val: %f \n", leftFrontVal, rightFrontVal, leftBackVal, rightBackVal);
+	//printf("LeftFront Value: %f, Right Front Value: %f, Left Back Val: %f, Right Back Val: %f \n", leftFrontVal, rightFrontVal, leftBackVal, rightBackVal);
 }
 /*float DriveTrain::ReturnGyroScaled(){  //returns a gyro value scaled similiarly to that of the joystick twist, so a full rotation (360 degrees) = 1 
 	float gyroDegrees = (gyro->GetAngle()/(3.141592654));
