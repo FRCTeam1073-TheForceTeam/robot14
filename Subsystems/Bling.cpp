@@ -22,7 +22,6 @@ Bling::Bling() : Subsystem("Bling") {
     
 void Bling::InitDefaultCommand() {
 }
-
 void Bling::SetColor(BlingColor colorCode){
 	code = colorCode;	
 }
@@ -111,8 +110,6 @@ void Bling::Execute()
 		printf("ERROR: in BLing.cpp execute switch");
 	}
 }
-
-
 const float blingNice = 0.001f;
 int BlingBgFunction(...)
 {
@@ -123,7 +120,6 @@ int BlingBgFunction(...)
 		Robot::bling->Execute();
 	}
 }
-
 SEM_ID BlingSemaphore = 0;
 static Task* BlingTask;	
 void Bling::InitializeBackgroundTask() {
@@ -133,7 +129,6 @@ void Bling::InitializeBackgroundTask() {
 	BlingTask->Start();
 	printf("Bling Flame On!\n");
 }
-
 void Bling::LightNth(int ledNumber, int red, int green, int blue)
 {
 	for (int i = 0; i < ledNumber - 1; i++)
@@ -197,5 +192,3 @@ void Bling::TurnMeOn(){
 	Wait(.005);
 	
 }
-
-

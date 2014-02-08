@@ -111,4 +111,3 @@ void DriveTrain::StopMotors(){
 	rightBack->Set(0);
 	SmartCANJaguar::UpdateSyncGroup(DriveSyncGroup);
 }
-
