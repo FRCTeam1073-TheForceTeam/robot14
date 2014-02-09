@@ -584,6 +584,16 @@ Children:
         name: Number
         validators: *id020
         value: '2'
+  - Name: Throttle
+    Base: Joystick
+    Children: []
+    Properties:
+      Number: !!robotbuilder.data.properties.ChoicesProperty
+        choices: *id019
+        default: 1
+        name: Number
+        validators: *id020
+        value: '3'
   Properties: {}
 - Name: Commands
   Base: Commands
