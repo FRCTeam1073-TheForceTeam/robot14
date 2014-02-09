@@ -19,25 +19,37 @@ Bling::Bling() : Subsystem("Bling") {
 	blong->ApplyConfig();
 	forCounter = 0;
 	iCounter = 0;
-	code = RAINBOWEXPLOSION;
+	pattern = OFF;
 	Bling::InitializeBackgroundTask();
 	
 }
     
 void Bling::InitDefaultCommand() {
 }
-void Bling::SetColor(BlingColor colorCode){
-	code = colorCode;	
+void Bling::SetPattern(PATTERN pattern){
+	this->pattern = pattern;
 }
 void Bling::Execute()
 {
 	//printf(".\n");
-	switch (code){
-	case RAINBOWEXPLOSION:
-		clearStrip();
-		rainbowExplosion();
-		//TurnMeOn();
-		//printf("THis be executing hard\n");
+	switch (pattern){
+	case OFF:
+		break;
+	case BLUE_SOLID:
+		break;
+	case BLUE_BLINKING:
+		break;
+	case GREEN_SOLID:
+		break;
+	case GREEN_BLINKING:
+		break;
+	case RAINBOW_EXPLOSION:
+		break;
+	case RED_BLINKING:
+		break;
+	case PURPLE_SOLID:
+		break;
+	case PURPLE_BLINKING:
 		break;
 	default:
 		printf("ERROR: in BLing.cpp execute switch");
