@@ -22,7 +22,7 @@ public:
 	virtual void Interrupted();
 private:
 	void Construct(bool dir);
-	bool dir;
+	bool goUp;
 };
 
 #endif

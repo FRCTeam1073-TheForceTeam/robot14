@@ -26,7 +26,6 @@ Bling::Bling() : Subsystem("Bling") {
     
 void Bling::InitDefaultCommand() {
 }
-
 void Bling::SetColor(BlingColor colorCode){
 	code = colorCode;	
 }
@@ -45,8 +44,6 @@ void Bling::Execute()
 		printf("ERROR: in BLing.cpp execute switch");
 	}
 }
-
-
 const float blingNice = 0.001f;
 int BlingBgFunction(...)
 {
@@ -57,7 +54,6 @@ int BlingBgFunction(...)
 		Robot::bling->Execute();
 	}
 }
-
 SEM_ID BlingSemaphore = 0;
 static Task* BlingTask;	
 void Bling::InitializeBackgroundTask() {
@@ -67,7 +63,6 @@ void Bling::InitializeBackgroundTask() {
 	BlingTask->Start();
 	printf("Bling Flame On!\n");
 }
-
 
 void Bling::dispClear()
 {
@@ -120,6 +115,7 @@ void Bling::rainbowExplosion(){
   }
   delay(500);
 }
+
 void Bling::rainbowColor(int pos) {
 	  //pos is the position on the rainbow
 	  //There are 384 colors
@@ -162,7 +158,3 @@ void Bling::clearStrip() {
   }
   magicFunction();
 }
-
-
-
-

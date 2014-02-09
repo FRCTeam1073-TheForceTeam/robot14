@@ -18,21 +18,33 @@ void RobotStatus::InitDefaultCommand() {
 // here. Call these from Commands.
 void RobotStatus::SetError(StatusCode code){
 	switch (code){
-	case LAUNCHER_SHOOTING:
-		Robot::bling->SetColor(Bling::RAINBOWEXPLOSION);
-		printf("RobotStatus: Launcher Shot\n");
-		break;
-	case LAUNCHER_READY:
-		Robot::bling->SetColor(Bling::GREEN);
-		printf("RobotStatus: Launcher Ready\n");
-		break;
-	case LAUNCHER_UNREADY:
-		Robot::bling->SetColor(Bling::ORANGE);
-		printf("RobotStatus: Launcher Unready\n");
+	case HAPPY:
+		Robot::bling->SetColor(Bling::HAPPY);
+		printf("RobotStatus: Celebration\n");
 		break;
 	case LAUNCHER_ERROR:
 		Robot::bling->SetColor(Bling::RED);
 		printf("RobotStatus: Launcher Error\n");
+		break;
+	case SHIFT_ERROR:
+		Robot::bling->SetColor(Bling::RED);
+		printf("RobotStatus: Shifter Error\n");
+		break;
+	case LAUNCHER_SHOOTING:
+		Robot::bling->SetColor(Bling::RAINBOWEXPLOSION);
+		printf("RobotStatus: Launcher Shot\n");
+		break;
+	case SHIFT_HIGH:		
+//		Robot::bling->SetColor(Bling::);
+		printf("RobotStatus: Gear HIGH\n");
+		break;
+	case SHIFT_LOW:
+//		Robot::bling->SetColor(Bling::);
+		printf("RobotStatus: Gear LOW\n");
+		break;
+	case LAUNCHER_READY:
+		Robot::bling->SetColor(Bling::GREEN);
+		printf("RobotStatus: Launcher Ready\n");
 		break;
 	default:
 		printf("RobotStatus: Unknown Error: %d\n", code);
