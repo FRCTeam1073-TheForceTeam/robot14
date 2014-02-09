@@ -13,16 +13,17 @@ void ElevateCollector::Construct(bool up){
 }
 // Called just before this Command runs the first time
 void ElevateCollector::Initialize() {
-	if(goUp){
-		Robot::elevator->SetSetpoint(Robot::elevator->GetSetpoint() + .1);
-	}
-	else{
-		Robot::elevator->SetSetpoint(Robot::elevator->GetSetpoint() - .1);
-	}
+
 }
 void ElevateCollector::Execute() {
 	// part of the Stallable interface
 	Robot::elevator->elevationEncoder->ProcessVoltageData();
+	if(goUp){
+		Robot::elevator->SetSetpoint(Robot::elevator->GetSetpoint() + .5);
+	}
+	else{
+		Robot::elevator->SetSetpoint(Robot::elevator->GetSetpoint() - .5);
+	}
 }
 bool ElevateCollector::IsFinished() {
 	return Robot::elevator->NotOKToMove();
