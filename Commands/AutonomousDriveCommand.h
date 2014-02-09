@@ -20,9 +20,12 @@ public:
 	virtual void End();
 	virtual void Interrupted();
 private:
-	static const float timeval = 2.5;
+	static const float timeval = 3.0;
 	float autonomousValue;
 	bool useRangeFinder;
+	float initialTime;
+	float currentTime;
+	float timeInMethod;
 };
 
 
