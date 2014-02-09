@@ -15,7 +15,6 @@ private:
 	JoystickButton* launchBallButton;
 	SmartJoystick* driveStick;
 	JoystickButton* forwardDirectionButton;
-	JoystickButton* toggleJoystickMode;
 	JoystickButton* toggleDriveMode;
 	JoystickButton* highGear;
 	JoystickButton* lowGear;
