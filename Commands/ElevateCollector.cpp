@@ -13,7 +13,7 @@ void ElevateCollector::Construct(bool up){
 }
 // Called just before this Command runs the first time
 void ElevateCollector::Initialize() {
-
+	Robot::elevator->SetSetpoint(5);
 }
 void ElevateCollector::Execute() {
 	// part of the Stallable interface
