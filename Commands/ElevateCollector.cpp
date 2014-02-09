@@ -9,7 +9,7 @@ ElevateCollector::ElevateCollector(){
 }
 void ElevateCollector::Construct(bool up){
 	this->goUp = up;
-	Requires(Robot::collector);
+	Requires(Robot::elevator);
 }
 // Called just before this Command runs the first time
 void ElevateCollector::Initialize() {
@@ -20,18 +20,12 @@ void ElevateCollector::Initialize() {
 		Robot::elevator->SetSetpoint(Robot::elevator->GetSetpoint() - .1);
 	}
 }
-// Called repeatedly when this Command is scheduled to run
 void ElevateCollector::Execute() {
-	
+	// part of the Stallable interface
+	Robot::elevator->elevationEncoder->ProcessVoltageData();
 }
-// Make this return true when this Command no longer needs to run execute()
 bool ElevateCollector::IsFinished() {
-	return true;
+	return Robot::elevator->NotOKToMove();
 }
-// Called once after isFinished returns true
-void ElevateCollector::End() {
-	
-}
-// Called when another command which requires one or more of the same
-// subsystems is scheduled to run
+void ElevateCollector::End() {}
 void ElevateCollector::Interrupted() { End(); }
