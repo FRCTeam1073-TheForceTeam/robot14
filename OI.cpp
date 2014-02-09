@@ -24,14 +24,14 @@ OI::OI() {
 	
 	operatorStick = new SmartJoystick(2);
 	
-	collectorDownButton = new JoystickButton(operatorStick, 10);
-	collectorDownButton->WhileHeld(new ElevateCollector());
-	collectorUpButton = new JoystickButton(operatorStick, 9);
-	collectorUpButton->WhileHeld(new ElevateCollector());
-	collectButton = new JoystickButton(operatorStick, 7);
-	collectButton->WhileHeld(new Collect());
-	purgeButton = new JoystickButton(operatorStick, 8);
-	purgeButton->WhileHeld(new Collect());
+	collectorDownButton = new JoystickButton(operatorStick, 9);
+	collectorDownButton->WhileHeld(new ElevateCollector(false));
+	collectorUpButton = new JoystickButton(operatorStick, 10);
+	collectorUpButton->WhileHeld(new ElevateCollector(true));
+	collectButton = new JoystickButton(operatorStick, 12);
+	collectButton->WhileHeld(new Collect(true));
+	purgeButton = new JoystickButton(operatorStick, 11);
+	purgeButton->WhileHeld(new Collect(false));
 	launchBallButton = new JoystickButton(operatorStick, 1);
 	launchBallButton->WhileHeld(new LaunchBall());
 	driveStick = new SmartJoystick(1);

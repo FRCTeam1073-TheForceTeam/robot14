@@ -40,7 +40,6 @@ void DriveTrain::ToggleOrientation(){
 bool DriveTrain::IsFieldOrientation(){
 	return isFieldOrientation;
 }
-
 void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joystickTwist) {
 		float newX, newY, newTwist;
 		if(fabs(joystickX) > fabs(oldX)){

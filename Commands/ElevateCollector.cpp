@@ -13,20 +13,25 @@ void ElevateCollector::Construct(bool up){
 }
 // Called just before this Command runs the first time
 void ElevateCollector::Initialize() {
-	Robot::elevator->SetSetpoint(5);
+	printf("ElevateCollector initialized!!!");
 }
 void ElevateCollector::Execute() {
 	// part of the Stallable interface
 	Robot::elevator->elevationEncoder->ProcessVoltageData();
+	
 	if(goUp){
 		Robot::elevator->SetSetpoint(Robot::elevator->GetSetpoint() + .5);
+		printf("Elevator Going UP to %f!!\n", Robot::elevator->GetSetpoint());
 	}
 	else{
 		Robot::elevator->SetSetpoint(Robot::elevator->GetSetpoint() - .5);
+		printf("Elevator Going DOWN to %f!!\n", Robot::elevator->GetSetpoint());
 	}
 }
 bool ElevateCollector::IsFinished() {
 	return Robot::elevator->NotOKToMove();
 }
-void ElevateCollector::End() {}
+void ElevateCollector::End() {
+	Robot::elevator->SetSetpoint(Robot::elevator->elevationEncoder->GetAverageVoltage());
+}
 void ElevateCollector::Interrupted() { End(); }
