@@ -29,7 +29,6 @@ void Bling::InitDefaultCommand() {
 void Bling::SetColor(BlingColor colorCode){
 	code = colorCode;	
 }
-
 void Bling::Execute()
 {
 	//printf(".\n");
@@ -63,7 +62,6 @@ void Bling::InitializeBackgroundTask() {
 	BlingTask->Start();
 	printf("Bling Flame On!\n");
 }
-
 void Bling::dispClear()
 {
 	dispColor(0, 0, 0);
@@ -82,7 +80,6 @@ void Bling::dispColor(int R, int G, int B)
 void Bling::magicFunction(){
 blong->Write(0);
 }
-
 void Bling::rainbowExplosion(){
   for(int i = 0; i<33; i++){
     clearStrip();
@@ -115,7 +112,6 @@ void Bling::rainbowExplosion(){
   }
   delay(500);
 }
-
 void Bling::rainbowColor(int pos) {
 	  //pos is the position on the rainbow
 	  //There are 384 colors
@@ -137,12 +133,10 @@ void Bling::rainbowColor(int pos) {
 	      break;
 	  }
 	}
-
 void Bling::lightNth(int n, int r, int g, int b) {
   if (n > num_pixels) {
     return;
   }
-
   for(int i=0; i<=n-1; i++) {
     dispClear();
     //dispColor(0,127,127);
@@ -151,7 +145,6 @@ void Bling::lightNth(int n, int r, int g, int b) {
   
   magicFunction();
 }
-
 void Bling::clearStrip() {
   for(int i=0; i<=num_pixels; i++) {
     dispClear();
