@@ -38,9 +38,9 @@ OI::OI() {
 	forwardDirectionButton->WhenPressed(new ToggleForwardDirection());
 	toggleDriveMode = new JoystickButton(driveStick, 3);
 	toggleDriveMode->WhenPressed(new ToggleDriveOrientation());
-	highGear = new JoystickButton(driveStick, 6);
+	highGear = new JoystickButton(driveStick, 10);
 	highGear->WhenPressed(new ShiftHighGear());
-	lowGear = new JoystickButton(driveStick, 4);
+	lowGear = new JoystickButton(driveStick, 9);
 	lowGear->WhenPressed(new ShiftLowGear());
      
         // SmartDashboard Buttons
