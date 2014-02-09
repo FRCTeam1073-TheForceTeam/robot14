@@ -2,6 +2,8 @@
 Do not mix this code with any other version of RobotBuilder! */
 #ifndef ROBOT_STATUS_H
 #define ROBOT_STATUS_H
+#include "Robot.h"
+#include "Subsystems/Bling.h"
 class RobotStatus {
 public:
 		

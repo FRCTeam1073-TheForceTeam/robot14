@@ -35,5 +35,36 @@ void RobotStatus::SetError(bool error) {
 }
 
 void RobotStatus::UpdateBling() {
-	
+	Bling::PATTERN p = Bling::OFF;
+	if (error) {p = Bling::RED_BLINKING;}
+	else if (Robot::getInstance().IsAutonomous()) {
+		switch (autonomousStatus) {
+		case AUTONOMOUS_DRIVING:
+			p = Bling::PURPLE_BLINKING;
+			break;
+		case AUTONOMOUS_WAIT:
+			p = Bling::PURPLE_SOLID;
+			break;
+		case AUTONOMOUS_SHOOT:
+			p = Bling::RAINBOW_EXPLOSION;
+			break;
+		case AUTONOMOUS_DONE:
+			p = Bling::RAINBOW_EXPLOSION;
+			break;
+		}
+	}
+	else{
+			if (launcherStatus == LAUNCHER_SHOOTING) {
+			p = Bling::RAINBOW_EXPLOSION;
+		}
+		else if (launcherStatus == LAUNCHER_READY) {
+			if (shiftingStatus == SHIFTER_LOW) p = Bling::GREEN_BLINKING;
+			else p = Bling::GREEN_SOLID;
+		}
+		else if (launcherStatus == LAUNCHER_READY) {
+			if (shiftingStatus == SHIFTER_LOW) p = Bling::BLUE_BLINKING;
+			else p = Bling::BLUE_SOLID;
+		}
+	}
+	Robot::bling->SetPattern(p);
 }
