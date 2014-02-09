@@ -19,6 +19,8 @@ class Elevator: public PIDSubsystem {
 	void UsePIDOutput(double output);
 	void InitDefaultCommand();
 	bool NotOKToMove();
-	void AutonomousElevate();
+	void GoToShootPosition();
+	void GoToMaxPosition();
+	void GoToMinPosition();
 };
 #endif
