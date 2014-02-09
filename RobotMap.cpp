@@ -9,7 +9,8 @@ SmartCANJaguar* RobotMap::driveTrainLeftBack = NULL;
 SmartCANJaguar* RobotMap::driveTrainRightFront = NULL;
 SmartCANJaguar* RobotMap::driveTrainLeftFront = NULL;
 SmartGyro* RobotMap::driveTrainGyro = NULL;
-Solenoid* RobotMap::launcherSolenoid = NULL;
+Solenoid* RobotMap::launcherSolenoidLeft = NULL;
+Solenoid* RobotMap::launcherSolenoidRight = NULL;
 SpeedController* RobotMap::collectorLeftRoller = NULL;
 SpeedController* RobotMap::collectorRightRoller = NULL;
 DoubleSolenoid* RobotMap::shifterDoubleSolenoid = NULL;
@@ -38,8 +39,11 @@ void RobotMap::init() {
 	driveTrainGyro = new SmartGyro(1, 1);
 	lw->AddSensor("Drive Train", "Gyro", driveTrainGyro);
 	driveTrainGyro->SetSensitivity(0.007);
-	launcherSolenoid = new Solenoid(1, 1);
-	lw->AddActuator("Launcher", "Solenoid", launcherSolenoid);
+	launcherSolenoidLeft = new Solenoid(1, 1);
+	lw->AddActuator("Launcher", "SolenoidLeft", launcherSolenoidLeft);
+	
+	launcherSolenoidRight = new Solenoid(1, 4);
+	lw->AddActuator("Launcher", "SolenoidRight", launcherSolenoidRight);
 	
 	collectorLeftRoller = new Talon(1, 2);
 	lw->AddActuator("Collector", "Left Roller", (Talon*) collectorLeftRoller);

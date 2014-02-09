@@ -19,7 +19,8 @@ public:
 	static SmartCANJaguar* driveTrainRightFront;
 	static SmartCANJaguar* driveTrainLeftFront;
 	static SmartGyro* driveTrainGyro;
-	static Solenoid* launcherSolenoid;
+	static Solenoid* launcherSolenoidLeft;
+	static Solenoid* launcherSolenoidRight;
 	static SpeedController* collectorLeftRoller;
 	static SpeedController* collectorRightRoller;
 	static DoubleSolenoid* shifterDoubleSolenoid;
