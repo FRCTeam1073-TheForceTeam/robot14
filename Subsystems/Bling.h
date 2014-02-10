@@ -40,7 +40,7 @@ private:
 	void TurnMeOn();
 	static void InitializeBackgroundTask();
 	int R, G, B;
-	void magicFunction();
+	void setStrip();
 	const static int num_pixels = 64;
 };
 #endif

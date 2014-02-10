@@ -89,9 +89,13 @@ void Bling::dispColor(int R, int G, int B)
 	}
 	
 }
-void Bling::magicFunction(){
-blong->Write(0);
+
+// Found to be necessary to get some algorithms to work.
+
+void Bling::setStrip(){
+	blong->Write(0);
 }
+
 void Bling::rainbowExplosion(){
   for(int i = 0; i<33; i++){
     clearStrip();
@@ -155,11 +159,11 @@ void Bling::lightNth(int n, int r, int g, int b) {
   }
   dispColor(r, g, b);
   
-  magicFunction();
+  setStrip();
 }
 void Bling::clearStrip() {
   for(int i=0; i<=num_pixels; i++) {
     dispClear();
   }
-  magicFunction();
+  setStrip();
 }
