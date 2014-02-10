@@ -44,7 +44,29 @@ OI::OI() {
 	highGear->WhenPressed(new ShiftHighGear());
 	lowGear = new JoystickButton(driveStick, 9);
 	lowGear->WhenPressed(new ShiftLowGear());
-     
+	
+	//BEGIN DEBUG CODE
+	/*arcadeDriveButton = new JoystickButton(driveStick, 5);
+	arcadeDriveButton->WhenPressed(new driveArcarde());
+	collectSlowerButton = new JoystickButton(driveStick, 11);
+	collectSlowerButton->WhenPressed(new collectSlower());
+	collectFasterButton = new JoystickButton(driveStick, 12);
+	collectFasterButton->WhenPressed(new collectFaster());
+	angleDownButton = new JoystickButton(driveStick, 9);
+	angleDownButton->WhenPressed(new angleDown());
+	angleUpButton = new JoystickButton(driveStick, 10);
+	angleUpButton->WhenPressed(new angleUp());
+	shiftButton = new JoystickButton(driveStick, 8);
+	shiftButton->WhenPressed(new shift());
+	lauchBall = new JoystickButton(driveStick, 6);
+	lauchBall->WhenPressed(new launch());
+	mecanumDriveButton = new JoystickButton(driveStick, 4);
+	mecanumDriveButton->WhenPressed(new drive());
+	compressButton = new JoystickButton(driveStick, 2);
+	compressButton->WhenPressed(new compress());
+    */
+	//END DEBUG CODE
+	
         // SmartDashboard Buttons
 	SmartDashboard::PutData("ShiftLowGear", new ShiftLowGear());
 	SmartDashboard::PutData("ShiftHighGear", new ShiftHighGear());
