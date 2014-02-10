@@ -32,3 +32,12 @@ bool Launcher::IsLowPressure() {
 	else 
 		return false;
 }
+//BEGIN DEBUG CODE
+/*void Launcher::Launch(){
+	solenoidLeft->Set(true);
+	solenoidRight->Set(true);
+	Wait(1.5);
+	solenoidLeft->Set(false);
+	solenoidRight->Set(false);
+}*/
+//END DEBUG CODE

@@ -17,6 +17,7 @@ Elevator::Elevator() : PIDSubsystem("Elevator", 1.0, 0.0, 0.0) {
 	//                  to
 	SetSetpoint(ELEVATOR_UP);
 	Enable();
+	//DEBUG angleSpeed=0.00;
 }
 double Elevator::ReturnPIDInput() {
 	// Return your input value for the PID loop
@@ -51,3 +52,13 @@ void Elevator::GoToMinPosition(){
 bool Elevator::NotOKToMove() {
 	return elevationEncoder->IsStall();
 }
+
+//BEGIN DEBUG CODE
+/*void Elevator::SetAngleSpeed(float swag){
+	angleSpeed=swag;
+	angleAdjuster->Set(angleSpeed);
+}
+float Elevator::GetAngleSpeed(){
+	return angleSpeed;
+}*/
+//END DEBUG CODE
