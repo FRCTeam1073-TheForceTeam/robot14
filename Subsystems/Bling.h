@@ -42,5 +42,7 @@ private:
 	int R, G, B;
 	void setStrip();
 	const static int num_pixels = 64;
+	void makeItBlink(int r, int g, int b);
+	void setCoolor(int r, int g, int b);
 };
 #endif
