@@ -32,6 +32,10 @@ bool Launcher::IsLowPressure() {
 	else 
 		return false;
 }
+
+bool Launcher::AreTanksOpen() {
+	return solenoidLeft->Get() && solenoidRight->Get();
+}
 //BEGIN DEBUG CODE
 /*void Launcher::Launch(){
 	solenoidLeft->Set(true);
