@@ -7,8 +7,10 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "AutonomousDriveCommand.h"
 #include "WaitForHotGoal.h"
 #include "AutonomousLaunchCommand.h"
+#include "AutonomousDeElevateCommand.h"
 AutonomousCommmandGroup::AutonomousCommmandGroup() {
 	AddSequential(new AutonomousDriveCommand());
+	AddSequential(new AutonomousDeElevateCommand());
 	AddSequential(new WaitForHotGoal());
 	AddSequential(new AutonomousLaunchCommand());
 	// Add Commands here:
