@@ -27,3 +27,30 @@ void Shifter::Set(bool lowGear) {
 bool Shifter::IsLowGear() {
 	return lowGear;
 }
+//BEGIN DEBUG CODE
+/*string Shifter::GetGearSetting(){
+	if(doubleSolenoid->Get()==DoubleSolenoid::kForward){
+		return "low";
+	}
+	if(doubleSolenoid->Get()==DoubleSolenoid::kReverse){
+		return "high";
+	}
+	if(doubleSolenoid->Get()==DoubleSolenoid::kOff){
+		return "off";
+	}
+	return 0;
+}
+void Shifter::Shift(){
+	bool changed=false;
+	if(doubleSolenoid->Get()==DoubleSolenoid::kOff){
+		doubleSolenoid->Set(DoubleSolenoid::kForward);
+		changed=true;
+	}
+	if(doubleSolenoid->Get()==DoubleSolenoid::kForward&&!changed){
+		doubleSolenoid->Set(DoubleSolenoid::kReverse);
+		changed=true;
+	}
+	if(doubleSolenoid->Get()==DoubleSolenoid::kReverse&&!changed)
+		doubleSolenoid->Set(DoubleSolenoid::kForward);
+}*/
+//END DEBUG CODE
