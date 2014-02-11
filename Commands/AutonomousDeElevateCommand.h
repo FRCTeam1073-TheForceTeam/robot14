@@ -2,8 +2,8 @@
 Do not mix this code with any other version of RobotBuilder! */
 
 
-#ifndef AUTONOMOUSDRIVECOMMAND_H
-#define AUTONOMOUSDRIVECOMMAND_H
+#ifndef AUTONOMOUSDEELEVATECOMMAND_H
+#define AUTONOMOUSDEELEVATECOMMAND_H
 
 
 #include "Commands/Subsystem.h"
@@ -11,22 +11,16 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "WPILib.h"
 #include "../WPILibExtensions/WPILibExtensions.h"
 
-class AutonomousDriveCommand: public Command {
+class AutonomousDeElevateCommand: public Command {
 public:
-	AutonomousDriveCommand();
+	AutonomousDeElevateCommand();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
 private:
-	static const float timeval = 3.0;
-	float autonomousValue;
-	bool useRangeFinder;
-	float initialTime;
-	float currentTime;
-	float timeInMethod;
+	
 };
-
 
 #endif

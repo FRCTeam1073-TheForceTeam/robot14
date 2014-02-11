@@ -22,6 +22,11 @@ public:
 	bool IsFieldOrientation(); 
 	void ToggleForwardDirection(); 
 //	float ReturnGyroScaled();
+	//BEGIN DEBUG CODE
+	//void ArcadeDrive(Joystick *stick);
+	//void MecanumDrive(float joystickX, float joystickY, float joystickTwist);
+	//string GetDriveMode();
+	//END DEBUG CODE
 private: 
 	bool isFieldOrientation;
 	float oldX, oldY, oldTwist;

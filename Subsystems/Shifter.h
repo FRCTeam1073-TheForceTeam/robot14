@@ -15,6 +15,10 @@ public:
 	void SetHighGear();
 	void SetLowGear();
 	bool IsLowGear();
+	//BEGIN DEBUG CODE
+	//string GetGearSetting();
+	//void Shift();
+	//END DEBUG CODE
 private:
 	void Set(bool lowGear);
 	bool lowGear;

@@ -29,7 +29,6 @@ void Bling::InitDefaultCommand() {
 void Bling::SetPattern(PATTERN pattern){
 	this->pattern = pattern;
 }
-
 void Bling::Execute()
 {
 	//printf(".\n");
@@ -96,7 +95,6 @@ void Bling::InitializeBackgroundTask() {
 	BlingTask->Start();
 	printf("Bling Flame On!\n");
 }
-
 void Bling::dispClear()
 {
 	dispColor(0, 0, 0);
@@ -112,8 +110,11 @@ void Bling::dispColor(int R, int G, int B)
 	}
 	
 }
-void Bling::magicFunction(){
-blong->Write(0);
+
+// Found to be necessary to get some algorithms to work.
+
+void Bling::setStrip(){
+	blong->Write(0);
 }
 
 void Bling::rainbowExplosion(){
@@ -148,7 +149,6 @@ void Bling::rainbowExplosion(){
   }
   delay(500);
 }
-
 void Bling::rainbowColor(int pos) {
 	  //pos is the position on the rainbow
 	  //There are 384 colors
@@ -170,26 +170,23 @@ void Bling::rainbowColor(int pos) {
 	      break;
 	  }
 	}
-
 void Bling::lightNth(int n, int r, int g, int b) {
   if (n > num_pixels) {
     return;
   }
-
   for(int i=0; i<=n-1; i++) {
     dispClear();
     //dispColor(0,127,127);
   }
   dispColor(r, g, b);
   
-  magicFunction();
+  setStrip();
 }
-
 void Bling::clearStrip() {
   for(int i=0; i<=num_pixels; i++) {
     dispClear();
   }
-  magicFunction();
+  setStrip();
 }
 void Bling::makeItBlink(int r, int g, int b)
 {
