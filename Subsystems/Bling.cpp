@@ -35,13 +35,13 @@ void Bling::Execute()
 	switch (pattern){
 	case OFF:
 		clearStrip();
-		for(i = 0; i < 64; i++){
+		for(int j = 0; j < 64; j++){
 			dispColor(128, 128, 128);
 		}
 		break;
 	case BLUE_SOLID:
 		clearStrip();
-			for(i = 0; i < 64; i++){
+			for(int j = 0; j < 64; j++){
 				dispColor(128, 128, 128);
 			}
 		break;
@@ -49,7 +49,7 @@ void Bling::Execute()
 		break;
 	case GREEN_SOLID:
 		clearStrip();
-			for(i = 0; i < 64; i++){
+			for(int j = 0; j < 64; j++){
 				dispColor(128, 128, 128);
 			}
 		break;
@@ -66,7 +66,7 @@ void Bling::Execute()
 		break;
 	case PURPLE_SOLID:
 		clearStrip();
-			for(i = 0; i < 64; i++){
+			for(int i = 0; i < 64; i++){
 				dispColor(128, 128, 128);
 			}
 		break;
