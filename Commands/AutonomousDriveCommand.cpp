@@ -22,9 +22,11 @@ void AutonomousDriveCommand::Execute() {
 	timeInMethod = currentTime - initialTime; 
 	*/
 	if(useRangeFinder && Robot::robotRangeFinder->InRange()){ //when set to true, will allow the rangefinder to stop the robot
+		printf("Autonomous drive:  now in range\n");
 		autonomousValue = 0;
 	}
 	else{
+		printf("Autonomous drive: moving forward\n");
 		autonomousValue = 0.82;     // Linear Drive, use if sinusoidal not working/not configured yet
 		//sinusoidal scaling below
 	//autonomousValue = sin((3.141592654 * timeInMethod)/3); //currently set to run for 3 seconds, needs to be configured still (longer or shorter...)
@@ -34,7 +36,12 @@ void AutonomousDriveCommand::Execute() {
 }
 // Make this return true when this Command no longer needs to run execute()
 bool AutonomousDriveCommand::IsFinished() {
-	return IsTimedOut();
+	bool isInRange = ( useRangeFinder ? Robot::robotRangeFinder->InRange() : false);
+	bool isTimeout = IsTimedOut();
+	printf("isInRange = %s, isTimeout = %s\n", isInRange ? "true" : "false",
+				isTimeout ? "true" : "false");
+	
+	return isInRange || IsTimedOut();
 }
 // Called once after isFinished returns true
 void AutonomousDriveCommand::End() {
