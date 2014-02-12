@@ -2,8 +2,8 @@
 Do not mix this code with any other version of RobotBuilder! */
 
 
-#ifndef COLLECT_H
-#define COLLECT_H
+#ifndef COLLECTORPURGE_H
+#define COLLECTORPURGE_H
 
 
 #include "Commands/Subsystem.h"
@@ -11,16 +11,14 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "WPILib.h"
 #include "../WPILibExtensions/WPILibExtensions.h"
 
-class Collect: public Command {
+class CollectorPurge: public Command {
 public:
-	Collect(bool dir = true);
+	CollectorPurge();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
-private:
-	bool dir;
 };
 
 #endif
