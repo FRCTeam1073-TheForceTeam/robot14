@@ -9,6 +9,9 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "Commands/AutonomousLaunchCommand.h"
 #include "Commands/Collect.h"
 #include "Commands/Drive.h"
+#include "Commands/ElevateCollectorToBottom.h"
+#include "Commands/ElevateCollectorToShooter.h"
+#include "Commands/ElevateCollectorToTop.h"
 #include "Commands/ElevateCollectorUp.h"
 #include "Commands/ElevatorCollectorDown.h"
 #include "Commands/LaunchBall.h"
@@ -26,6 +29,10 @@ OI::OI() {
 	
 	operatorStick = new SmartJoystick(2);
 	
+	collectorToShooterButton = new JoystickButton(operatorStick, 2);
+	collectorToShooterButton->WhenPressed(new ElevateCollectorToShooter());
+	collectorToBottomButton = new JoystickButton(operatorStick, 7);
+	collectorToBottomButton->WhenPressed(new ElevateCollectorToBottom());
 	collectorDownButton = new JoystickButton(operatorStick, 9);
 	collectorDownButton->WhileHeld(new ElevatorCollectorDown());
 	collectorUpButton = new JoystickButton(operatorStick, 10);
@@ -50,6 +57,9 @@ OI::OI() {
         // SmartDashboard Buttons
 	SmartDashboard::PutData("ElevateCollectorUp", new ElevateCollectorUp());
 	SmartDashboard::PutData("ElevatorCollectorDown", new ElevatorCollectorDown());
+	SmartDashboard::PutData("ElevateCollectorToShooter", new ElevateCollectorToShooter());
+	SmartDashboard::PutData("ElevateCollectorToTop", new ElevateCollectorToTop());
+	SmartDashboard::PutData("ElevateCollectorToBottom", new ElevateCollectorToBottom());
 	SmartDashboard::PutData("ShiftLowGear", new ShiftLowGear());
 	SmartDashboard::PutData("ShiftHighGear", new ShiftHighGear());
 	SmartDashboard::PutData("Collect", new Collect());
