@@ -125,7 +125,6 @@ void DataSending::GetJagInfo(){
 	Send(RobotMap::driveTrainRightFront->GetBusVoltage());
 	Send(RobotMap::driveTrainRightFront->GetTemperature());
 	Send((int)RobotMap::driveTrainRightFront->GetFaults());
-
 	Send(RobotMap::driveTrainLeftBack->Get());
 	Send(RobotMap::driveTrainLeftBack->GetOutputVoltage());
 	Send(RobotMap::driveTrainLeftBack->GetOutputCurrent());
@@ -133,7 +132,6 @@ void DataSending::GetJagInfo(){
 	Send(RobotMap::driveTrainLeftBack->GetBusVoltage());
 	Send(RobotMap::driveTrainLeftBack->GetTemperature());
 	Send((int)RobotMap::driveTrainLeftBack->GetFaults());
-
 	Send(RobotMap::driveTrainRightBack->Get());
 	Send(RobotMap::driveTrainRightBack->GetOutputVoltage());
 	Send(RobotMap::driveTrainRightBack->GetOutputCurrent());
@@ -141,7 +139,6 @@ void DataSending::GetJagInfo(){
 	Send(RobotMap::driveTrainRightBack->GetBusVoltage());
 	Send(RobotMap::driveTrainRightBack->GetTemperature());
 	Send((int)RobotMap::driveTrainRightBack->GetFaults());
-
 	Send(RobotMap::elevatorAngleAdjuster->Get());
 	Send(RobotMap::elevatorAngleAdjuster->GetOutputVoltage());
 	Send(RobotMap::elevatorAngleAdjuster->GetOutputCurrent());

@@ -26,9 +26,11 @@ class Elevator: public PIDSubsystem {
 	void GoToShootPosition();
 	void GoToMaxPosition();
 	void GoToMinPosition();
+	void HoldPosition();
 	//BEGIN DEBUG CODE
 	//void SetAngleSpeed(float swag);
 	//float GetAngleSpeed();
 	//END DEBUG CODE
+	void IncrementSetPoint(bool up);
 };
 #endif
