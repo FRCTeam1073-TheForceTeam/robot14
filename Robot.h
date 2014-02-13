@@ -2,6 +2,7 @@
 Do not mix this code with any other version of RobotBuilder! */
 #ifndef _ROBOT_H
 #define _ROBOT_H
+#define DIGITAL_JUMPER_14 14
 #include "WPILib.h"
 #include "WPILibExtensions/WPILibExtensions.h"
 #include "Commands/Command.h"
@@ -51,5 +52,9 @@ public:
 	virtual void TeleopInit();
 	virtual void TeleopPeriodic();
 	virtual void TestPeriodic();
+	static enum WhatRobot_t {atlasRobot, mobileBase2014} whatRobot;
+	static WhatRobot_t GetWhichRobot();
+private:
+	static DigitalInput *jumper14;
 };
 #endif
