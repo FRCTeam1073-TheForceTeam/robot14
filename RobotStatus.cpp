@@ -61,7 +61,7 @@ void RobotStatus::UpdateBling() {
 			if (shiftingStatus == SHIFTER_LOW) p = Bling::GREEN_BLINKING;
 			else p = Bling::GREEN_SOLID;
 		}
-		else if (launcherStatus == LAUNCHER_READY) {
+		else if (launcherStatus == LAUNCHER_NOT_READY) {
 			if (shiftingStatus == SHIFTER_LOW) p = Bling::BLUE_BLINKING;
 			else p = Bling::BLUE_SOLID;
 		}

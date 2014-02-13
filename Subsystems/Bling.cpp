@@ -34,20 +34,41 @@ void Bling::Execute()
 	//printf(".\n");
 	switch (pattern){
 	case OFF:
+		clearStrip();
+		for(int j = 0; j < 64; j++){
+			dispColor(128, 128, 128);
+		}
 		break;
 	case BLUE_SOLID:
+		clearStrip();
+			for(int j = 0; j < 64; j++){
+				dispColor(128, 128, 128);
+			}
 		break;
 	case BLUE_BLINKING:
 		break;
 	case GREEN_SOLID:
+		clearStrip();
+			for(int j = 0; j < 64; j++){
+				dispColor(128, 128, 128);
+			}
 		break;
 	case GREEN_BLINKING:
+		clearStrip();
+		
+		
 		break;
 	case RAINBOW_EXPLOSION:
+		clearStrip();
+		rainbowExplosion();
 		break;
 	case RED_BLINKING:
 		break;
 	case PURPLE_SOLID:
+		clearStrip();
+			for(int i = 0; i < 64; i++){
+				dispColor(128, 128, 128);
+			}
 		break;
 	case PURPLE_BLINKING:
 		break;
@@ -166,4 +187,30 @@ void Bling::clearStrip() {
     dispClear();
   }
   setStrip();
+}
+void Bling::makeItBlink(int r, int g, int b)
+{
+  for(int j = 0; j < 500; j++)
+  { 
+    for(int i = 0; i <= 64; i++){
+       dispColor(r, g, b);
+      
+    }
+     setStrip();
+    
+    
+    delay(25);
+     for(int k = 0; k <= 64; k++)
+     {
+       dispColor(0, 0, 0);
+      
+    }
+     setStrip();
+    delay(25);
+  }
+}
+void Bling::setCoolor(int r, int g, int b){
+  for(int i = 0; i < 64; i++){
+    dispColor(r, g, b);
+  }
 }

@@ -5,9 +5,9 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "Commands/PIDSubsystem.h"
 #include "WPILib.h"
 #include "../WPILibExtensions/WPILibExtensions.h"
-#define ELEVATOR_UP 4.03
-#define ELEVATOR_DOWN 2.87
-#define ELEVATOR_SHOOTPOS 3.76
+#define ELEVATOR_UP 2.563
+#define ELEVATOR_DOWN 1.43
+#define ELEVATOR_SHOOTPOS 2.42
 class Elevator: public PIDSubsystem {
 	//BEGIN DEBUG CODE
 	//private:
@@ -26,9 +26,11 @@ class Elevator: public PIDSubsystem {
 	void GoToShootPosition();
 	void GoToMaxPosition();
 	void GoToMinPosition();
+	void HoldPosition();
 	//BEGIN DEBUG CODE
 	//void SetAngleSpeed(float swag);
 	//float GetAngleSpeed();
 	//END DEBUG CODE
+	void IncrementSetPoint(bool up);
 };
 #endif

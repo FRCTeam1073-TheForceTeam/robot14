@@ -10,6 +10,7 @@ AutonomousDeElevateCommand::AutonomousDeElevateCommand() {
 }
 // Called just before this Command runs the first time
 void AutonomousDeElevateCommand::Initialize() {
+	printf("Moving elevator\n");
 	Robot::elevator->GoToShootPosition();
 }
 // Called repeatedly when this Command is scheduled to run
