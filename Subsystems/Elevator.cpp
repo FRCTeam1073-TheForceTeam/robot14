@@ -46,7 +46,6 @@ void Elevator::InitDefaultCommand() {
 void Elevator::GoToShootPosition(){SetSetpoint(ELEVATOR_SHOOTPOS);}
 void Elevator::GoToMaxPosition(){SetSetpoint(ELEVATOR_UP);}
 void Elevator::GoToMinPosition(){SetSetpoint(ELEVATOR_DOWN);}
->>>>>>> b608b0d5d8fe67b3c5cfbb125b5d1a23ed3796ff
 bool Elevator::NotOKToMove() {
 	return elevationEncoder->IsStall();
 }
