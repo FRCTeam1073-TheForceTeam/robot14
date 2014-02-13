@@ -97,10 +97,10 @@ void DataSending::UpdateUserLCD(){
 	string driveMode = "Drive mode Mecanum";//+Robot::driveTrain->GetDriveMode();
 	strcpy(line1,setting.c_str());
 	strcpy(line2,driveMode.c_str());
-	if((bool)RobotMap::airCompressorCompressor->GetPressureSwitchValue())sprintf(line3,"PSI is 1");
-	if(!(bool)RobotMap::airCompressorCompressor->GetPressureSwitchValue())sprintf(line3,"PSI is 0");
-	sprintf(line4,"Elevation is %f",RobotMap::elevatorElevationEncoder->GetVoltage());
-	sprintf(line5, "Battery Current is %f",batteryCurrent->GetVoltage());
+	if((bool)RobotMap::airCompressorCompressor->GetPressureSwitchValue())sprintf(line3,"Sufficent Pressure");
+	if(!(bool)RobotMap::airCompressorCompressor->GetPressureSwitchValue())sprintf(line3,"Insufficient Pressure");
+	sprintf(line4,"Elevation voltage is %f",RobotMap::elevatorElevationEncoder->GetVoltage());
+	sprintf(line5, "Battery Current is %f Amps",((batteryCurrent->GetVoltage()-2.5)*AMPS_CONSTANT));
 	DriverStationLCD *lcd = DriverStationLCD::GetInstance();
 	lcd->PrintfLine(DriverStationLCD::kUser_Line1, "%s",line1);
 	lcd->PrintfLine(DriverStationLCD::kUser_Line2, "%s",line2);
