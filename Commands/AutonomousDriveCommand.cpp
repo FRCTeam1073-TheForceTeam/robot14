@@ -41,8 +41,8 @@ void AutonomousDriveCommand::Execute() {
 bool AutonomousDriveCommand::IsFinished() {
 	bool isInRange = ( useRangeFinder ? Robot::robotRangeFinder->InRange() : false);
 	bool isTimeout = IsTimedOut();
-	printf("isInRange = %s, isTimeout = %s\n", isInRange ? "true" : "false",
-				isTimeout ? "true" : "false");
+	printf("isInRange = %s, isTimeout = %s, range: %d\n", isInRange ? "true" : "false",
+				isTimeout ? "true" : "false", Robot::robotRangeFinder->GetDistance());
 	
 	return isInRange || IsTimedOut();
 }
