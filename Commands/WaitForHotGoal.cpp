@@ -10,7 +10,7 @@ WaitForHotGoal::WaitForHotGoal() {
 }
 // Called just before this Command runs the first time
 void WaitForHotGoal::Initialize() {
-	
+	RobotStatus::SetAutonomousStatus(RobotStatus::AUTONOMOUS_WAIT);
 }
 // Called repeatedly when this Command is scheduled to run
 void WaitForHotGoal::Execute() {
