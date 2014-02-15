@@ -6,7 +6,6 @@ Do not mix this code with any other version of RobotBuilder! */
 static const float VoltsPerCM = 0.0049;
 static const int MaxShootingRangeCmDflt = 229; // 7.5 ft 90 in 228.6 cm, round to 229
 static const int MinShootingRangeCmDflt = 91;   // 3 ft (temporary value), round to 91
-
 float RobotRangeFinder::MaxShootingRangeCM = 0.0;
 float RobotRangeFinder::MinShootingRangeCM = 0.0;
 

@@ -8,7 +8,6 @@ ElevatorCollectorDown::ElevatorCollectorDown() {
 }
 void ElevatorCollectorDown::Initialize() {}
 void ElevatorCollectorDown::Execute() {
-	Robot::elevator->elevationEncoder->ProcessVoltageData();
 	Robot::elevator->IncrementSetPoint(false);
 }
 bool ElevatorCollectorDown::IsFinished() {return false;}

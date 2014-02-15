@@ -34,7 +34,7 @@ private:
 	void DispClear();
 	void ClearStrip();
 	void DispColor(int r, int g, int b);
-	void Blink(int r, int g, int b, int interval = 500);
+	void Blink(int r, int g, int b, int interval = 250);
 	void RainbowColor(int pos);
 	void TurnMeOn();
 	static void InitializeBackgroundTask();
