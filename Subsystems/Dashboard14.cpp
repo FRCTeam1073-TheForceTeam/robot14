@@ -37,9 +37,8 @@ void Dashboard14::SendData()
 	char data[100];
 	sprintf(data,"%lf,%lf,%lf", Robot::elevator->GetSetpoint(),Robot::elevator->GetElevatorUp(),Robot::elevator->GetElevatorDown());
 	SmartDashboard::PutString("Elevator Data", data);
-	
-	if(!Robot::airCompressor->IsLowPressure() && Robot::robotRangeFinder->InRange())
-	{
+	bool goodToGo = !Robot::airCompressor->IsLowPressure() && Robot::robotRangeFinder->InRange();
+	if(goodToGo){
 		SmartDashboard::PutNumber("Shooter Ready", 1);
 	}
 	else if(!Robot:: airCompressor->IsLowPressure() && !Robot::robotRangeFinder->InRange())
@@ -55,5 +54,6 @@ void Dashboard14::SendData()
 		SmartDashboard::PutNumber("Shooter Ready", -2);
 	}
 	
+	RobotStatus::SetLauncherStatus(goodToGo ? RobotStatus::LAUNCHER_READY : RobotStatus::LAUNCHER_NOT_READY);
 	
 }

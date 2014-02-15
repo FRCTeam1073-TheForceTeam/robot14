@@ -2,6 +2,7 @@
 Do not mix this code with any other version of RobotBuilder! */
 #include "Shifter.h"
 #include "../Robotmap.h"
+#include "../RobotStatus.h"
 #define high DoubleSolenoid::kForward
 #define off DoubleSolenoid::kOff
 #define low DoubleSolenoid::kReverse
@@ -19,6 +20,7 @@ void Shifter::InitDefaultCommand() {
 void Shifter::SetLowGear() { Set(true); }
 void Shifter::SetHighGear() { Set(false); }
 void Shifter::Set(bool lowGear) {
+	RobotStatus::SetShiftingStatus(lowGear ? RobotStatus::SHIFTER_LOW : RobotStatus::SHIFTER_HIGH);
 	this->lowGear = lowGear;
 	doubleSolenoid->Set(lowGear ? high : low);
 	printf("Your current gear is");
