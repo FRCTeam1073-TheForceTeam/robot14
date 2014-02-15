@@ -32,8 +32,8 @@ Elevator::Elevator() : PIDSubsystem("Elevator", 1.0, 0.0, 0.0) {
 	}	
 	//DEBUG angleSpeed=0.00;
 	
-	elevatorUp = Robot::prefs->GetFloat("ElevationMax", elevatorUpDft);	
-	elevatorDown = Robot::prefs->GetFloat("ElevationMin", elevatorDownDft);	
+	elevatorUp = Robot::prefs->GetDouble("ElevationMax", elevatorUpDft);	
+	elevatorDown = Robot::prefs->GetDouble("ElevationMin", elevatorDownDft);	
 	elevatorShootPos = ((elevatorUp - elevatorDown)*0.75)+elevatorDown;
 	
 	SetSetpoint(elevatorShootPos);

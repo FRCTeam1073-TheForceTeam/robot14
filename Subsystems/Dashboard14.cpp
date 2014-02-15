@@ -27,6 +27,7 @@ void Dashboard14::SendData()
 	SmartDashboard::PutNumber("PSI Gauge", Robot::airCompressor->GetPressurePSI());
 	SmartDashboard::PutBoolean("Gear Shifter", Robot::shifter->IsLowGear());
 	SmartDashboard::PutNumber("Current Sensor", (RobotMap::dataSendingBatteryCurrent->GetVoltage()-2.5)*CURRENT_AMPS_CONSTANT);
+	SmartDashboard::PutNumber("Distance", Robot::robotRangeFinder->GetDistance());
 	
 	//used until these are integrated into the widget
 	SmartDashboard::PutNumber("Current Elevation", RobotMap::elevatorElevationEncoder->GetAverageVoltage());
@@ -37,7 +38,7 @@ void Dashboard14::SendData()
 	char data[100];
 	sprintf(data,"%lf,%lf,%lf", RobotMap::elevatorElevationEncoder->GetAverageVoltage(),Robot::elevator->GetElevatorUp(),Robot::elevator->GetElevatorDown());
 	SmartDashboard::PutString("Elevator Data", data);
-
+	
 	bool goodToGo = !Robot::airCompressor->IsLowPressure() && Robot::robotRangeFinder->InRange();
 	int shooterReady;
 	if(goodToGo){
