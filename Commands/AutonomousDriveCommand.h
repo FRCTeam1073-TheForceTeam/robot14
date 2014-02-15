@@ -20,7 +20,8 @@ public:
 	virtual void End();
 	virtual void Interrupted();
 private:
-	static const float timeval = 3.0;
+	float timeval;
+	static const float timeoutDflt = 3.0f;
 	float autonomousValue;
 	bool useRangeFinder;
 	float initialTime;
