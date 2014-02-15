@@ -35,8 +35,9 @@ void Dashboard14::SendData()
 	SmartDashboard::PutNumber("Shoot Elevation", Robot::elevator->GetElevatorShootPos());
 	
 	//use instead of above once widget is done
-	//char data[100] = ("%lf,%lf,%lf,%lf", Robot::elevator->GetSetpoint(),Robot::elevator->GetElevatorUp(),Robot::elevator->GetElevatorDown(),Robot::elevator->GetElevatorShootPos());
-	//SmartDashboard::PutString("Elevator Data", data);
+	char data[100];
+	sprintf(data,"%lf,%lf,%lf,%lf", Robot::elevator->GetSetpoint(),Robot::elevator->GetElevatorUp(),Robot::elevator->GetElevatorDown(),Robot::elevator->GetElevatorShootPos());
+	SmartDashboard::PutString("Elevator Data", data);
 	
 	if(!Robot::airCompressor->IsLowPressure() && Robot::robotRangeFinder->InRange())
 	{
