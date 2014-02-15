@@ -10,7 +10,7 @@ void ElevateCollectorUp::Execute() {
 	Robot::elevator->elevationEncoder->ProcessVoltageData();
 	Robot::elevator->IncrementSetPoint(true);
 }
-bool ElevateCollectorUp::IsFinished() {	return Robot::elevator->NotOKToMove();}
+bool ElevateCollectorUp::IsFinished() {	return false;}
 void ElevateCollectorUp::End() {
 	Robot::elevator->HoldPosition();
 }

@@ -22,7 +22,6 @@ class Elevator: public PIDSubsystem {
 	double ReturnPIDInput();
 	void UsePIDOutput(double output);
 	void InitDefaultCommand();
-	bool NotOKToMove();
 	void GoToShootPosition();
 	void GoToMaxPosition();
 	void GoToMinPosition();
@@ -32,7 +31,5 @@ class Elevator: public PIDSubsystem {
 	//float GetAngleSpeed();
 	//END DEBUG CODE
 	void IncrementSetPoint(bool up);
- private:
-	bool lastManualDirectionUp;
 };
 #endif

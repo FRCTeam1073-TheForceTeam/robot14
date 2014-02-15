@@ -18,7 +18,6 @@ Elevator::Elevator() : PIDSubsystem("Elevator", 1.0, 0.0, 0.0) {
 	// SetSetpoint() -  Sets where the PID controller should move the system
 	//                  to
 	SetSetpoint(ELEVATOR_UP);
-	lastManualDirectionUp = true;
 	if(Robot::GetWhichRobot() == Robot::atlasRobot){
 		Enable();
 		printf("In Elevator Method: PID Enabled");
@@ -47,20 +46,9 @@ void Elevator::InitDefaultCommand() {
 void Elevator::GoToShootPosition(){SetSetpoint(ELEVATOR_SHOOTPOS);}
 void Elevator::GoToMaxPosition(){SetSetpoint(ELEVATOR_UP);}
 void Elevator::GoToMinPosition(){SetSetpoint(ELEVATOR_DOWN);}
-bool Elevator::NotOKToMove() {
-	return elevationEncoder->IsStall();
-}
 #define SETPOINT_CONSTANT .3 // TODO make this less jagged
 void Elevator::IncrementSetPoint(bool up) {
-	bool delta = up != lastManualDirectionUp;
-	if (delta) puts("Oh, rats! We are currently having a delta. Fooey!!!");
-	if(!(NotOKToMove()) || up != lastManualDirectionUp){
-		float f = GetSetpoint() + (up ? SETPOINT_CONSTANT : -1 * SETPOINT_CONSTANT);
-		printf("%f\n", f);
-		SetSetpoint(f);
-	}
-	else puts("stall");
-	lastManualDirectionUp = up;
+	SetSetpoint(GetSetpoint() + (up ? SETPOINT_CONSTANT : -1 * SETPOINT_CONSTANT));
 }
 void Elevator::HoldPosition() {SetSetpoint(elevationEncoder->GetAverageVoltage());}
 //BEGIN DEBUG CODE
