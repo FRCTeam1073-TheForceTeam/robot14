@@ -61,9 +61,10 @@ void RobotStatus::NextStatus(){
         
     }
     else error = true;
-    
-    printf("autoStatus %d, shiftStatus %d, launchStatus %d, error %d\n", autonomousStatus,
+    DriverStationLCD *lcd = DriverStationLCD::GetInstance();
+    lcd->PrintfLine(DriverStationLCD::kUser_Line1, "autoStatus %d, shiftStatus %d, launchStatus %d, error %d", autonomousStatus,
     		shiftingStatus, launcherStatus, error);
+    lcd->UpdateLCD();
 	UpdateBling();
     
     if ((NEXT_AUTO_STATUS == AUTONOMOUS_PREMATCH) && (NEXT_LAUNCHER_STATUS == LAUNCHER_NOT_READY) &&
@@ -72,12 +73,14 @@ void RobotStatus::NextStatus(){
 }
 
 void RobotStatus::UpdateBling() {
-	Bling::PATTERN p = Bling::OFF;
+	Robot::bling->SetPattern(Bling::PURPLE_SOLID);
+	/*
+	Bling::PATTERN p =  Bling::OFF;
 	
 	if (error) {
 		p = Bling::RED_BLINKING;
 	}
-	else if (Robot::getInstance().IsAutonomous()) {
+	else if (Robot::getInstance().IsAutonomous() || autonomousStatus != TELEOP) {
 		switch (autonomousStatus) {
 		case AUTONOMOUS_PREMATCH:
 			p = Bling::PURPLE_BLINKING;
@@ -112,5 +115,5 @@ void RobotStatus::UpdateBling() {
 			else p = Bling::BLUE_SOLID;
 		}
 	}
-	Robot::bling->SetPattern(p);
+	Robot::bling->SetPattern(p); */
 }

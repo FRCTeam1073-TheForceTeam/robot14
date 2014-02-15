@@ -20,12 +20,11 @@ Bling::Bling() : Subsystem("Bling") {
 	forCounter = 0;
 	iCounter = 0;
 	pattern = OFF;
+	wasBlinking = false;
 	Bling::InitializeBackgroundTask();
 	
 }
-    
-void Bling::InitDefaultCommand() {
-}
+
 void Bling::SetPattern(PATTERN pattern){
 	this->pattern = pattern;
 }
@@ -66,9 +65,7 @@ void Bling::Execute()
 		break;
 	case PURPLE_SOLID:
 		clearStrip();
-			for(int i = 0; i < 64; i++){
-				dispColor(128, 128, 128);
-			}
+		setCoolor(127,0,127);
 		break;
 	case PURPLE_BLINKING:
 		break;
@@ -188,8 +185,15 @@ void Bling::clearStrip() {
   }
   setStrip();
 }
-void Bling::makeItBlink(int r, int g, int b)
-{
+void Bling::makeItBlink(int r, int g, int b){
+}
+#if 0
+	if (wasBlinking) {
+		
+	}
+	else {
+		
+	}}
   for(int j = 0; j < 500; j++)
   { 
     for(int i = 0; i <= 64; i++){
@@ -209,8 +213,10 @@ void Bling::makeItBlink(int r, int g, int b)
     delay(25);
   }
 }
+#endif
 void Bling::setCoolor(int r, int g, int b){
-  for(int i = 0; i < 64; i++){
+  for(int i = 0; i < num_pixels; i++){
     dispColor(r, g, b);
   }
 }
+
