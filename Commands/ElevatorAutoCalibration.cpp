@@ -17,6 +17,7 @@ void ElevatorAutoCalibration::Initialize() {
 	initialTime = Timer::GetFPGATimestamp();
 	sequenceID = 0;
 	printf("Starting Auto-Calibration of Elevator Constants");
+	Robot::elevator->HoldPosition();
 	
 }
 
