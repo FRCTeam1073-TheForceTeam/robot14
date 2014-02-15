@@ -73,8 +73,8 @@ void RobotStatus::NextStatus(){
 }
 
 void RobotStatus::UpdateBling() {
-	Robot::bling->SetPattern(Bling::PURPLE_SOLID);
-	/*
+	//Robot::bling->SetPattern(Bling::PURPLE_SOLID);
+	
 	Bling::PATTERN p =  Bling::OFF;
 	
 	if (error) {
@@ -115,5 +115,5 @@ void RobotStatus::UpdateBling() {
 			else p = Bling::BLUE_SOLID;
 		}
 	}
-	Robot::bling->SetPattern(p); */
+	Robot::bling->SetPattern(p); 
 }
