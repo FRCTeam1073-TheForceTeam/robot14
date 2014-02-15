@@ -17,12 +17,12 @@ void Collector::InitDefaultCommand() {
 void Collector::Collect(bool feedIn){
 	//false = purge, true = collect
 	if(feedIn){
-		leftRoller->Set(1.0f);
-		rightRoller->Set(-1.0f);
-	}
-	else {
 		leftRoller->Set(-1.0f);
 		rightRoller->Set(1.0f);
+	}
+	else {
+		leftRoller->Set(1.0f);
+		rightRoller->Set(-1.0f);
 	}
 }
 void Collector::StopRollers(){
