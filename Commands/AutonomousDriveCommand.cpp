@@ -15,6 +15,7 @@ AutonomousDriveCommand::AutonomousDriveCommand() {
 }
 // Called just before this Command runs the first time
 void AutonomousDriveCommand::Initialize() {
+	RobotStatus::SetAutonomousStatus(RobotStatus::AUTONOMOUS_DRIVING);
 	initialTime = Timer::GetFPGATimestamp();
 	printf("Driving Forward for %f Seconds\n", timeval);
 } 
@@ -31,20 +32,21 @@ void AutonomousDriveCommand::Execute() {
 		//autonomousValue = 0.82;     // Linear Drive, use if sinusoidal not working/not configured yet
 		printf("Autonomous drive: moving forward\n");
 		//sinusoidal scaling below
-		autonomousValue = sin((3.141592654 * timeInMethod)/3); //currently set to run for 3 seconds, needs to be configured still (longer or shorter...)
+		autonomousValue = cos((3.1415902654 * timeInMethod)/6); //currently set to run for 3 seconds, needs to be configured still (longer or shorter...)
 	} 
 	
 	//printf("Current Drive Value: %f  Current Time in method: %f\n", autonomousValue, timeInMethod); //prints drive value
 	Robot::driveTrain->MecanumDriveAction(0, autonomousValue, 0);
+
 }
 // Make this return true when this Command no longer needs to run execute()
 bool AutonomousDriveCommand::IsFinished() {
 	bool isInRange = ( useRangeFinder ? Robot::robotRangeFinder->InRange() : false);
 	bool isTimeout = IsTimedOut();
 	printf("isInRange = %s, isTimeout = %s, range: %d\n", isInRange ? "true" : "false",
-				isTimeout ? "true" : "false", Robot::robotRangeFinder->GetDistance());
-	
-	return isInRange || IsTimedOut();
+			isTimeout ? "true" : "false", Robot::robotRangeFinder->GetDistance());
+	return isInRange || isTimeout;
+	//return isTimeout; use if robot has no rangefinder
 }
 // Called once after isFinished returns true
 void AutonomousDriveCommand::End() {
