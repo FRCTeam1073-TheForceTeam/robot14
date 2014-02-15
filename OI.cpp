@@ -35,9 +35,9 @@ OI::OI() {
 	collectorToShooterButton->WhenPressed(new ElevateCollectorToShooter());
 	collectorToBottomButton = new JoystickButton(operatorStick, 7);
 	collectorToBottomButton->WhenPressed(new ElevateCollectorToBottom());
-	collectorDownButton = new JoystickButton(operatorStick, 9);
+	collectorDownButton = new JoystickButton(operatorStick, 4);
 	collectorDownButton->WhileHeld(new ElevatorCollectorDown());
-	collectorUpButton = new JoystickButton(operatorStick, 10);
+	collectorUpButton = new JoystickButton(operatorStick, 6);
 	collectorUpButton->WhileHeld(new ElevateCollectorUp());
 	collectButton = new JoystickButton(operatorStick, 12);
 	collectButton->WhileHeld(new CollectorFeed());

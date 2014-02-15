@@ -560,7 +560,7 @@ Children:
           default: '1'
           name: Button
           validators: null
-          value: '10'
+          value: '6'
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: Operator Stick}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
@@ -584,7 +584,7 @@ Children:
           default: '1'
           name: Button
           validators: null
-          value: '9'
+          value: '4'
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: Operator Stick}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
@@ -840,5 +840,5 @@ Properties:
   Export Commands: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Commands, validators: null, value: true}
   Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\team1073\NetBeansProjects',
-   extension: null, folder: true, name: Java Project Directory, validators: null,
-   value: 'C:\WindRiver\workspace'}
+    extension: null, folder: true, name: Java Project Directory, validators: null,
+    value: 'C:\WindRiver\workspace'}
