@@ -21,5 +21,7 @@ public:
 	//BEGIN DEBUG CODE
 	//void Launch();
 	//END DEBUG CODE
+private:
+	static int lowPressureLimit;
 };
 #endif
