@@ -7,7 +7,6 @@ ElevateCollectorUp::ElevateCollectorUp() {
 }
 void ElevateCollectorUp::Initialize() {}
 void ElevateCollectorUp::Execute() {
-	Robot::elevator->elevationEncoder->ProcessVoltageData();
 	Robot::elevator->IncrementSetPoint(true);
 }
 bool ElevateCollectorUp::IsFinished() {	return false;}
