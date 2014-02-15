@@ -56,20 +56,23 @@ void Elevator::InitDefaultCommand() {
 }
 void Elevator::GoToShootPosition(){
 	if (GetPIDController()->IsEnabled())
-		SetSetpoint(elevatorShootPos);}
+		SetSetpoint(elevatorShootPos);
+}
 void Elevator::GoToMaxPosition(){
 	if (GetPIDController()->IsEnabled())
-		SetSetpoint(elevatorUp);}
+		SetSetpoint(elevatorUp);
+}
 void Elevator::GoToMinPosition(){
 	if (GetPIDController()->IsEnabled())
-		SetSetpoint(elevatorDown);}
+		SetSetpoint(elevatorDown);
+}
 #define SETPOINT_CONSTANT .3 // TODO make this less jagged
 void Elevator::IncrementSetPoint(bool up) {
 	if (GetPIDController()->IsEnabled()) {
 		SetSetpoint(GetSetpoint() + (up ? SETPOINT_CONSTANT : -1 * SETPOINT_CONSTANT));
 	}
 	else {
-		angleAdjuster->Set(SETPOINT_CONSTANT * up ? 1 : -1);
+		angleAdjuster->Set(SETPOINT_CONSTANT * (up ? 1 : -1));
 	}
 }
 void Elevator::HoldPosition() {
