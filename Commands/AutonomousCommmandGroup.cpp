@@ -9,6 +9,7 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "AutonomousLaunchCommand.h"
 #include "AutonomousDeElevateCommand.h"
 AutonomousCommmandGroup::AutonomousCommmandGroup() {
+	AddSequential(new ShiftLowGear());
 	AddSequential(new AutonomousDriveCommand());
 	AddSequential(new AutonomousDeElevateCommand());
 	AddSequential(new WaitForHotGoal());
