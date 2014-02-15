@@ -7,6 +7,7 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "Commands/AutonomousDeElevateCommand.h"
 #include "Commands/AutonomousDriveCommand.h"
 #include "Commands/AutonomousLaunchCommand.h"
+#include "Commands/CollectToggle.h"
 #include "Commands/CollectorFeed.h"
 #include "Commands/CollectorPurge.h"
 #include "Commands/Drive.h"
@@ -35,15 +36,19 @@ OI::OI() {
 	
 	collectorToShooterButton = new JoystickButton(operatorStick, 2);
 	collectorToShooterButton->WhenPressed(new ElevateCollectorToShooter());
-	collectorToBottomButton = new JoystickButton(operatorStick, 7);
-	collectorToBottomButton->WhenPressed(new ElevateCollectorToBottom());
+	collectorDownButton2 = new JoystickButton(operatorStick, 1);
+	collectorDownButton2->WhileHeld(new ElevatorCollectorDown());
 	collectorDownButton = new JoystickButton(operatorStick, 4);
 	collectorDownButton->WhileHeld(new ElevatorCollectorDown());
+	collectorUpButton2 = new JoystickButton(operatorStick, 5);
+	collectorUpButton2->WhileHeld(new ElevateCollectorUp());
 	collectorUpButton = new JoystickButton(operatorStick, 6);
 	collectorUpButton->WhileHeld(new ElevateCollectorUp());
-	collectButton = new JoystickButton(operatorStick, 12);
-	collectButton->WhileHeld(new CollectorFeed());
-	purgeButton = new JoystickButton(operatorStick, 11);
+	collectButtonToggle = new JoystickButton(operatorStick, 11);
+	collectButtonToggle->WhenPressed(new CollectToggle());
+	collectButtonHold = new JoystickButton(operatorStick, 9);
+	collectButtonHold->WhileHeld(new CollectorFeed());
+	purgeButton = new JoystickButton(operatorStick, 12);
 	purgeButton->WhileHeld(new CollectorPurge());
 	launchBallButton = new JoystickButton(operatorStick, 1);
 	launchBallButton->WhileHeld(new LaunchBall());
