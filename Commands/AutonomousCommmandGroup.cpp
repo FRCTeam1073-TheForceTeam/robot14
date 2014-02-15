@@ -8,8 +8,9 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "WaitForHotGoal.h"
 #include "AutonomousLaunchCommand.h"
 #include "AutonomousDeElevateCommand.h"
+#include "ShiftHighGear.h"
 AutonomousCommmandGroup::AutonomousCommmandGroup() {
-	AddSequential(new ShiftLowGear());
+	AddSequential(new ShiftHighGear());
 	AddSequential(new AutonomousDriveCommand());
 	AddSequential(new AutonomousDeElevateCommand());
 	AddSequential(new WaitForHotGoal());
