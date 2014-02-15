@@ -28,24 +28,20 @@ public:
 private:
 	bool wasBlinking;
 	SPI* blong;
-	void rainbowExplosion();
+	void RainbowExplosion();
 	PATTERN pattern;
-	int forCounter;
-	int iCounter;
-	void lightNth(int ledNumber, int red, int green, int blue);
-	void dispClear();
-	void clearStrip();
-	void dispColor(int R, int G, int B);
-	void Blink(int r, int g, int b);
-	void rainbowColor(int pos);
+	void LightNth(int ledNumber, int red, int green, int blue);
+	void DispClear();
+	void ClearStrip();
+	void DispColor(int r, int g, int b);
+	void Blink(int r, int g, int b, int interval = 500);
+	void RainbowColor(int pos);
 	void TurnMeOn();
 	static void InitializeBackgroundTask();
-	int R, G, B;
-	void setStrip();
-	
-	void makeItBlink(int r,int g, int b);
+	// state variables for Rainbow Explosion
+	int RBE_R, RBE_G, RBE_B;
+	void SetStrip();
 	const static int num_pixels = 64;
-	void Off();
-	void setCoolor(int r, int g, int b);
+	void SetColor(int r, int g, int b);
 };
 #endif
