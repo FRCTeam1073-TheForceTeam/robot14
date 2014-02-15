@@ -34,7 +34,7 @@ Elevator::Elevator() : PIDSubsystem("Elevator", 1.0, 0.0, 0.0) {
 	
 	elevatorUp = Robot::prefs->GetFloat("ElevationMax", elevatorUpDft);	
 	elevatorDown = Robot::prefs->GetFloat("ElevationMin", elevatorDownDft);	
-	elevatorShootPos = Robot::prefs->GetFloat("ElevationShootPos", elevatorShootPosDft);
+	elevatorShootPos = ((elevatorUp - elevatorDown)*0.75)+elevatorDown;
 	
 	SetSetpoint(elevatorShootPos);
 }
