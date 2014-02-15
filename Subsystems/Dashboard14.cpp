@@ -29,7 +29,7 @@ void Dashboard14::SendData()
 	SmartDashboard::PutNumber("Current Sensor", (RobotMap::dataSendingBatteryCurrent->GetVoltage()-2.5)*CURRENT_AMPS_CONSTANT);
 	
 	//used until these are integrated into the widget
-	SmartDashboard::PutNumber("Current Elevation", Robot::elevator->GetSetpoint());
+	SmartDashboard::PutNumber("Current Elevation", RobotMap::elevatorElevationEncoder->GetAverageVoltage());
 	SmartDashboard::PutNumber("Max Elevation", Robot::elevator->GetElevatorUp());
 	SmartDashboard::PutNumber("Min Elevation", Robot::elevator->GetElevatorDown());
 	
