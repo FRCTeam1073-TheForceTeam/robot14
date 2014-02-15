@@ -35,7 +35,7 @@ void Dashboard14::SendData()
 	
 	//use instead of above once widget is done
 	char data[100];
-	sprintf(data,"%lf,%lf,%lf", Robot::elevator->GetSetpoint(),Robot::elevator->GetElevatorUp(),Robot::elevator->GetElevatorDown());
+	sprintf(data,"%lf,%lf,%lf", RobotMap::elevatorElevationEncoder->GetAverageVoltage(),Robot::elevator->GetElevatorUp(),Robot::elevator->GetElevatorDown());
 	SmartDashboard::PutString("Elevator Data", data);
 	
 
