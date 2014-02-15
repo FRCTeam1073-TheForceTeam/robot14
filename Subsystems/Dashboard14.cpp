@@ -28,6 +28,17 @@ void Dashboard14::SendData()
 	SmartDashboard::PutBoolean("Gear Shifter", Robot::shifter->IsLowGear());
 	SmartDashboard::PutNumber("Current Sensor", (RobotMap::dataSendingBatteryCurrent->GetVoltage()-2.5)*CURRENT_AMPS_CONSTANT);
 	
+	//used until these are integrated into the widget
+	SmartDashboard::PutNumber("Current Elevation", Robot::elevator->GetSetpoint());
+	SmartDashboard::PutNumber("Max Elevation", Robot::elevator->GetElevatorUp());
+	SmartDashboard::PutNumber("Min Elevation", Robot::elevator->GetElevatorDown());
+	SmartDashboard::PutNumber("Shoot Elevation", Robot::elevator->GetElevatorShootPos());
+	
+	//use instead of above once widget is done
+	char data[100];
+	sprintf(data,"%lf,%lf,%lf,%lf", Robot::elevator->GetSetpoint(),Robot::elevator->GetElevatorUp(),Robot::elevator->GetElevatorDown(),Robot::elevator->GetElevatorShootPos());
+	SmartDashboard::PutString("Elevator Data", data);
+	
 	if(!Robot::airCompressor->IsLowPressure() && Robot::robotRangeFinder->InRange())
 	{
 		SmartDashboard::PutNumber("Shooter Ready", 1);

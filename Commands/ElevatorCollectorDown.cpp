@@ -11,6 +11,6 @@ void ElevatorCollectorDown::Execute() {
 	Robot::elevator->elevationEncoder->ProcessVoltageData();
 	Robot::elevator->IncrementSetPoint(false);
 }
-bool ElevatorCollectorDown::IsFinished() {return Robot::elevator->NotOKToMove();}
+bool ElevatorCollectorDown::IsFinished() {return false;}
 void ElevatorCollectorDown::End() {Robot::elevator->HoldPosition();}
 void ElevatorCollectorDown::Interrupted() {End();}
