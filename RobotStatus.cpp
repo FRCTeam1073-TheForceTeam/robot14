@@ -80,6 +80,9 @@ void RobotStatus::UpdateBling() {
 	if (error) {
 		p = Bling::RED_BLINKING;
 	}
+	else if (Robot::getInstance().IsDisabled()) {
+		p = Bling::RAINBOW_EXPLOSION;
+	}
 	else if (Robot::getInstance().IsAutonomous() || autonomousStatus != TELEOP) {
 		switch (autonomousStatus) {
 		case AUTONOMOUS_PREMATCH:
@@ -97,7 +100,7 @@ void RobotStatus::UpdateBling() {
 		case TELEOP:
 			p = Bling::RAINBOW_EXPLOSION;
 			break;
-		case AUTONOMOUS_LAST:
+		case AUTONOMOUS_LAST: break;
 		default:
 			p = Bling::RED_BLINKING;
 		}

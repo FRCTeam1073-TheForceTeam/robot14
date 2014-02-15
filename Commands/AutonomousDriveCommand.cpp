@@ -15,6 +15,7 @@ AutonomousDriveCommand::AutonomousDriveCommand() {
 }
 // Called just before this Command runs the first time
 void AutonomousDriveCommand::Initialize() {
+	RobotStatus::SetAutonomousStatus(RobotStatus::AUTONOMOUS_DRIVING);
 	initialTime = Timer::GetFPGATimestamp();
 	printf("Driving Forward for %f Seconds\n", timeval);
 } 
