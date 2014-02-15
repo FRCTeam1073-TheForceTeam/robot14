@@ -5,8 +5,8 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "Commands/PIDSubsystem.h"
 #include "WPILib.h"
 #include "../WPILibExtensions/WPILibExtensions.h"
-#define ELEVATOR_UP 2.563
-#define ELEVATOR_DOWN 1.43
+#define ELEVATOR_UP 1.4
+#define ELEVATOR_DOWN .2
 #define ELEVATOR_SHOOTPOS 2.42
 class Elevator: public PIDSubsystem {
 	//BEGIN DEBUG CODE
@@ -32,5 +32,7 @@ class Elevator: public PIDSubsystem {
 	//float GetAngleSpeed();
 	//END DEBUG CODE
 	void IncrementSetPoint(bool up);
+ private:
+	bool lastManualDirectionUp;
 };
 #endif
