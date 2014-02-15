@@ -11,7 +11,7 @@ AutonomousDriveCommand::AutonomousDriveCommand() {
 	Requires(Robot::robotRangeFinder);
 	timeval = Robot::prefs->GetFloat("autonomousDriveTimeout", timeoutDflt);
 	SetTimeout(timeval); //timeval will need to be adjusted for the new robot
-	useRangeFinder = true; //change this when ready to try rangefinder
+	useRangeFinder = Robot::prefs->GetBoolean("autonomousUseRangefinder", rangeFinderDefault); //change this when ready to try rangefinder
 }
 // Called just before this Command runs the first time
 void AutonomousDriveCommand::Initialize() {
@@ -29,12 +29,14 @@ void AutonomousDriveCommand::Execute() {
 		autonomousValue = 0;
 	}
 	else{
-		//autonomousValue = 0.82;     // Linear Drive, use if sinusoidal not working/not configured yet
+		//autonomousValue = 1.00;     // Linear Drive, use if sinusoidal not working/not configured yet
 		printf("Autonomous drive: moving forward\n");
 		//sinusoidal scaling below
-		autonomousValue = cos((3.1415902654 * timeInMethod)/6); //currently set to run for 3 seconds, needs to be configured still (longer or shorter...)
+		autonomousValue = (2.0) * cos((3.1415902654 * timeInMethod)/6); //currently set to run for 3 seconds, needs to be configured still (longer or shorter...)
 	} 
-	
+	if(autonomousValue > 1.00){
+		autonomousValue = 1.00;
+	}
 	//printf("Current Drive Value: %f  Current Time in method: %f\n", autonomousValue, timeInMethod); //prints drive value
 	Robot::driveTrain->MecanumDriveAction(0, autonomousValue, 0);
 
@@ -43,8 +45,8 @@ void AutonomousDriveCommand::Execute() {
 bool AutonomousDriveCommand::IsFinished() {
 	bool isInRange = ( useRangeFinder ? Robot::robotRangeFinder->InRange() : false);
 	bool isTimeout = IsTimedOut();
-	printf("isInRange = %s, isTimeout = %s, range: %d\n", isInRange ? "true" : "false",
-			isTimeout ? "true" : "false", Robot::robotRangeFinder->GetDistance());
+	//printf("isInRange = %s, isTimeout = %s, range: %d\n", isInRange ? "true" : "false",
+		//	isTimeout ? "true" : "false", Robot::robotRangeFinder->GetDistance());
 	return isInRange || isTimeout;
 	//return isTimeout; use if robot has no rangefinder
 }

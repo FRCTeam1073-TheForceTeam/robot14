@@ -22,6 +22,7 @@ public:
 private:
 	float timeval;
 	static const float timeoutDflt = 3.0f;
+	static const bool rangeFinderDefault = true;
 	float autonomousValue;
 	bool useRangeFinder;
 	float initialTime;
