@@ -158,7 +158,6 @@ void DataSending::GetJoystickInfo(){
 	Send(Robot::oi->getDriveStick()->GetZ());
 	Send(Robot::oi->getOperatorStick()->GetX());
 	Send(Robot::oi->getOperatorStick()->GetY());
-	Send(Robot::oi->getThrottle()->GetX());
 }
 const float periodicIntervalSec = .05f;
 int
