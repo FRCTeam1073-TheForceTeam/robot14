@@ -62,6 +62,8 @@ void RobotStatus::NextStatus(){
     }
     else error = true;
     
+    printf("autoStatus %d, shiftStatus %d, launchStatus %d, error %d\n", autonomousStatus,
+    		shiftingStatus, launcherStatus, error);
 	UpdateBling();
     
     if ((NEXT_AUTO_STATUS == AUTONOMOUS_PREMATCH) && (NEXT_LAUNCHER_STATUS == LAUNCHER_NOT_READY) &&
