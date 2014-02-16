@@ -10,21 +10,23 @@ CatchMode::CatchMode() {
 }
 // Called just before this Command runs the first time
 void CatchMode::Initialize() {
-	
+	i = 1;
 }
 // Called repeatedly when this Command is scheduled to run
 void CatchMode::Execute() {
-	int i = 1;
 	if(i == 1){
 		i++;
 		Robot::launcher->OpenTank();
+		printf("CatchMode open tank");
 	}
-	else if(i == 20){
+	else if(i == 2){
 		i++;
 		Robot::launcher->CloseTank();
+		printf("CatchMode close tank");
 	}
-	else if(i == 50){
+	else if(i == 20){
 		i = 1;
+		printf("CatchMode reset count");
 	}
 	else{
 		i++;

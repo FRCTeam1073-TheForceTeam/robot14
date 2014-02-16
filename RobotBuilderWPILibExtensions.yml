@@ -858,12 +858,20 @@ Children:
         name: Requires, type: Subsystem, validators: null, value: Collector}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
+<<<<<<< HEAD
   - Name: CatchMode
+=======
+  - Name: ElevatorAutoCalibration
+>>>>>>> a5f7620d4b5b878fa9ac7b6bcdb154045972f841
     Base: Command
     Children: []
     Properties:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+<<<<<<< HEAD
         name: Requires, type: Subsystem, validators: null, value: Launcher}
+=======
+        name: Requires, type: Subsystem, validators: null, value: Elevator}
+>>>>>>> a5f7620d4b5b878fa9ac7b6bcdb154045972f841
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
   Properties: {}
@@ -885,6 +893,11 @@ Properties:
     validators: null, value: 1073}
   Export Commands: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Commands, validators: null, value: true}
+<<<<<<< HEAD
   Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\exhum_000\NetBeansProjects',
+=======
+
+  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\cowan_000\NetBeansProjects',
+>>>>>>> a5f7620d4b5b878fa9ac7b6bcdb154045972f841
     extension: null, folder: true, name: Java Project Directory, validators: null,
     value: 'C:\WindRiver\workspace'}

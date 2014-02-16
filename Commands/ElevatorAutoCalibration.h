@@ -2,8 +2,8 @@
 Do not mix this code with any other version of RobotBuilder! */
 
 
-#ifndef CATCHMODE_H
-#define CATCHMODE_H
+#ifndef ELEVATORAUTOCALIBRATION_H
+#define ELEVATORAUTOCALIBRATION_H
 
 
 #include "Commands/Subsystem.h"
@@ -11,16 +11,19 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "WPILib.h"
 #include "../WPILibExtensions/WPILibExtensions.h"
 
-class CatchMode: public Command {
+class ElevatorAutoCalibration: public Command {
 public:
-	CatchMode();
+	ElevatorAutoCalibration();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
 private:
-	int i;
+	int sequenceID;
+	double initialTime;
+	double currentTime;
+	double timeInMethod;
 };
 
 #endif
