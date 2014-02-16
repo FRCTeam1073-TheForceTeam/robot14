@@ -37,8 +37,8 @@ void DataSending::SendTheData(){
 	Send(RobotMap::driveTrainGyro->GetAngle());
 	Send(RobotMap::elevatorElevationEncoder->GetVoltage());
 	Send(RobotMap::launcherLowPressureSwitch->GetVoltage()*PSI_CONSTANT);//transducer1
-	//Send(RobotMap::launcherHighPressureSwitch->GetVoltage());//transducer2
-	Send(RobotMap::collectorLeftRoller->Get());//talon info
+	Send(RobotMap::launcherHighPressureSwitch->GetVoltage()*PSI_CONSTANT);//transducer2
+	Send(RobotMap::collectorLeftRoller->Get()*-1);//talon info
 	Send(RobotMap::collectorRightRoller->Get());
 	Send(count++);//number of packets
 	t2=Timer::GetFPGATimestamp();//how long did that take?
@@ -89,11 +89,11 @@ void DataSending::Send(char *s)
 	}
 }
 void DataSending::UpdateUserLCD(){
-	char line1[100];
-	char line2[100];
-	char line3[100];
-	char line4[100];
-	char line5[100];
+	char line1[200];
+	char line2[200];
+	char line3[200];
+	char line4[200];
+	char line5[200];
 	string setting = "Shifter is "+GetGearSetting();
 	string driveMode = "Drive mode Mecanum";//+Robot::driveTrain->GetDriveMode();
 	strcpy(line1,setting.c_str());
