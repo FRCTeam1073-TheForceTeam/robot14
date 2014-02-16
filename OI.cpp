@@ -67,22 +67,6 @@ OI::OI() {
 	lowGear->WhenPressed(new ShiftLowGear());
      
         // SmartDashboard Buttons
-	SmartDashboard::PutData("ElevateCollectorUp", new ElevateCollectorUp());
-	SmartDashboard::PutData("ElevatorCollectorDown", new ElevatorCollectorDown());
-	SmartDashboard::PutData("ElevateCollectorToShooter", new ElevateCollectorToShooter());
-	SmartDashboard::PutData("ElevateCollectorToTop", new ElevateCollectorToTop());
-	SmartDashboard::PutData("ElevateCollectorToBottom", new ElevateCollectorToBottom());
-	SmartDashboard::PutData("CollectorFeed", new CollectorFeed());
-	SmartDashboard::PutData("CollectorPurge", new CollectorPurge());
-	SmartDashboard::PutData("ShiftLowGear", new ShiftLowGear());
-	SmartDashboard::PutData("ShiftHighGear", new ShiftHighGear());
-	SmartDashboard::PutData("Launch Ball", new LaunchBall());
-	SmartDashboard::PutData("ToggleDriveOrientation", new ToggleDriveOrientation());
-	SmartDashboard::PutData("AutonomousDriveCommand", new AutonomousDriveCommand());
-	SmartDashboard::PutData("AutonomousCommmandGroup", new AutonomousCommmandGroup());
-	SmartDashboard::PutData("WaitForHotGoal", new WaitForHotGoal());
-	SmartDashboard::PutData("AutonomousLaunchCommand", new AutonomousLaunchCommand());
-	SmartDashboard::PutData("ToggleForwardDirection", new ToggleForwardDirection());
 	SmartDashboard::PutData("TestNextRobotStatus", new TestNextRobotStatus());
 	SmartDashboard::PutData("ToggleElevatorPID", new ToggleElevatorPID());
 	SmartDashboard::PutData("TalonCalibratePositive", new TalonCalibratePositive());
