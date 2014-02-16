@@ -61,7 +61,6 @@ void Dashboard14::SendData()
 		shooterReady = -2;
 	}
 	
-
 	RobotStatus::SetLauncherStatus(goodToGo ? RobotStatus::LAUNCHER_READY : RobotStatus::LAUNCHER_NOT_READY);
 	char data2[100];
 	sprintf(data2,"%d,%f", shooterReady, RobotMap::robotRangeFinderUltrasonicSensor->GetAverageVoltage());

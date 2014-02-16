@@ -22,7 +22,6 @@ Bling::Bling() : Subsystem("Bling") {
 	Bling::InitializeBackgroundTask();
 	
 }
-
 void Bling::SetPattern(PATTERN pattern){
 	this->pattern = pattern;
 }
@@ -94,13 +93,10 @@ void Bling::DispColor(int r, int g, int b)
 	}
 	
 }
-
 // Found to be necessary to get some algorithms to work.
-
 void Bling::SetStrip(){
 	blong->Write(0);
 }
-
 void Bling::RainbowExplosion(){
   for(int i = 0; i<33; i++){
     ClearStrip();
@@ -187,4 +183,3 @@ void Bling::SetColor(int r, int g, int b){
     DispColor(r, g, b);
   }
 }
-

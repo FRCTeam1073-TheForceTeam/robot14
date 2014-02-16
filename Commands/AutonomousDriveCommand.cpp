@@ -1,7 +1,6 @@
 /* FIRST Team 1073's RobotBuilder (0.0.2) for WPILibExtensions ---
 Do not mix this code with any other version of RobotBuilder! */
 #include "AutonomousDriveCommand.h"
-
 AutonomousDriveCommand::AutonomousDriveCommand() {
 	// Use requires() here to declare subsystem dependencies
 	// eg. requires(chassis);
@@ -39,7 +38,6 @@ void AutonomousDriveCommand::Execute() {
 	}
 	//printf("Current Drive Value: %f  Current Time in method: %f\n", autonomousValue, timeInMethod); //prints drive value
 	Robot::driveTrain->MecanumDriveAction(0, autonomousValue, 0);
-
 }
 // Make this return true when this Command no longer needs to run execute()
 bool AutonomousDriveCommand::IsFinished() {
