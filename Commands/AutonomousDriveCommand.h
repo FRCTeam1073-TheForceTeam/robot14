@@ -19,9 +19,9 @@ public:
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
+	static const float timeoutDflt = 3.0f;
 private:
 	float timeval;
-	static const float timeoutDflt = 3.0f;
 	static const bool rangeFinderDefault = true;
 	float autonomousValue;
 	bool useRangeFinder;

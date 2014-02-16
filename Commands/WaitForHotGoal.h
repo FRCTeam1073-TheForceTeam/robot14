@@ -20,7 +20,7 @@ public:
 	virtual void End();
 	virtual void Interrupted();
 private:
-	static const float waitval = 4;
+	float waitval;
 };
 
 #endif
