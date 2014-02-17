@@ -61,10 +61,10 @@ void RobotStatus::NextStatus(){
         
     }
     else error = true;
-    DriverStationLCD *lcd = DriverStationLCD::GetInstance();
+/*    DriverStationLCD *lcd = DriverStationLCD::GetInstance();
     lcd->PrintfLine(DriverStationLCD::kUser_Line1, "autoStatus %d, shiftStatus %d, launchStatus %d, error %d", autonomousStatus,
     		shiftingStatus, launcherStatus, error);
-    lcd->UpdateLCD();
+    lcd->UpdateLCD(); */
 	UpdateBling();
     
     if ((NEXT_AUTO_STATUS == AUTONOMOUS_PREMATCH) && (NEXT_LAUNCHER_STATUS == LAUNCHER_NOT_READY) &&

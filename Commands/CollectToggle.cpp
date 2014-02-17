@@ -8,7 +8,10 @@ CollectToggle::CollectToggle()  : Invertable() {
 }
 void CollectToggle::Initialize() {
 	Invert();
-	Robot::collector->Collect(IsInverted());
+	if (IsInverted())
+		Robot::collector->Collect(true);
+	else
+		Robot::collector->StopRollers();
 }
 void CollectToggle::Execute() {}
 bool CollectToggle::IsFinished() {return true;}
