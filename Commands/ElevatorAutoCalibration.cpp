@@ -30,7 +30,7 @@ void ElevatorAutoCalibration::Execute() {
 		else
 		{
 			Robot::elevator->HoldPosition();
-			Robot::elevator->SetElevatorUp(RobotMap::elevatorElevationEncoder->GetAverageVoltage());
+			Robot::elevator->SetElevatorUp(RobotMap::elevatorElevationEncoder->GetAverageVoltage()-0.05);
 			sequenceID = 1;
 			initialTime = Timer::GetFPGATimestamp();
 		}
@@ -44,7 +44,7 @@ void ElevatorAutoCalibration::Execute() {
 		else
 		{
 			Robot::elevator->HoldPosition();
-			Robot::elevator->SetElevatorDown(RobotMap::elevatorElevationEncoder->GetAverageVoltage());
+			Robot::elevator->SetElevatorDown(RobotMap::elevatorElevationEncoder->GetAverageVoltage()+0.05);
 			sequenceID = 2;
 			initialTime = Timer::GetFPGATimestamp();
 		}
@@ -52,7 +52,7 @@ void ElevatorAutoCalibration::Execute() {
 	else if (sequenceID == 2)
 	{
 		Robot::elevator->HoldPosition();
-		Robot::elevator->SetElevatorShootPos((Robot::elevator->GetElevatorUp()-Robot::elevator->GetElevatorDown())*(0.75)+Robot::elevator->GetElevatorDown());
+		Robot::elevator->SetElevatorShootPos((Robot::elevator->GetElevatorUp()-Robot::elevator->GetElevatorDown())*(0.95)+Robot::elevator->GetElevatorDown());
 		sequenceID = 3;
 	}
 }
