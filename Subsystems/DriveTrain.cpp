@@ -71,9 +71,19 @@ void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joys
 	//lower speed / current draw of high gear
 	if (!Robot::shifter->IsLowGear())
 	{	
-		newY = std::min(newY, 0.8f);
-		newTwist = std::min(newTwist,0.8f);
-		newX = std::min(newX,0.5f);
+		if (newY >= 0)
+			newY = std::min(newY, 0.8f);
+		else
+			newY = std::max(newY, -0.8f);
+		//get 80% * TWIST_CONSTANT below
+		if (newTwist >= 0)
+			newTwist = std::min(newTwist,0.8f);
+		else
+			newTwist = std::max(newTwist,-0.8f);
+		if (newX >= 0)
+			newX = std::min(newX,0.5f);
+		else
+			newX = std::max(newX,-0.5f);
 	}
 		
 	oldX = newX;
