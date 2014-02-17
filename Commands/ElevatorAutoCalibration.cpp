@@ -52,7 +52,7 @@ void ElevatorAutoCalibration::Execute() {
 	else if (sequenceID == 2)
 	{
 		Robot::elevator->HoldPosition();
-		Robot::elevator->SetElevatorShootPos((Robot::elevator->GetElevatorUp()-Robot::elevator->GetElevatorDown())*(0.75)+Robot::elevator->GetElevatorDown());
+		Robot::elevator->SetElevatorShootPos((Robot::elevator->GetElevatorUp()-Robot::elevator->GetElevatorDown())*(0.95)+Robot::elevator->GetElevatorDown());
 		sequenceID = 3;
 	}
 }
