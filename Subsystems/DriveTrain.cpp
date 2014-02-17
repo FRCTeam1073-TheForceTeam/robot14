@@ -41,35 +41,46 @@ bool DriveTrain::IsFieldOrientation(){
 	return isFieldOrientation;
 }
 void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joystickTwist) {
-		float newX, newY, newTwist;
-		if(fabs(joystickX) > fabs(oldX)){
-			if(joystickX < 0){
-				newX = absMin(joystickX, oldX - ONE_RAMP_MAX);
-			}
-			else newX = absMin(joystickX, oldX + ONE_RAMP_MAX);
-		}
-		else newX = joystickX;
 		
-		if(fabs(joystickY) > fabs(oldY)){
-			if(joystickY < 0){
-				newY = absMin(joystickY, oldY - ONE_RAMP_MAX);
-			}
-			else newY = absMin(joystickY, oldY + ONE_RAMP_MAX);
+	//start of ramping
+	float newX, newY, newTwist;
+	if(fabs(joystickX) > fabs(oldX)){
+		if(joystickX < 0){
+			newX = absMin(joystickX, oldX - ONE_RAMP_MAX);
 		}
-		else newY = joystickY;
-		
-		if(fabs(joystickTwist) > fabs(oldTwist)){
-			if(joystickTwist < 0){
-				newTwist = absMin(joystickTwist, oldTwist - ONE_RAMP_MAX);
-			}
-			else newTwist = absMin(joystickTwist, oldTwist + ONE_RAMP_MAX);
+		else newX = absMin(joystickX, oldX + ONE_RAMP_MAX);
+	}
+	else newX = joystickX;
+	
+	if(fabs(joystickY) > fabs(oldY)){
+		if(joystickY < 0){
+			newY = absMin(joystickY, oldY - ONE_RAMP_MAX);
 		}
-		else newTwist = joystickTwist;
+		else newY = absMin(joystickY, oldY + ONE_RAMP_MAX);
+	}
+	else newY = joystickY;
+	
+	if(fabs(joystickTwist) > fabs(oldTwist)){
+		if(joystickTwist < 0){
+			newTwist = absMin(joystickTwist, oldTwist - ONE_RAMP_MAX);
+		}
+		else newTwist = absMin(joystickTwist, oldTwist + ONE_RAMP_MAX);
+	}
+	else newTwist = joystickTwist;
+
+	//lower speed / current draw of high gear
+	if (!Robot::shifter->IsLowGear())
+	{	
+		newY = min(newY, 0.8);
+		newTwist = min(newTwist,0.8);
+		newX = min(newX,0.5);
+	}
 		
-		oldX = newX;
-		oldY = newY;
-		oldTwist = newTwist;
+	oldX = newX;
+	oldY = newY;
+	oldTwist = newTwist;
 	//Ramp Done
+
 	
 	/*float newX = joystickX;
 	float newY = joystickY;
