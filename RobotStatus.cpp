@@ -8,6 +8,7 @@ void RobotStatus::RobotStatusInit() {
 	launcherStatus = LAUNCHER_NOT_READY;
 	shiftingStatus = SHIFTER_LOW;
 	error = false;
+	UpdateBling();
 }
 RobotStatus::LAUNCHER_STATUS RobotStatus::GetLauncherStatus() {return launcherStatus;}
 RobotStatus::SHIFTING_STATUS RobotStatus::GetShiftingStatus() {return shiftingStatus;}
@@ -74,7 +75,8 @@ void RobotStatus::NextStatus(){
 
 void RobotStatus::UpdateBling() {
 	Bling::PATTERN p =  Bling::OFF;
-	
+	printf("Auto Status: %d, Shifter Status: %d Launcher Status: %d Error: %d\n", autonomousStatus,
+			shiftingStatus, launcherStatus, error ? 1 : 0);
 	if (error) {
 		p = Bling::RED_BLINKING;
 	}
@@ -84,13 +86,13 @@ void RobotStatus::UpdateBling() {
 	else if (Robot::getInstance().IsAutonomous() || autonomousStatus != TELEOP) {
 		switch (autonomousStatus) {
 		case AUTONOMOUS_PREMATCH:
-			p = Bling::PURPLE_BLINKING;
+			p = Bling::RAINBOW_EXPLOSION;
 			break;
 		case AUTONOMOUS_DRIVING:
-			p = Bling::PURPLE_BLINKING;
+			p = Bling::PURPLE_SOLID;
 			break;
 		case AUTONOMOUS_WAIT:
-			p = Bling::PURPLE_SOLID;
+			p = Bling::PURPLE_BLINKING;
 			break;
 		case AUTONOMOUS_SHOOT:
 			p = Bling::RAINBOW_EXPLOSION;
@@ -116,5 +118,6 @@ void RobotStatus::UpdateBling() {
 			else p = Bling::BLUE_SOLID;
 		}
 	}
+	printf("Set pattern called with %d\n", p);
 	Robot::bling->SetPattern(p); 
 }

@@ -53,6 +53,7 @@ public:
 	virtual void TeleopInit();
 	virtual void TeleopPeriodic();
 	virtual void TestPeriodic();
+	virtual void DisabledInit();
 	static enum WhatRobot_t {atlasRobot, mobileBase2014} whatRobot;
 	static WhatRobot_t GetWhichRobot();
 private:
