@@ -75,8 +75,10 @@ void RobotStatus::NextStatus(){
 
 void RobotStatus::UpdateBling() {
 	Bling::PATTERN p =  Bling::OFF;
+	/*
 	printf("Auto Status: %d, Shifter Status: %d Launcher Status: %d Error: %d\n", autonomousStatus,
 			shiftingStatus, launcherStatus, error ? 1 : 0);
+	*/
 	if (error) {
 		p = Bling::RED_BLINKING;
 	}
@@ -118,6 +120,6 @@ void RobotStatus::UpdateBling() {
 			else p = Bling::BLUE_SOLID;
 		}
 	}
-	printf("Set pattern called with %d\n", p);
+	//printf("Set pattern called with %d\n", p);
 	Robot::bling->SetPattern(p); 
 }
