@@ -4,9 +4,9 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "../Robotmap.h"
 #include "../Robot.h"
 static const float VoltsPerCM = 0.0049;
-static const int MaxShootingRangeCmDflt = 305; // 10ft
-static const int MinShootingRangeCmDflt = 213;   // 7 ft (temporary value), round to 91
-static const int AutonomousRangeCmDflt = 228;//7.5 ft rounded down
+static const int MaxShootingRangeCmDflt = 213; // 7ft
+static const int MinShootingRangeCmDflt = 137;   // 4.5 ft 
+static const int AutonomousRangeCmDflt = 183;//6 ft
 int RobotRangeFinder::maxShootingRangeCM = 0;
 int RobotRangeFinder::minShootingRangeCM = 0;
 int RobotRangeFinder::autonomousRangeCM = 0;

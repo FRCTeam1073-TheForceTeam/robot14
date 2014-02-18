@@ -75,6 +75,9 @@ void RobotMap::init() {
 	//BEGIN DEBUG CODE
 	//dataSendingBatteryCurrent = new StallableAnalogEncoder(1, 5);
 	//END DEBUG CODE
+	// init quad encoders?
+			
+	
 	driveTrainGyro->SetGyroMode(SmartGyro::radians);
 	// don't have hardware
 	launcherLowPressureSwitch = new AnalogPressureTransducer(1, 3);
