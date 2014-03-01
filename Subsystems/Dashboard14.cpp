@@ -39,18 +39,18 @@ void Dashboard14::SendData()
 	sprintf(data,"%lf,%lf,%lf", RobotMap::elevatorElevationEncoder->GetAverageVoltage(),Robot::elevator->GetElevatorUp(),Robot::elevator->GetElevatorDown());
 	SmartDashboard::PutString("Elevator Data", data);
 	
-	bool goodToGo = !Robot::launcher->IsGoodPressure() && Robot::robotRangeFinder->InRange();
+	bool goodToGo = !Robot::launcher->IsBadPressure() && Robot::robotRangeFinder->InRange();
 	int shooterReady;
 	if(goodToGo){
 		SmartDashboard::PutNumber("Shooter Ready", 1);
 		shooterReady = 1;
 	}
-	else if(!Robot::launcher->IsGoodPressure() && !Robot::robotRangeFinder->InRange())
+	else if(!Robot::launcher->IsBadPressure() && !Robot::robotRangeFinder->InRange())
 	{
 		SmartDashboard::PutNumber("Shooter Ready", 0);
 		shooterReady = 0;
 	}
-	else if(Robot::launcher->IsGoodPressure() && Robot::robotRangeFinder->InRange())
+	else if(Robot::launcher->IsBadPressure() && Robot::robotRangeFinder->InRange())
 	{
 		SmartDashboard::PutNumber("Shooter Ready", -1);
 		shooterReady = -1;

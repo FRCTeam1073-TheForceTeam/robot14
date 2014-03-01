@@ -29,7 +29,7 @@ void Launcher::CloseTank() {
 	solenoidRight->Set(false);
 }
 //TODO: Constant may need to be calibrated
-bool Launcher::IsGoodPressure() {
+bool Launcher::IsBadPressure() {
 	float PSI = pressureTransducer->GetPressurePSI();
 	if (PSI <= pressureLimit){
 		return true;

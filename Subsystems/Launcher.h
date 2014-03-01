@@ -17,7 +17,7 @@ public:
 	void InitDefaultCommand();
 	void OpenTank();
 	void CloseTank();
-	bool IsGoodPressure();
+	bool IsBadPressure();
 	bool AreTanksOpen();
 	//BEGIN DEBUG CODE
 	//void Launch();
