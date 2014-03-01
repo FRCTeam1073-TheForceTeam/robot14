@@ -3,8 +3,8 @@
 #include "../Robotmap.h"
 #include "SmartDashboard/SmartDashboard.h"
 #include "LiveWindow/LiveWindow.h"
-static const double elevatorUpDft = 1.93;
-static const double elevatorDownDft = 0.81;
+static const double elevatorUpDft = 2.3f;
+static const double elevatorDownDft = 1.05f;
 
 double Elevator::elevatorUp = 0.0;
 double Elevator::elevatorDown = 0.0;
