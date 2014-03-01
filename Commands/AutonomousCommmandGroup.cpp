@@ -16,7 +16,7 @@ AutonomousCommmandGroup::AutonomousCommmandGroup() {
 	AddSequential(new AutonomousDriveCommand());
 	AddSequential(new WaitForHotGoal());
 	AddSequential(new AutonomousLaunchCommand());
-	AddSequential(new ShiftHighGear());
+	AddSequential(new ShiftLowGear());
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
 	//      AddSequential(new Command2());
