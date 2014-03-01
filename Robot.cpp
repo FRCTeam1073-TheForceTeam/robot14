@@ -9,7 +9,6 @@ DriveTrain* Robot::driveTrain = 0;
 Launcher* Robot::launcher = 0;
 Collector* Robot::collector = 0;
 Shifter* Robot::shifter = 0;
-AirCompressor* Robot::airCompressor = 0;
 Vision* Robot::vision = 0;
 Dashboard14* Robot::dashboard14 = 0;
 RobotRangeFinder* Robot::robotRangeFinder = 0;
@@ -42,7 +41,6 @@ void Robot::RobotInit() {
 	launcher = new Launcher();
 	collector = new Collector();
 	shifter = new Shifter();
-	airCompressor = new AirCompressor();
 	vision = new Vision();
 	dashboard14 = new Dashboard14();
 	robotRangeFinder = new RobotRangeFinder();

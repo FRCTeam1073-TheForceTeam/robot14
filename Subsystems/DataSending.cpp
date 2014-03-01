@@ -41,12 +41,11 @@ void DataSending::SendTheData(){
 	Send((bool)RobotMap::launcherSolenoidLeft->Get());//solenoid info
 	Send((bool)RobotMap::launcherSolenoidRight->Get());
 	Send(RobotMap::shifterDoubleSolenoid->Get());
-	Send((bool)RobotMap::airCompressorCompressor->GetPressureSwitchValue());//sensor info
+	Send((bool)RobotMap::launcherCompressor->GetPressureSwitchValue());//sensor info
 	Send(RobotMap::robotRangeFinderUltrasonicSensor->GetVoltage()*INCHES_CONSTANT);
 	Send(RobotMap::driveTrainGyro->GetAngle());
 	Send(RobotMap::elevatorElevationEncoder->GetVoltage());
-	Send(RobotMap::launcherLowPressureSwitch->GetVoltage()*PSI_CONSTANT);//transducer1
-	Send(RobotMap::launcherHighPressureSwitch->GetVoltage()*PSI_CONSTANT);//transducer2
+	Send(RobotMap::launcherPressureSwitch->GetVoltage()*PSI_CONSTANT);//transducer1
 	Send(RobotMap::collectorLeftRoller->Get()*-1);//talon info
 	Send(RobotMap::collectorRightRoller->Get());
 	Send(count++);//number of packets
@@ -107,8 +106,8 @@ void DataSending::UpdateUserLCD(){
 	string driveMode = "Drive mode Mecanum";//+Robot::driveTrain->GetDriveMode();
 	strcpy(line1,setting.c_str());
 	strcpy(line2,driveMode.c_str());
-	if((bool)RobotMap::airCompressorCompressor->GetPressureSwitchValue())sprintf(line3,"Sufficent Pressure");
-	if(!(bool)RobotMap::airCompressorCompressor->GetPressureSwitchValue())sprintf(line3,"Insufficient Pressure");
+	if((bool)RobotMap::launcherCompressor->GetPressureSwitchValue())sprintf(line3,"Sufficent Pressure");
+	else sprintf(line3,"Insufficient Pressure");
 	sprintf(line4,"Elevation voltage is %f",RobotMap::elevatorElevationEncoder->GetVoltage());
 	sprintf(line5, "Battery Current is %f Amps",((batteryCurrent->GetVoltage()-2.5)*AMPS_CONSTANT));
 	DriverStationLCD *lcd = DriverStationLCD::GetInstance();

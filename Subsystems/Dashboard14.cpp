@@ -24,7 +24,7 @@ void Dashboard14::SendData()
 {
 	SmartDashboard::PutNumber("Battery", DriverStation::GetInstance()->GetBatteryVoltage());
 	SmartDashboard::PutNumber("TimeCounterWidget", DriverStation::GetInstance()->GetMatchTime());
-	SmartDashboard::PutNumber("PSI Gauge", Robot::airCompressor->GetPressurePSI());
+	SmartDashboard::PutNumber("PSI Gauge", Robot::launcher->pressureTransducer->GetPressurePSI());
 	SmartDashboard::PutBoolean("Gear Shifter", Robot::shifter->IsLowGear());
 	SmartDashboard::PutNumber("Current Sensor", (RobotMap::dataSendingBatteryCurrent->GetVoltage()-2.5)*CURRENT_AMPS_CONSTANT);
 	SmartDashboard::PutNumber("Distance", Robot::robotRangeFinder->GetDistance());
@@ -39,18 +39,18 @@ void Dashboard14::SendData()
 	sprintf(data,"%lf,%lf,%lf", RobotMap::elevatorElevationEncoder->GetAverageVoltage(),Robot::elevator->GetElevatorUp(),Robot::elevator->GetElevatorDown());
 	SmartDashboard::PutString("Elevator Data", data);
 	
-	bool goodToGo = !Robot::airCompressor->IsLowPressure() && Robot::robotRangeFinder->InRange();
+	bool goodToGo = !Robot::launcher->IsGoodPressure() && Robot::robotRangeFinder->InRange();
 	int shooterReady;
 	if(goodToGo){
 		SmartDashboard::PutNumber("Shooter Ready", 1);
 		shooterReady = 1;
 	}
-	else if(!Robot:: airCompressor->IsLowPressure() && !Robot::robotRangeFinder->InRange())
+	else if(!Robot::launcher->IsGoodPressure() && !Robot::robotRangeFinder->InRange())
 	{
 		SmartDashboard::PutNumber("Shooter Ready", 0);
 		shooterReady = 0;
 	}
-	else if(Robot::airCompressor->IsLowPressure() && Robot::robotRangeFinder->InRange())
+	else if(Robot::launcher->IsGoodPressure() && Robot::robotRangeFinder->InRange())
 	{
 		SmartDashboard::PutNumber("Shooter Ready", -1);
 		shooterReady = -1;
