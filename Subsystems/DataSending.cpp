@@ -56,6 +56,7 @@ void DataSending::SendTheData(){
 	Send(downTime,4);
 	Send(percentCPU,4);
 	Send(drive->GetMatchTime());
+	Send(drive->IsEnabled());
 	dash.AddString(strBuffer);
 	dash.Finalize();
 	UpdateUserLCD();
