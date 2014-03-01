@@ -5,8 +5,7 @@
 #include "LiveWindow/LiveWindow.h"
 static const double elevatorUpDft = 3.24;
 static const double elevatorDownDft = 2.02;
-static const double elevatorShootPosDft = 1.74
-		;
+static const double elevatorShootPosDft = 1.74;
 double Elevator::elevatorUp = 0.0;
 double Elevator::elevatorDown = 0.0;
 double Elevator::elevatorShootPos = 0.0;
