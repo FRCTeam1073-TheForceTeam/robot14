@@ -51,8 +51,19 @@ void ElevatorAutoCalibration::Execute() {
 	}
 	else if (sequenceID == 2)
 	{
+		//shooter position
 		Robot::elevator->HoldPosition();
-		Robot::elevator->SetElevatorShootPos((Robot::elevator->GetElevatorUp()-Robot::elevator->GetElevatorDown())*(0.95)+Robot::elevator->GetElevatorDown());
+		if (Robot::elevator->GetElevatorUp() < Robot::elevator->GetElevatorDown())
+		{
+			//zero crossing
+			double shootPos = ((Robot::elevator->GetElevatorUp() + 5.0)-Robot::elevator->GetElevatorDown())*(0.95)+Robot::elevator->GetElevatorDown();
+			if (shootPos >= 5.0)
+				shootPos -= 5.0;
+			Robot::elevator->SetElevatorShootPos(shootPos);
+		}
+		else
+			Robot::elevator->SetElevatorShootPos((Robot::elevator->GetElevatorUp()-Robot::elevator->GetElevatorDown())*(0.95)+Robot::elevator->GetElevatorDown());
+		
 		sequenceID = 3;
 	}
 }
