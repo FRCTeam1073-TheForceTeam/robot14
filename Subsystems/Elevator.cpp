@@ -62,6 +62,10 @@ void Elevator::InitDefaultCommand() {
 void Elevator::GoToShootPosition(){
 	if (GetPIDController()->IsEnabled())
 		SetSetpoint(elevatorShootPos);
+	else//autononmous hacks here
+	{
+		angleAdjuster->Set(-1 * SETPOINT_CONSTANT);
+	}
 }
 void Elevator::GoToMaxPosition(){
 	if (GetPIDController()->IsEnabled())
