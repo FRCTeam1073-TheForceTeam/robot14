@@ -36,7 +36,7 @@ Elevator::Elevator() : PIDSubsystem("Elevator", 1.0, 0.0, 0.0) {
 	
 	elevatorUp = Robot::prefs->GetFloat(ELEVATORUP, elevatorUpDft);	
 	elevatorDown = Robot::prefs->GetFloat(ELEVATORDOWN, elevatorDownDft);	
-	elevatorShootPos = ((elevatorUp - elevatorDown)*0.75)+elevatorDown;
+	SetElevatorShootPos();
 	
 	HoldPosition();
 }
@@ -92,7 +92,19 @@ void Elevator::SetElevatorUp(double encoderVal){
 	Robot::prefs->PutFloat(ELEVATORUP, encoderVal);
 	Robot::prefs->Save();
 }
-void Elevator::SetElevatorShootPos(double encoderVal){elevatorShootPos = encoderVal;}
+void Elevator::SetElevatorShootPos(){
+	
+	if (GetElevatorUp() < GetElevatorDown())
+	{
+		//zero crossing
+		double shootPos = ((GetElevatorUp() + 5.0)-GetElevatorDown())*(0.95)+GetElevatorDown();
+		if (shootPos >= 5.0)
+			shootPos -= 5.0;
+		elevatorShootPos = shootPos;
+	}
+	else
+		elevatorShootPos = (GetElevatorUp()-GetElevatorDown())*(0.95)+GetElevatorDown();
+}
 double Elevator::GetElevatorDown(){return elevatorDown;}
 double Elevator::GetElevatorUp(){return elevatorUp;}
 double Elevator::GetElevatorShootPos(){return elevatorShootPos;}

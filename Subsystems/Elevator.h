@@ -37,7 +37,7 @@ public:
 	double GetElevatorShootPos();
 	void SetElevatorUp(double encoderVal);
 	void SetElevatorDown(double encoderVal);
-	void SetElevatorShootPos(double encoderVal);	
+	void SetElevatorShootPos();	
 	void TogglePIDEnabled();
 };
 #endif
