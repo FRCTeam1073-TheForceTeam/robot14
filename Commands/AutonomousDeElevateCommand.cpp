@@ -20,7 +20,7 @@ void AutonomousDeElevateCommand::Execute() {
 }
 // Make this return true when this Command no longer needs to run execute()
 bool AutonomousDeElevateCommand::IsFinished() {
-	return true;
+	return IsTimedOut();
 }
 // Called once after isFinished returns true
 void AutonomousDeElevateCommand::End() {
