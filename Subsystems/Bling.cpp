@@ -59,7 +59,7 @@ void Bling::Execute()
 		printf("ERROR: in Bling.cpp execute switch\n");
 	}
 }
-const float blingNice = 0.001f;
+const float blingNice = 0.5f;
 int BlingBgFunction(...)
 {
 	Wait(1.0);  //wait a second to make sure everything is ready
@@ -102,7 +102,7 @@ void Bling::RainbowExplosion(){
     ClearStrip();
     LightNth(64 -i, 0, 127, 0);
     LightNth(i, 127, 0, 0);
-   delay(20);
+   delay(200);
   }
   
   for (int i=0; i<=24; i++) {
@@ -124,7 +124,7 @@ void Bling::RainbowExplosion(){
       RainbowColor((i + l)*3);
       DispColor(RBE_R, RBE_G, RBE_B);
     }
-  delay(20);
+  delay(200);
   ClearStrip();
   }
   delay(500);

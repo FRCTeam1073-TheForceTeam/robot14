@@ -168,14 +168,14 @@ void DataSending::GetJoystickInfo(){
 	Send(Robot::oi->getOperatorStick()->GetX());
 	Send(Robot::oi->getOperatorStick()->GetY());
 }
-const float periodicIntervalSec = .05f;
+const float periodicIntervalSec = .5f;
 int
 BackroundFunction(...)
 {
 	Wait(1.0);  //wait a second to make sure everything is ready
 	while (1)  // No stopping the Zombie, Life before Autonomous....
 	{
-		Wait(periodicIntervalSec);		// Wait 50ms for a 20Hz update rate...
+		Wait(periodicIntervalSec);		// Wait 500ms for a 2Hz update rate...
 		Robot::dataSending->SendTheData();
 	}
 }
@@ -184,11 +184,12 @@ Task *BackgroundTask;
 void
 DataSending::InitializeBackGroundTask()
 {
+	
 	printf("Initiation ocurred\n");
 	BackgroundTask = new Task("BackGroundTask", BackroundFunction );
 	BackgroundSemaphore = semMCreate(SEM_DELETE_SAFE | SEM_INVERSION_SAFE); // synchronize access to multi-value registers
 	BackgroundTask->Start();
-	printf("This robot is currently being monitered\n");
+	printf("This robot is currently being monitered\n"); 
 }
 string DataSending::GetGearSetting(){
 	if(RobotMap::shifterDoubleSolenoid->Get()==DoubleSolenoid::kForward){
