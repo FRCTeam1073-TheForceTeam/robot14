@@ -73,7 +73,7 @@ SEM_ID BlingSemaphore = 0;
 static Task* BlingTask;	
 void Bling::InitializeBackgroundTask() {
 	printf("Bling background task initialized\n");
-	BlingTask = new Task("BlingTask", BlingBgFunction);
+	BlingTask = new Task("BlingTask", BlingBgFunction, 150); // lowered from default of 101
 	BlingSemaphore = semMCreate(SEM_DELETE_SAFE | SEM_INVERSION_SAFE); // synchronize access to multi-value registers
 	BlingTask->Start();
 	printf("Bling Flame On!\n");
@@ -102,32 +102,34 @@ void Bling::RainbowExplosion(){
     ClearStrip();
     LightNth(64 -i, 0, 127, 0);
     LightNth(i, 127, 0, 0);
-   delay(200);
+    delay(50);
   }
-  
   for (int i=0; i<=24; i++) {
     DispClear();
   }
+  delay(20);
   for (int i=0; i<=14; i++) {
     DispColor(127, 127, 127);
   }
-  
+  delay(20);
   for(int i=0;i<=33;i++){ 
     for(int j=0;j<=32-i;j++){
       DispClear();
     }
+    delay(20);
     for(int k=0;k<i;k++){
       RainbowColor((i -k)*11);
       DispColor(RBE_R, RBE_G, RBE_B);
     }
+    delay(20);
     for(int l=0;l<i;l++){
       RainbowColor((i + l)*3);
       DispColor(RBE_R, RBE_G, RBE_B);
     }
-  delay(200);
+    delay(20);
   ClearStrip();
   }
-  delay(500);
+  delay(20);
 }
 void Bling::RainbowColor(int pos) {
 	  //pos is the position on the Rainbow
