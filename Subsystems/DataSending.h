@@ -30,11 +30,5 @@ private:
 	static const int MaxBuffer = 1000;
 	char strBuffer[MaxBuffer];
 	int strIndex;
-	double t1;
-	double t2;
-	double t3;
-	double totalExeucted;
-	double downTime;
-	double percentCPU;
 };
 #endif
