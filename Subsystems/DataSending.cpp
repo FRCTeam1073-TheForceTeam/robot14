@@ -174,7 +174,7 @@ Task *BackgroundTask;
 void DataSending::InitializeBackGroundTask()
 {
 	printf("Initiation ocurred\n");
-	BackgroundTask = new Task("BackGroundTask", BackroundFunction );
+	BackgroundTask = new Task("BackGroundTask", BackroundFunction, Task::kDefaultPriority+10 );
 	BackgroundSemaphore = semMCreate(SEM_DELETE_SAFE | SEM_INVERSION_SAFE); // synchronize access to multi-value registers
 	BackgroundTask->Start();
 	printf("This robot is currently being monitered\n");
