@@ -14,21 +14,24 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "ElevateCollectorToTop.h"
 #include "CollectToggle.h"
 #include "ElevatorOff.h"
+#include "CollectorOff.h"
+#include "CollectorFeed.h"
 AutonomousCommmandGroup::AutonomousCommmandGroup() {
 	AddParallel(new ElevateCollectorToBottom());
-	AddParallel(new CollectToggle());
+	AddParallel(new CollectorFeed());
 	AddSequential(new WaitCommand(0.5));
 	AddSequential(new ElevatorOff());
-	AddParallel(new CollectToggle());
+	AddSequential(new CollectorOff());
 	AddSequential(new ShiftLowGear());
 	AddSequential(new AutonomousDriveCommand());
 	AddSequential(new AutonomousLaunchCommand());
 	AddSequential(new WaitCommand(1));
-	AddSequential(new CollectToggle());
+	AddSequential(new CollectorFeed());
 	AddSequential(new WaitCommand(0.5));
 	AddSequential(new ElevateCollectorToTop());
 	AddSequential(new WaitCommand(0.5));
 	AddSequential(new AutonomousDeElevateCommand());
+	AddSequential(new CollectorOff());
 	AddSequential(new AutonomousLaunchCommand());
 	AddSequential(new ShiftLowGear());
 	// Add Commands here:
