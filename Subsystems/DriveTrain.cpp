@@ -67,7 +67,6 @@ void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joys
 		else newTwist = absMin(joystickTwist, oldTwist + ONE_RAMP_MAX);
 	}
 	else newTwist = joystickTwist;
-
 	//lower speed / current draw of high gear
 	
 		
@@ -75,7 +74,6 @@ void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joys
 	oldY = newY;
 	oldTwist = newTwist;
 	//Ramp Done
-
 	
 	/*float newX = joystickX;
 	float newY = joystickY;

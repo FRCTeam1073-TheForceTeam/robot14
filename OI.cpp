@@ -18,6 +18,7 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "Commands/ElevateCollectorUp.h"
 #include "Commands/ElevatorAutoCalibration.h"
 #include "Commands/ElevatorCollectorDown.h"
+#include "Commands/ElevatorOff.h"
 #include "Commands/LaunchBall.h"
 #include "Commands/SendToDashboard.h"
 #include "Commands/ShiftHighGear.h"

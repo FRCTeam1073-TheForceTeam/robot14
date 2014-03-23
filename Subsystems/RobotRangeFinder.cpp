@@ -19,7 +19,6 @@ RobotRangeFinder::RobotRangeFinder() : Subsystem("RobotRangeFinder") {
 	minShootingRangeCM = Robot::prefs->GetInt("minShootingRangeCM", MinShootingRangeCmDflt);
 	autonomousRangeCM = Robot::prefs->GetInt("autonomousRangeCM", AutonomousRangeCmDflt);
 	printf("recorded Max: %d\tRecordedMin: %d\tAutonomous: %d\n", maxShootingRangeCM, minShootingRangeCM,autonomousRangeCM);
-
 }
     
 void RobotRangeFinder::InitDefaultCommand() {
