@@ -15,5 +15,5 @@ void CollectToggle::Initialize() {
 }
 void CollectToggle::Execute() {}
 bool CollectToggle::IsFinished() {return true;}
-void CollectToggle::End() {Robot::collector->StopRollers();}
+void CollectToggle::End() {}
 void CollectToggle::Interrupted() { End(); }
