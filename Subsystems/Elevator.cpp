@@ -75,7 +75,6 @@ void Elevator::GoToMinPosition(){
 	if (GetPIDController()->IsEnabled())
 		SetSetpoint(elevatorDown);
 }
-
 void Elevator::IncrementSetPoint(bool up) {
 	if (GetPIDController()->IsEnabled()) {
 		SetSetpoint(GetSetpoint() + (up ? setpointConstant : -1 * setpointConstant));

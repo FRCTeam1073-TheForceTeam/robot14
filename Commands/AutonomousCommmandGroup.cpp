@@ -10,12 +10,16 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "AutonomousDeElevateCommand.h"
 #include "ShiftLowGear.h"
 #include "ShiftHighGear.h"
+#include "AutonomousHoldElevatorPos.h"
+#include "ElevatorOff.h"
 AutonomousCommmandGroup::AutonomousCommmandGroup() {
 	AddParallel(new AutonomousDeElevateCommand());
 	AddSequential(new ShiftLowGear());
+	AddSequential(new AutonomousHoldElevatorPos());
 	AddSequential(new AutonomousDriveCommand());
 	AddSequential(new WaitForHotGoal());
 	AddSequential(new AutonomousLaunchCommand());
+	AddSequential(new ElevatorOff());
 	AddSequential(new ShiftLowGear());
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
