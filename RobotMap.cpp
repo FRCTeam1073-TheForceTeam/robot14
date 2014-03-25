@@ -28,13 +28,13 @@ void RobotMap::init() {
 	driveTrainRightBack = new SmartCANJaguar(4,SmartCANJaguar::kCurrent);
 	
 	
-	driveTrainLeftBack = new SmartCANJaguar(3);
+	driveTrainLeftBack = new SmartCANJaguar(3,SmartCANJaguar::kCurrent);
 	
 	
-	driveTrainRightFront = new SmartCANJaguar(5);
+	driveTrainRightFront = new SmartCANJaguar(5,SmartCANJaguar::kCurrent);
 	
 	
-	driveTrainLeftFront = new SmartCANJaguar(2);
+	driveTrainLeftFront = new SmartCANJaguar(2,SmartCANJaguar::kCurrent);
 	
 	
 	driveTrainGyro = new SmartGyro(1, 1);
