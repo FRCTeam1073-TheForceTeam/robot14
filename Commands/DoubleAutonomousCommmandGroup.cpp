@@ -16,6 +16,8 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "ElevatorOff.h"
 #include "CollectorOff.h"
 #include "CollectorFeed.h"
+#include "AutonomousHoldElevatorPos.h"
+#include "ElevatorOff.h"
 AutonomousCommmandGroup::AutonomousCommmandGroup() {
 	AddParallel(new ElevateCollectorToBottom());
 	AddParallel(new CollectorFeed());
@@ -23,6 +25,7 @@ AutonomousCommmandGroup::AutonomousCommmandGroup() {
 	AddSequential(new ElevatorOff());
 	AddSequential(new CollectorOff());
 	AddSequential(new ShiftLowGear());
+	AddSequential(new AutonomousHoldElevatorPos());
 	AddSequential(new AutonomousDriveCommand());
 	AddSequential(new AutonomousLaunchCommand());
 	AddSequential(new WaitCommand(1));
@@ -33,6 +36,7 @@ AutonomousCommmandGroup::AutonomousCommmandGroup() {
 	AddSequential(new AutonomousDeElevateCommand());
 	AddSequential(new CollectorOff());
 	AddSequential(new AutonomousLaunchCommand());
+	AddSequential(new ElevatorOff());
 	AddSequential(new ShiftLowGear());
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
