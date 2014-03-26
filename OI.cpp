@@ -6,6 +6,7 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "Commands/AutonomousCommmandGroup.h"
 #include "Commands/AutonomousDeElevateCommand.h"
 #include "Commands/AutonomousDriveCommand.h"
+#include "Commands/AutonomousHoldElevatorPos.h"
 #include "Commands/AutonomousLaunchCommand.h"
 #include "Commands/CatchMode.h"
 #include "Commands/CollectToggle.h"
