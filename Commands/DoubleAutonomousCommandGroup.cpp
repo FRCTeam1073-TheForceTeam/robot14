@@ -3,7 +3,7 @@ Do not mix this code with any other version of RobotBuilder! */
 
 
 
-#include "DoubleAutonomousCommmandGroup.h"
+#include "DoubleAutonomousCommandGroup.h"
 #include "AutonomousDriveCommand.h"
 #include "WaitForHotGoal.h"
 #include "AutonomousLaunchCommand.h"
@@ -18,7 +18,7 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "CollectorFeed.h"
 #include "AutonomousHoldElevatorPos.h"
 #include "ElevatorOff.h"
-DoubleAutonomousCommmandGroup::DoubleAutonomousCommmandGroup() {
+DoubleAutonomousCommandGroup::DoubleAutonomousCommandGroup() {
 	AddParallel(new ElevateCollectorToBottom());
 	AddParallel(new CollectorFeed());
 	AddSequential(new WaitCommand(0.5));
