@@ -3,8 +3,8 @@ Do not mix this code with any other version of RobotBuilder! */
 
 
 
-#ifndef AUTONOMOUSCOMMMANDGROUP_H
-#define AUTONOMOUSCOMMMANDGROUP_H
+#ifndef DOUBLEAUTONOMOUSCOMMMANDGROUP_H
+#define DOUBLEAUTONOMOUSCOMMMANDGROUP_H
 
 #include "Commands/CommandGroup.h"
 
@@ -13,9 +13,9 @@ Do not mix this code with any other version of RobotBuilder! */
  *
  * @author ExampleAuthor
  */
-class AutonomousCommmandGroup: public CommandGroup {
+class DoubleAutonomousCommmandGroup: public CommandGroup {
 public:	
-	AutonomousCommmandGroup();
+	DoubleAutonomousCommmandGroup();
 };
 
 #endif
