@@ -21,6 +21,7 @@ AutonomousCommmandGroup::AutonomousCommmandGroup() {
 	AddSequential(new AutonomousLaunchCommand());
 	AddSequential(new ElevatorOff());
 	AddSequential(new ShiftLowGear());
+	//test commit
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
 	//      AddSequential(new Command2());
