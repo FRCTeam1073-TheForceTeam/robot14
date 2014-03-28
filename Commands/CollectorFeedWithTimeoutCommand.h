@@ -13,7 +13,7 @@ Do not mix this code with any other version of RobotBuilder! */
 
 class CollectorFeedWithTimeoutCommand: public Command {
 public:
-	CollectorFeedWithTimeoutCommand(bool dir, double timeout);
+	CollectorFeedWithTimeoutCommand(bool dir=true, double timeout=0.1);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
