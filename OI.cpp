@@ -71,6 +71,11 @@ OI::OI() {
 	lowGear->WhenPressed(new ShiftLowGear());
      
         // SmartDashboard Buttons
+	SmartDashboard::PutData("ElevateCollectorUp", new ElevateCollectorUp());
+	SmartDashboard::PutData("ElevatorCollectorDown", new ElevatorCollectorDown());
+	SmartDashboard::PutData("CollectorFeed", new CollectorFeed());
+	SmartDashboard::PutData("CollectorPurge", new CollectorPurge());
+	SmartDashboard::PutData("Launch Ball", new LaunchBall());
 	SmartDashboard::PutData("TestNextRobotStatus", new TestNextRobotStatus());
 	SmartDashboard::PutData("ToggleElevatorPID", new ToggleElevatorPID());
 	SmartDashboard::PutData("TalonCalibratePositive", new TalonCalibratePositive());
