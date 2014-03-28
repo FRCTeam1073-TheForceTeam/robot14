@@ -27,7 +27,6 @@ Do not mix this code with any other version of RobotBuilder! */
 class Robot : public IterativeRobot {
 public:
 	Command *autonomousCommand;
-	Command *doubleAutonomousCommand;
 	static OI *oi;
 	LiveWindow *lw;
 	static Preferences *prefs;
@@ -55,7 +54,7 @@ public:
 	virtual void DisabledInit();
 	static enum WhatRobot_t {atlasRobot, mobileBase2014} whatRobot;
 	static WhatRobot_t GetWhichRobot();
-	static SendableChooser* autoChooser;
+	SendableChooser *autoChooser;
 private:
 	static DigitalInput *jumper14;
 };

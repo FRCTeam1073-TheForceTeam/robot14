@@ -18,10 +18,11 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "CollectorFeed.h"
 #include "AutonomousHoldElevatorPos.h"
 #include "ElevatorOff.h"
+#include "CollectorFeedWithTimeoutCommand.h"
 DoubleAutonomousCommandGroup::DoubleAutonomousCommandGroup() {
 	AddParallel(new ElevateCollectorToBottom());
 	AddParallel(new CollectorFeed());
-	AddSequential(new WaitCommand(0.5));
+	AddSequential(new WaitCommand(0.8));
 	AddSequential(new ElevatorOff());
 	AddSequential(new CollectorOff());
 	AddSequential(new ShiftLowGear());
@@ -29,12 +30,15 @@ DoubleAutonomousCommandGroup::DoubleAutonomousCommandGroup() {
 	AddSequential(new AutonomousDriveCommand());
 	AddSequential(new AutonomousLaunchCommand());
 	AddSequential(new WaitCommand(1));
-	AddSequential(new CollectorFeed());
-	AddSequential(new WaitCommand(0.5));
+	//AddSequential(new CollectorFeed(/*.5*/));
+	//AddSequential(new WaitCommand(0.5));
+	AddSequential(new CollectorFeedWithTimeoutCommand(true, 0.5));
 	AddSequential(new ElevateCollectorToTop());
-	AddSequential(new WaitCommand(0.5));
+	AddSequential(new WaitCommand(1.0));
+	AddSequential(new ElevatorOff());
 	AddSequential(new AutonomousDeElevateCommand());
 	AddSequential(new CollectorOff());
+	AddSequential(new WaitCommand(0.1));
 	AddSequential(new AutonomousLaunchCommand());
 	AddSequential(new ElevatorOff());
 	AddSequential(new ShiftLowGear());

@@ -11,6 +11,7 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "Commands/CatchMode.h"
 #include "Commands/CollectToggle.h"
 #include "Commands/CollectorFeed.h"
+#include "Commands/CollectorFeedWithTimeoutCommand.h"
 #include "Commands/CollectorOff.h"
 #include "Commands/CollectorPurge.h"
 #include "Commands/Drive.h"
