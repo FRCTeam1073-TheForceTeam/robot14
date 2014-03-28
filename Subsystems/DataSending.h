@@ -21,6 +21,7 @@ public:
 	void GetJagTest();
 	void InitializeBackGroundTask();
 	string GetGearSetting();
+	float GetDataSendInterval();
 private:
 	int count;
 	void Send(bool b);
@@ -30,5 +31,6 @@ private:
 	static const int MaxBuffer = 1000;
 	char strBuffer[MaxBuffer];
 	int strIndex;
+	float dataSendInterval;
 };
 #endif
