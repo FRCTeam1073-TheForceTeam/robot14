@@ -15,6 +15,7 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "Commands/CollectorOff.h"
 #include "Commands/CollectorPurge.h"
 #include "Commands/Drive.h"
+#include "Commands/DumbDriveForwardUntilTimeout.h"
 #include "Commands/ElevateCollectorToBottom.h"
 #include "Commands/ElevateCollectorToShooter.h"
 #include "Commands/ElevateCollectorToTop.h"

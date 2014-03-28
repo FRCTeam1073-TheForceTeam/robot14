@@ -2,8 +2,8 @@
 Do not mix this code with any other version of RobotBuilder! */
 
 
-#ifndef AUTONOMOUSLAUNCHCOMMAND_H
-#define AUTONOMOUSLAUNCHCOMMAND_H
+#ifndef DUMBDRIVEFORWARDUNTILTIMEOUT_H
+#define DUMBDRIVEFORWARDUNTILTIMEOUT_H
 
 
 #include "Commands/Subsystem.h"
@@ -11,16 +11,14 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "WPILib.h"
 #include "../WPILibExtensions/WPILibExtensions.h"
 
-class AutonomousLaunchCommand: public Command {
+class DumbDriveForwardUntilTimeout: public Command {
 public:
-	AutonomousLaunchCommand();
+	DumbDriveForwardUntilTimeout();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
-private:
-	static const float shootertimeval = 1.0; 
 };
 
 #endif

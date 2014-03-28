@@ -19,6 +19,7 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "AutonomousHoldElevatorPos.h"
 #include "ElevatorOff.h"
 #include "CollectorFeedWithTimeoutCommand.h"
+#include "DumbDriveForwardUntilTimeout.h"
 DoubleAutonomousCommandGroup::DoubleAutonomousCommandGroup() {
 	AddParallel(new ElevateCollectorToBottom());
 	AddParallel(new CollectorFeed());
@@ -27,21 +28,28 @@ DoubleAutonomousCommandGroup::DoubleAutonomousCommandGroup() {
 	AddSequential(new CollectorOff());
 	AddSequential(new ShiftLowGear());
 	AddSequential(new AutonomousHoldElevatorPos());
-	AddSequential(new AutonomousDriveCommand());
+	AddSequential(new AutonomousDriveCommand());	
 	AddSequential(new AutonomousLaunchCommand());
 	AddSequential(new WaitCommand(1));
 	//AddSequential(new CollectorFeed(/*.5*/));
 	//AddSequential(new WaitCommand(0.5));
-	AddSequential(new CollectorFeedWithTimeoutCommand(true, 0.5));
+	// AddSequential(new CollectorFeedWithTimeoutCommand(true, 0.5)); probably a waste
 	AddSequential(new ElevateCollectorToTop());
 	AddSequential(new WaitCommand(1.0));
 	AddSequential(new ElevatorOff());
 	AddSequential(new AutonomousDeElevateCommand());
 	AddSequential(new CollectorOff());
 	AddSequential(new WaitCommand(0.1));
-	AddSequential(new AutonomousLaunchCommand());
-	AddSequential(new ElevatorOff());
-	AddSequential(new ShiftLowGear());
+	
+	CommandGroup* paralell = new CommandGroup();
+	paralell->AddSequential(new WaitCommand(0.4));
+	paralell->AddSequential(new AutonomousLaunchCommand());
+	paralell->AddSequential(new ElevatorOff());
+
+	
+	AddParallel(new DumbDriveForwardUntilTimeout()); // 0.3 timeout
+	AddParallel(paralell);
+	
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
 	//      AddSequential(new Command2());
