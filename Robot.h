@@ -54,6 +54,7 @@ public:
 	virtual void DisabledInit();
 	static enum WhatRobot_t {atlasRobot, mobileBase2014} whatRobot;
 	static WhatRobot_t GetWhichRobot();
+	SendableChooser *autoChooser;
 private:
 	static DigitalInput *jumper14;
 };

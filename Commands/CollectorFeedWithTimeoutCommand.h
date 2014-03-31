@@ -2,8 +2,8 @@
 Do not mix this code with any other version of RobotBuilder! */
 
 
-#ifndef COLLECTORFEED_H
-#define COLLECTORFEED_H
+#ifndef COLLECTORFEEDWITHTIMEOUTCOMMAND_H
+#define COLLECTORFEEDWITHTIMEOUTCOMMAND_H
 
 
 #include "Commands/Subsystem.h"
@@ -11,15 +11,16 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "WPILib.h"
 #include "../WPILibExtensions/WPILibExtensions.h"
 
-class CollectorFeed: public Command {
+class CollectorFeedWithTimeoutCommand: public Command {
 public:
-	CollectorFeed();
-	CollectorFeed(double timeout);
+	CollectorFeedWithTimeoutCommand(bool dir=true, double timeout=0.1);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
+private:
+	bool dir;
 };
 
 #endif

@@ -20,7 +20,7 @@ public:
 	virtual void End();
 	virtual void Interrupted();
 private:
-	static const float shootertimeval = 3.0; 
+	static const float shootertimeval = 1.0; 
 };
 
 #endif

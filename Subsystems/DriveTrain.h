@@ -30,5 +30,6 @@ public:
 private: 
 	bool isFieldOrientation;
 	float oldX, oldY, oldTwist;
+	bool enableRamping;
 };
 #endif

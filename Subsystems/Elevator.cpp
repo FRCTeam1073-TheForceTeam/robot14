@@ -70,10 +70,14 @@ void Elevator::GoToShootPosition(){
 void Elevator::GoToMaxPosition(){
 	if (GetPIDController()->IsEnabled())
 		SetSetpoint(elevatorUp);
+	else 
+		angleAdjuster->Set(setpointConstant);
 }
 void Elevator::GoToMinPosition(){
 	if (GetPIDController()->IsEnabled())
 		SetSetpoint(elevatorDown);
+	else
+		angleAdjuster->Set(-1 * setpointConstant);
 }
 void Elevator::IncrementSetPoint(bool up) {
 	if (GetPIDController()->IsEnabled()) {

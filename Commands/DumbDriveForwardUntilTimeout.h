@@ -2,8 +2,8 @@
 Do not mix this code with any other version of RobotBuilder! */
 
 
-#ifndef COLLECTORFEED_H
-#define COLLECTORFEED_H
+#ifndef DUMBDRIVEFORWARDUNTILTIMEOUT_H
+#define DUMBDRIVEFORWARDUNTILTIMEOUT_H
 
 
 #include "Commands/Subsystem.h"
@@ -11,10 +11,9 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "WPILib.h"
 #include "../WPILibExtensions/WPILibExtensions.h"
 
-class CollectorFeed: public Command {
+class DumbDriveForwardUntilTimeout: public Command {
 public:
-	CollectorFeed();
-	CollectorFeed(double timeout);
+	DumbDriveForwardUntilTimeout();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

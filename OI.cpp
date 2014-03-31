@@ -11,14 +11,18 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "Commands/CatchMode.h"
 #include "Commands/CollectToggle.h"
 #include "Commands/CollectorFeed.h"
+#include "Commands/CollectorFeedWithTimeoutCommand.h"
+#include "Commands/CollectorOff.h"
 #include "Commands/CollectorPurge.h"
 #include "Commands/Drive.h"
+#include "Commands/DumbDriveForwardUntilTimeout.h"
 #include "Commands/ElevateCollectorToBottom.h"
 #include "Commands/ElevateCollectorToShooter.h"
 #include "Commands/ElevateCollectorToTop.h"
 #include "Commands/ElevateCollectorUp.h"
 #include "Commands/ElevatorAutoCalibration.h"
 #include "Commands/ElevatorCollectorDown.h"
+#include "Commands/ElevatorOff.h"
 #include "Commands/LaunchBall.h"
 #include "Commands/SendToDashboard.h"
 #include "Commands/ShiftHighGear.h"
@@ -68,6 +72,11 @@ OI::OI() {
 	lowGear->WhenPressed(new ShiftLowGear());
      
         // SmartDashboard Buttons
+	SmartDashboard::PutData("ElevateCollectorUp", new ElevateCollectorUp());
+	SmartDashboard::PutData("ElevatorCollectorDown", new ElevatorCollectorDown());
+	SmartDashboard::PutData("CollectorFeed", new CollectorFeed());
+	SmartDashboard::PutData("CollectorPurge", new CollectorPurge());
+	SmartDashboard::PutData("Launch Ball", new LaunchBall());
 	SmartDashboard::PutData("TestNextRobotStatus", new TestNextRobotStatus());
 	SmartDashboard::PutData("ToggleElevatorPID", new ToggleElevatorPID());
 	SmartDashboard::PutData("TalonCalibratePositive", new TalonCalibratePositive());
