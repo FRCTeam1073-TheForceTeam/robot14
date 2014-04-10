@@ -20,7 +20,9 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "ElevatorOff.h"
 #include "CollectorFeedWithTimeoutCommand.h"
 #include "DumbDriveForwardUntilTimeout.h"
+#define WAIT_TIME_AFTER_FIRST_SHOT "WaitTimeAfterFirstShot"
 DoubleAutonomousCommandGroup::DoubleAutonomousCommandGroup() {
+	waitTimeAfterFirstShot =  Robot::prefs->GetFloat(WAIT_TIME_AFTER_FIRST_SHOT, 0.4);
 	AddParallel(new ElevateCollectorToBottom());
 	AddParallel(new CollectorFeed());
 	AddSequential(new WaitCommand(0.8));
@@ -42,12 +44,12 @@ DoubleAutonomousCommandGroup::DoubleAutonomousCommandGroup() {
 	AddSequential(new WaitCommand(0.1));
 	
 	CommandGroup* paralell = new CommandGroup();
-	paralell->AddSequential(new WaitCommand(0.4));
+	paralell->AddSequential(new WaitCommand(waitTimeAfterFirstShot));
 	paralell->AddSequential(new AutonomousLaunchCommand());
 	paralell->AddSequential(new ElevatorOff());
 
 	
-	AddParallel(new DumbDriveForwardUntilTimeout()); // 0.3 timeout
+	AddParallel(new DumbDriveForwardUntilTimeout()); 
 	AddParallel(paralell);
 	
 	// Add Commands here:

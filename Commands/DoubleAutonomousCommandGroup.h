@@ -16,6 +16,8 @@ Do not mix this code with any other version of RobotBuilder! */
 class DoubleAutonomousCommandGroup: public CommandGroup {
 public:	
 	DoubleAutonomousCommandGroup();
+private:
+	double waitTimeAfterFirstShot;
 };
 
 #endif
