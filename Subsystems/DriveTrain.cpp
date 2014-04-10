@@ -48,7 +48,7 @@ void DriveTrain::MecanumDriveAction(float joystickX, float joystickY, float joys
 	float newX = joystickX;
 	float newY = joystickY;
 	float newTwist = joystickTwist;
-	if (enableRamping)
+	if (enableRamping || DriverStation::GetInstance()->IsAutonomous())
 	{
 		if(fabs(joystickX) > fabs(oldX)){
 			if(joystickX < 0){

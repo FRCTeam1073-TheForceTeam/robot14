@@ -13,7 +13,7 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "AutonomousHoldElevatorPos.h"
 #include "ElevatorOff.h"
 AutonomousCommmandGroup::AutonomousCommmandGroup() {
-	AddParallel(new AutonomousDeElevateCommand());
+	AddSequential(new AutonomousDeElevateCommand());
 	AddSequential(new ShiftLowGear());
 	AddSequential(new AutonomousHoldElevatorPos());
 	AddSequential(new AutonomousDriveCommand());

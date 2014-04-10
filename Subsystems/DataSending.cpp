@@ -3,7 +3,7 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "DataSending.h"
 #include "../Robotmap.h"
 #include "../Robot.h"
-#define INCHES_CONSTANT (1024.0/5.0*2.54)
+static const float VoltsPerCM = 0.0049;
 #define AMPS_CONSTANT (71.43)
 #define PSI_CONSTANT (22.22222)
 #define ENCODER_CONSTANT (6.2857)
@@ -41,7 +41,7 @@ void DataSending::SendTheData(){
 	Send((bool)RobotMap::launcherSolenoidRight->Get());
 	Send(RobotMap::shifterDoubleSolenoid->Get());
 	Send((bool)RobotMap::launcherCompressor->GetPressureSwitchValue());//sensor info
-	Send(RobotMap::robotRangeFinderUltrasonicSensor->GetVoltage()*INCHES_CONSTANT);
+	Send(RobotMap::robotRangeFinderUltrasonicSensor->GetVoltage()/VoltsPerCM);
 	Send(RobotMap::driveTrainGyro->GetAngle());
 	Send(RobotMap::elevatorElevationEncoder->GetVoltage());
 	Send(RobotMap::launcherPressureSwitch->GetVoltage()*PSI_CONSTANT);//transducer1
