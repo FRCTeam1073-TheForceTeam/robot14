@@ -18,6 +18,8 @@ public:
 	DoubleAutonomousCommandGroup();
 private:
 	double waitTimeAfterFirstShot;
+	double waitTimeCollectBall;
+	bool spinCollector;
 };
 
 #endif

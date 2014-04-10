@@ -21,11 +21,16 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "CollectorFeedWithTimeoutCommand.h"
 #include "DumbDriveForwardUntilTimeout.h"
 #define WAIT_TIME_AFTER_FIRST_SHOT "WaitTimeAfterFirstShot"
+#define WAIT_TIME_COLLECT_BALL "WaitTimeCollectBall"
+#define SPIN_COLLECTOR "SpinCollector"
 DoubleAutonomousCommandGroup::DoubleAutonomousCommandGroup() {
 	waitTimeAfterFirstShot =  Robot::prefs->GetFloat(WAIT_TIME_AFTER_FIRST_SHOT, 0.4);
+	waitTimeCollectBall = Robot::prefs->GetFloat(WAIT_TIME_COLLECT_BALL, 0.8);
+	spinCollector = Robot::prefs->GetFloat(SPIN_COLLECTOR, true);
 	AddParallel(new ElevateCollectorToBottom());
-	AddParallel(new CollectorFeed());
-	AddSequential(new WaitCommand(0.8));
+	if (spinCollector)
+		AddParallel(new CollectorFeed());
+	AddSequential(new WaitCommand(waitTimeCollectBall));
 	AddSequential(new ElevatorOff());
 	AddSequential(new CollectorOff());
 	AddSequential(new ShiftLowGear());
