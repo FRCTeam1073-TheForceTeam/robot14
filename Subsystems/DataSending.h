@@ -32,5 +32,6 @@ private:
 	char strBuffer[MaxBuffer];
 	int strIndex;
 	float dataSendInterval;
+	bool enableBackgroundThread;
 };
 #endif
