@@ -28,13 +28,13 @@ void RobotMap::init() {
 	driveTrainRightBack = new SmartVictor(1,4,false);
 		
 		
-	driveTrainLeftBack = new SmartVictor(1,3,false);
+	driveTrainLeftBack = new SmartVictor(1,5,false);
 		
 		
-	driveTrainRightFront = new SmartVictor(1,5,false);
+	driveTrainRightFront = new SmartVictor(1,6,false);
 		
 		
-	driveTrainLeftFront = new SmartVictor(1,2,false);
+	driveTrainLeftFront = new SmartVictor(1,7,false);
 	
 	driveTrainGyro = new SmartGyro(1, 1);
 	lw->AddSensor("Drive Train", "Gyro", driveTrainGyro);
@@ -60,7 +60,7 @@ void RobotMap::init() {
 	robotRangeFinderUltrasonicSensor = new StallableAnalogEncoder(1, 4);
 	lw->AddSensor("RobotRangeFinder", "UltrasonicSensor", robotRangeFinderUltrasonicSensor);
 	
-	elevatorAngleAdjuster = new Jaguar(1,6);
+	elevatorAngleAdjuster = new Jaguar(1,1);
 	
 	
 	elevatorElevationEncoder = new StallableAnalogEncoder(1, 2);
