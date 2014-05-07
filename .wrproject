@@ -249,10 +249,6 @@
                 <folder name="/robot14" recursive="true"/>
             </contents>
         </buildtarget>
-        <buildtarget buildtool="Partial Image Linker" name="Robot14_partialImage" passed="true" targetname="Robot14_partialImage">
-            <contents>
-                <folder name="/robot14" recursive="true"/>
-            </contents>
-        </buildtarget>
+        
     </buildtargets>
 </wrxml>

@@ -26,9 +26,9 @@ Elevator::Elevator() : PIDSubsystem("Elevator", 1.0, 0.0, 0.0) {
 	// SetSetpoint() -  Sets where the PID controller should move the system
 	//                  to
 	if(Robot::GetWhichRobot() == Robot::atlasRobot){
-		bool PIDenabled = Robot::prefs->GetBoolean("PIDenabled", true);
+		bool PIDenabled = Robot::prefs->GetBoolean("PIDenabled", false);
 		if (PIDenabled)
-			Enable();
+			Disable();
 		else
 			Disable();
 		printf("In Elevator Method: PID Enabled");
