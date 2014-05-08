@@ -12,7 +12,8 @@ AutonomousHoldElevatorPos::AutonomousHoldElevatorPos() {
 }
 // Called just before this Command runs the first time
 void AutonomousHoldElevatorPos::Initialize() {
-	Robot::elevator->SetSetpoint(holdPercent);
+	// TODO this function needs work as to what it's supposed to do *manually* apply some voltage to the motor
+	// Robot::elevator->SetSetpoint(holdPercent);
 }
 // Called repeatedly when this Command is scheduled to run
 void AutonomousHoldElevatorPos::Execute() {

@@ -5,7 +5,7 @@ Do not mix this code with any other version of RobotBuilder! */
 #include "Commands/PIDSubsystem.h"
 #include "WPILib.h"
 #include "../WPILibExtensions/WPILibExtensions.h"
-class Elevator: public PIDSubsystem {
+class Elevator: public Subsystem {
 	//BEGIN DEBUG CODE
 	//private:
 	//float angleSpeed;
@@ -39,6 +39,5 @@ public:
 	void SetElevatorUp(double encoderVal);
 	void SetElevatorDown(double encoderVal);
 	void SetElevatorShootPos();	
-	void TogglePIDEnabled();
 };
 #endif
