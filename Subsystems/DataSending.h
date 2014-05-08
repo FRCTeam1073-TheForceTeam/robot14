@@ -16,8 +16,7 @@ public:
 	void SendTheData();
 	void UpdateUserLCD();
 	void GetVicInfo();
-	void GetDriveJoystickInfo();
-	void GetOperatorJoystickInfo();
+	void GetJoystickInfo();
 	void InitializeBackGroundTask();
 	string GetGearSetting();
 	float GetDataSendInterval();
