@@ -16,12 +16,7 @@ void Drive::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void Drive::Execute() {
 	Robot::driveTrain->MecanumDriveAction(Robot::oi->getDriveStick()->GetX(), Robot::oi->getDriveStick()->GetY(), Robot::oi->getDriveStick()->GetZ());
-	// TODO is this ok to just keep pinging the jags. added in a mod to make sure?
-	if (counter % 20 == 0 &&!(Robot::driveTrain->leftBack->ExistsOnBus() || Robot::driveTrain->leftFront->ExistsOnBus() 
-			|| Robot::driveTrain->rightBack->ExistsOnBus() || Robot::driveTrain->rightFront->ExistsOnBus()))
-		RobotStatus::SetError(true);
-	else RobotStatus::SetError(false);
-	counter++;
+	
 }
 // Make this return true when this Command no longer needs to run execute()
 bool Drive::IsFinished() {
