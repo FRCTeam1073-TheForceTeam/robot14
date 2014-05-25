@@ -15,8 +15,8 @@ Do not mix this code with any other version of RobotBuilder! */
 AutonomousCommmandGroup::AutonomousCommmandGroup() {
 	AddSequential(new AutonomousDeElevateCommand());
 	AddSequential(new ShiftLowGear());
-	AddSequential(new AutonomousHoldElevatorPos());
 	AddSequential(new AutonomousDriveCommand());
+	AddSequential(new AutonomousHoldElevatorPos());
 	AddSequential(new WaitForHotGoal());
 	AddSequential(new AutonomousLaunchCommand());
 	AddSequential(new ElevatorOff());
