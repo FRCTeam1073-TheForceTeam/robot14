@@ -17,7 +17,7 @@ public:
 	string GetGearSetting();
 	bool istheCurrentSensorReady();
 private:
-	int count;
+	int packetCount;
 	void Send(bool b);
 	void Send(double f, int digs=3);
 	void Send(int i);
