@@ -39,5 +39,10 @@ public:
 	void SetElevatorUp(double encoderVal);
 	void SetElevatorDown(double encoderVal);
 	void SetElevatorShootPos();	
+	
+	void autoDown();
+	void autoUp();
+	bool isAngleAdjusterReady;
+	void autoStopArm();
 };
 #endif

@@ -122,3 +122,29 @@ void DriveTrain::StopMotors(){
 	rightBack->Set(0);
 	SmartCANJaguar::UpdateSyncGroup(DriveSyncGroup);
 }
+void DriveTrain::AutoFoward(){
+	leftFront->Set(-0.5);
+	rightFront->Set(0.5);
+	leftBack->Set(-0.5);
+	rightBack->Set(0.5);
+	Wait(0.1);
+	if((leftFront->Get()==-0.5f)&&(rightFront->Get()==0.5f)
+			&&(leftBack->Get()==-0.5f)&&(rightBack->Get()==0.5f))
+		isDriveTrainReady=true;
+}
+void DriveTrain::AutoReverse(){
+	leftFront->Set(0.5);
+	rightFront->Set(-0.5);
+	leftBack->Set(0.5);
+	rightBack->Set(-0.5);
+}
+void DriveTrain::Stop(){
+	leftFront->Set(0);
+	rightFront->Set(0);
+	leftBack->Set(0);
+	rightBack->Set(0);
+}
+bool DriveTrain::isGyroReady(){
+	float theAngle = gyro->GetAngle();
+	return ((0<theAngle)&&(theAngle<360));
+}

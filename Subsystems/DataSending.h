@@ -14,12 +14,8 @@ public:
 	DataSending();
 	void InitDefaultCommand();
 	void SendTheData();
-	void UpdateUserLCD();
-	void GetVicInfo();
-	void GetJoystickInfo();
-	void InitializeBackGroundTask();
 	string GetGearSetting();
-	float GetDataSendInterval();
+	bool istheCurrentSensorReady();
 private:
 	int count;
 	void Send(bool b);
@@ -29,7 +25,11 @@ private:
 	static const int MaxBuffer = 1000;
 	char strBuffer[MaxBuffer];
 	int strIndex;
-	float dataSendInterval;
+	int dataSendInterval;
 	bool enableBackgroundThread;
+	void UpdateUserLCD();
+	void GetVicInfo();
+	void GetDriveJoystickInfo();
+	void GetOperatorJoystickInfo();
 };
 #endif

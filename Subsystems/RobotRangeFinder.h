@@ -21,5 +21,6 @@ public:
 	int GetDistance();
 	RobotRangeFinder();
 	void InitDefaultCommand();
+	bool isTheRangeReady();
 };
 #endif

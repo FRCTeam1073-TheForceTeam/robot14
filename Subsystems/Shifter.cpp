@@ -56,3 +56,6 @@ void Shifter::Shift(){
 		doubleSolenoid->Set(DoubleSolenoid::kForward);
 }*/
 //END DEBUG CODE
+bool Shifter::isTheShifterReady(){
+	return((doubleSolenoid->Get()==DoubleSolenoid::kForward)||(doubleSolenoid->Get()==DoubleSolenoid::kReverse));
+}

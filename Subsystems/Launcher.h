@@ -19,10 +19,17 @@ public:
 	void CloseTank();
 	bool IsBadPressure();
 	bool AreTanksOpen();
+	bool isCompressorReady;
+	bool isLaucherReady;
+	void canCompress();
+	void autoStopLauch();
+	bool isTransducerReady();
+	void Compress();
 	//BEGIN DEBUG CODE
 	//void Launch();
 	//END DEBUG CODE
 private:
 	static int pressureLimit;
+	int willCompress;
 };
 #endif

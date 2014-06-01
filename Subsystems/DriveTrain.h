@@ -21,6 +21,11 @@ public:
 	void ToggleOrientation();
 	bool IsFieldOrientation(); 
 	void ToggleForwardDirection(); 
+	void AutoFoward();
+	void AutoReverse();
+	void Stop();
+	bool isGyroReady();
+	bool isDriveTrainReady;
 //	float ReturnGyroScaled();
 	//BEGIN DEBUG CODE
 	//void ArcadeDrive(Joystick *stick);

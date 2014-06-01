@@ -39,3 +39,10 @@ float Collector::GetSpeed(){
 	return realSpeed;
 }*/
 //END DEBUG CODE
+void Collector::autoStopRollers(){
+	if((leftRoller->Get()==1.0f||leftRoller->Get()==-1.0f)&&
+		(rightRoller->Get()==1.0f||rightRoller->Get()==-1.0f))
+		isCollectorReady=true;
+	leftRoller->Set(0);
+	rightRoller->Set(0);
+}

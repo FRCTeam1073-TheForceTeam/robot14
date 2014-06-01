@@ -19,6 +19,7 @@ public:
 	//string GetGearSetting();
 	//void Shift();
 	//END DEBUG CODE
+	bool isTheShifterReady();
 private:
 	void Set(bool lowGear);
 	bool lowGear;

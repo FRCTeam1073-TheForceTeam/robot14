@@ -51,3 +51,6 @@ int RobotRangeFinder::GetDistance() {
 	// printf("Voltage: %f %d cm\n", voltage, (int)(voltage/VoltsPerCM));
 	return (int)(voltage/VoltsPerCM);
 }
+bool RobotRangeFinder::isTheRangeReady(){
+	return((ultrasonicSensor->GetVoltage()/VoltsPerCM)>10.0f);
+}

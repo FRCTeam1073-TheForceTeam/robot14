@@ -90,3 +90,14 @@ double Elevator::GetElevatorShootPos(){return elevatorShootPos;}
 
 
 //END DEBUG CODE
+void Elevator::autoDown(){
+	angleAdjuster->Set(-1);
+}
+void Elevator::autoUp(){
+	angleAdjuster->Set(1);
+}
+void Elevator::autoStopArm(){
+	if((angleAdjuster->Get()==1.0f)||(angleAdjuster->Get()==-1.0f))
+		isAngleAdjusterReady=true;
+	angleAdjuster->Set(0);
+}

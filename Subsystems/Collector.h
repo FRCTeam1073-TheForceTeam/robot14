@@ -19,6 +19,8 @@ public:
 	void InitDefaultCommand();
 	void Collect(bool feedIn);
 	void StopRollers();
+	bool isCollectorReady;
+	void autoStopRollers();
 	//BEGIN DEBUG CODE
 	//void SetSpeed(float speed);
 	//float GetSpeed();
