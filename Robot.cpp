@@ -71,10 +71,20 @@ Robot::WhatRobot_t Robot::GetWhichRobot(){
 }
 	
 void Robot::AutonomousInit() {
-	autonomousCommand = (Command *) autoChooser->GetSelected();
-	if (autonomousCommand != NULL) {
-		RobotStatus::SetAutonomousStatus(RobotStatus::AUTONOMOUS_PREMATCH);
-		autonomousCommand->Start();
+	//if button 11 on the drive stick is pressed, make it run the diagnostic else do not
+	if(Robot::oi->getDiagButton()){
+		puts("Starting Self-Diagnostic Test...\n");
+		Wait(1);
+		if (debugAutoCommand != NULL)
+			debugAutoCommand->Start();
+	}
+	else{
+		puts("Starting regular autonomous...\n");
+		autonomousCommand = (Command *) autoChooser->GetSelected();
+		if (autonomousCommand != NULL) {
+			RobotStatus::SetAutonomousStatus(RobotStatus::AUTONOMOUS_PREMATCH);
+			autonomousCommand->Start();
+		}
 	}
 }
 	
