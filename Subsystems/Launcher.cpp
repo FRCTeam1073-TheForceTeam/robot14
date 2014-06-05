@@ -53,18 +53,6 @@ bool Launcher::AreTanksOpen() {
 	solenoidRight->Set(false);
 }*/
 //END DEBUG CODE
-void Launcher::Compress() {
-	if(willCompress%2==0){
-		compressor->Start();
-	}
-	else{
-		compressor->Stop();
-	}
-	willCompress++;
-	if(willCompress==1000){
-		willCompress=2;
-	}
-}
 void Launcher::canCompress(){
 	if(compressor->Enabled())isCompressorReady=true;
 	else

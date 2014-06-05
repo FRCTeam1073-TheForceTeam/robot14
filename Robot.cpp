@@ -74,8 +74,10 @@ void Robot::AutonomousInit() {
 	if(Robot::oi->getDiagButton()->Get()){
 		puts("Starting Self-Diagnostic Test...\n");
 		Wait(1);
-		if (debugAutoCommand != NULL)
+		if (debugAutoCommand != NULL){
+			RobotStatus::SetError(true);
 			debugAutoCommand->Start();
+		}
 	}
 	else{
 		puts("Starting regular autonomous...\n");

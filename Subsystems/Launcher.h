@@ -24,7 +24,6 @@ public:
 	void canCompress();
 	void autoStopLauch();
 	bool isTransducerReady();
-	void Compress();
 	//BEGIN DEBUG CODE
 	//void Launch();
 	//END DEBUG CODE

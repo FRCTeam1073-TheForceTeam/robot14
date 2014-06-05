@@ -35,6 +35,7 @@ void isRobotReady::Initialize() {
 	if(IsEverythingReady()) puts("The Robot is Ready! Good Luck at the Competition!\n");
 		else puts("The Robot is NOT ready, look at the previous messages to find out what\n");
 	puts("Self-Diagnostic Test Complete!\n");
+	RobotStatus::SetError(false);
 }
 // Called repeatedly when this Command is scheduled to run
 void isRobotReady::Execute() {

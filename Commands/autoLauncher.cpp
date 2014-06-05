@@ -26,20 +26,14 @@ void autoLauncher::Execute() {
 	}
 	else{//assume there is no air in the compressor and the valve is closed
 		puts("Adding a small amount for the Laucher...\n");
-		Robot::launcher->Compress();
 		Wait(2);
-		Robot::launcher->Compress();
 		puts("Lauching the Ball without air...\n");
 		Robot::launcher->OpenTank();
 		Wait(0.1);
 		Robot::launcher->autoStopLauch();
-		puts("Turning on the compressor for shifters...\n");
-		Robot::launcher->Compress();
+		puts("Waiting for enough compressor for the shifters...\n");
 		Wait(5);
 		Robot::launcher->canCompress();
-		puts("Turning off the compressor...\n");
-		Robot::launcher->Compress();
-		Wait(0.3);
 	}
 }
 // Make this return true when this Command no longer needs to run execute()
