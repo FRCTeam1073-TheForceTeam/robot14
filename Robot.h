@@ -60,6 +60,5 @@ public:
 	SendableChooser *autoChooser;
 private:
 	static DigitalInput *jumper14;
-	int count;
 };
 #endif

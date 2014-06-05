@@ -24,7 +24,6 @@ Preferences* Robot::prefs = 0;
 DigitalInput* Robot::jumper14 = 0;
 Robot::WhatRobot_t Robot::whatRobot = atlasRobot;
 void Robot::RobotInit() {
-	count=1;
 	prefs = Preferences::GetInstance();
 	RobotMap::init();
 	RobotStatus::RobotStatusInit();
@@ -72,7 +71,7 @@ Robot::WhatRobot_t Robot::GetWhichRobot(){
 	
 void Robot::AutonomousInit() {
 	//if button 11 on the drive stick is pressed, make it run the diagnostic else do not
-	if(Robot::oi->getDiagButton()){
+	if(Robot::oi->getDiagButton()->Get()){
 		puts("Starting Self-Diagnostic Test...\n");
 		Wait(1);
 		if (debugAutoCommand != NULL)
@@ -90,9 +89,7 @@ void Robot::AutonomousInit() {
 	
 void Robot::AutonomousPeriodic() {
 	Scheduler::GetInstance()->Run();
-	if(count%5==0)
-		Robot::dataSending->SendTheData();
-	count++;
+	Robot::dataSending->SendTheData();
 }
 	
 void Robot::TeleopInit() {
@@ -105,9 +102,7 @@ void Robot::TeleopInit() {
 void Robot::TeleopPeriodic() {
 	if (autonomousCommand != NULL)
 		Scheduler::GetInstance()->Run();
-	if(count%5==0)
-		Robot::dataSending->SendTheData();
-	count++;
+	Robot::dataSending->SendTheData();
 }
 void Robot::DisabledInit() {
 	RobotStatus::SetAutonomousStatus(RobotStatus::AUTONOMOUS_PREMATCH);
@@ -116,8 +111,6 @@ void Robot::TestPeriodic() {
 	lw->Run();
 }
 void Robot::DisabledPeriodic(){
-	if(count%5==0)
-			Robot::dataSending->SendTheData();
-		count++;
+	Robot::dataSending->SendTheData();
 }
 START_ROBOT_CLASS(Robot);

@@ -31,7 +31,7 @@ void autoLauncher::Execute() {
 		Robot::launcher->Compress();
 		puts("Lauching the Ball without air...\n");
 		Robot::launcher->OpenTank();
-		Wait(0.2);
+		Wait(0.1);
 		Robot::launcher->autoStopLauch();
 		puts("Turning on the compressor for shifters...\n");
 		Robot::launcher->Compress();
