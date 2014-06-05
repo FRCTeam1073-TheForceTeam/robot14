@@ -78,5 +78,5 @@ void Launcher::autoStopLauch(){
 }
 bool Launcher::isTransducerReady(){
 	float thePSI = pressureTransducer->GetVoltage()*PSI_CONSTANT;
-	return ((0<thePSI)&&(thePSI<130));
+	return ((21<thePSI)&&(thePSI<130));
 }

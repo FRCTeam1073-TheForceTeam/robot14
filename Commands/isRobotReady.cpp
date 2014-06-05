@@ -12,22 +12,22 @@ isRobotReady::isRobotReady() {
 }
 // Called just before this Command runs the first time
 void isRobotReady::Initialize() {
-	if(Robot::shifter->isTheShifterReady()) puts("The Shifter is Ready\n");
-		else puts("The Shifter is not ready\n");
+	if(Robot::shifter->isTheShifterReady()) puts("The Shifter Module is Ready\n");
+		else puts("The Shifter Module is not ready\n");
 	if(Robot::robotRangeFinder->isTheRangeReady()) puts("The Ultrasonic is Ready\n");
 		else puts("The Ultrasonic is not Ready\n");
-	if(Robot::collector->isCollectorReady) puts("The Collector is Ready\n");
-		else puts("The Collector is not Ready\n");
-	if(Robot::driveTrain->isDriveTrainReady) puts("The Drive Train is Ready\n");
-		else puts("The Drive Train is not Ready\n");
+	if(Robot::collector->isCollectorReady) puts("The Collector is Ready in code\n");
+		else puts("The Collector is not Ready in code\n");
+	if(Robot::driveTrain->isDriveTrainReady) puts("The Drive Train is Ready in code\n");
+		else puts("The Drive Train is not Ready in code\n");
 	if(Robot::driveTrain->isGyroReady()) puts("The Gyro is Ready\n");
 		else puts("The Gyro is not Ready\n");
-	if(Robot::elevator->isAngleAdjusterReady) puts("Jeremy's Elevator is Ready\n");
-		else puts("Jeremy's Elevator is not Ready\n");
+	if(Robot::elevator->isAngleAdjusterReady) puts("Jeremy's Elevator is Ready in code\n");
+		else puts("Jeremy's Elevator is not Ready in code\n");
 	if(Robot::launcher->isCompressorReady) puts("The Compressor is Ready\n");
 		else puts("The Compressor is not Ready\n");
-	if(Robot::launcher->isLaucherReady) puts("The Laucher is Ready\n");
-		else puts("The laucher is not Ready\n");
+	if(Robot::launcher->isLaucherReady) puts("The Laucher module is Ready\n");
+		else puts("The laucher module is not Ready\n");
 	if(Robot::dataSending->istheCurrentSensorReady()) puts("The Current Sensor is Ready\n");
 		else puts("The Current Sensor is not Ready\n");
 	if(Robot::launcher->isTransducerReady()) puts("The PSI Transducer is Ready\n");

@@ -11,20 +11,22 @@ autoDriveTrain::autoDriveTrain() {
 // Called just before this Command runs the first time
 void autoDriveTrain::Initialize() {
 	puts("Testing the drive Train..\n");
+	Wait(1);
 }
 // Called repeatedly when this Command is scheduled to run
 void autoDriveTrain::Execute() {
-	puts("Driving Foward half a second...\n");
+	puts("Driving Foward a second...\n");
 	Robot::driveTrain->AutoFoward();
 	Wait(1);
+	Robot::driveTrain->AreWheelsOK();
 	Robot::driveTrain->Stop();
 	Wait(0.3);
-	puts("Driving Reverse half a second...\n");
+	puts("Driving Reverse a second...\n");
 	Robot::driveTrain->AutoReverse();
 	Wait(1);
 	Robot::driveTrain->Stop();
 	puts ("Drive train test complete!\n");
-	Wait(1);
+	Wait(0.5);
 }
 // Make this return true when this Command no longer needs to run execute()
 bool autoDriveTrain::IsFinished() {

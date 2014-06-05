@@ -11,6 +11,7 @@ autoCollector::autoCollector() {
 // Called just before this Command runs the first time
 void autoCollector::Initialize() {
 	puts("Testing the Collector...\n");
+	Wait(1);
 }
 // Called repeatedly when this Command is scheduled to run
 void autoCollector::Execute() {
@@ -19,9 +20,8 @@ void autoCollector::Execute() {
 	Wait(1);
 	puts("Purging...\n");
 	Robot::collector->Collect(false);
-	Wait(1);
+	Wait(0.5);
 	Robot::collector->autoStopRollers();
-	Wait(1);
 }
 // Make this return true when this Command no longer needs to run execute()
 bool autoCollector::IsFinished() {

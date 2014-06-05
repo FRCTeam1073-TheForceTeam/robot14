@@ -11,6 +11,7 @@ autoShiftToHigh::autoShiftToHigh() {
 // Called just before this Command runs the first time
 void autoShiftToHigh::Initialize() {
 	puts("Shifting to High Gear...\n");
+	Wait(0.5);
 }
 // Called repeatedly when this Command is scheduled to run
 void autoShiftToHigh::Execute() {

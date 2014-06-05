@@ -11,17 +11,21 @@ autoElevator::autoElevator() {
 // Called just before this Command runs the first time
 void autoElevator::Initialize() {
 	puts("Testing the elevator...\n");
+	Wait(1);
 }
 // Called repeatedly when this Command is scheduled to run
 void autoElevator::Execute() {
-	puts("moving the elevator down...\n");
+	puts("Moving the elevator down...\n");
 	Robot::elevator->autoDown();
-	Wait(0.5);
-	puts("moving the elevator up...\n");
-	Robot::elevator->autoUp();
-	Wait(0.5);
-	Robot::elevator->autoStopArm();
 	Wait(1);
+	puts("Should hit the Limit Switch now...\n");
+	Wait(1);
+	puts("Moving the elevator up...\n");
+	Robot::elevator->autoUp();
+	Wait(1);
+	puts("Should hit the Limit Switch now...\n");
+	Wait(1);
+	Robot::elevator->autoStopArm();
 }
 // Make this return true when this Command no longer needs to run execute()
 bool autoElevator::IsFinished() {

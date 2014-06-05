@@ -26,6 +26,7 @@ public:
 	void Stop();
 	bool isGyroReady();
 	bool isDriveTrainReady;
+	void AreWheelsOK();
 //	float ReturnGyroScaled();
 	//BEGIN DEBUG CODE
 	//void ArcadeDrive(Joystick *stick);
@@ -36,5 +37,9 @@ private:
 	bool enableRamping;
 	bool isFieldOrientation;
 	float oldX, oldY, oldTwist;
+	bool leftFrontOK;
+	bool rightFrontOK;
+	bool leftBackOK;
+	bool rightBackOK;
 };
 #endif
