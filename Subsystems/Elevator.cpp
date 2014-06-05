@@ -91,13 +91,16 @@ double Elevator::GetElevatorShootPos(){return elevatorShootPos;}
 
 //END DEBUG CODE
 void Elevator::autoDown(){
-	angleAdjuster->Set(-1);
+	angleAdjuster->Set(-0.6);
 }
 void Elevator::autoUp(){
-	angleAdjuster->Set(1);
+	angleAdjuster->Set(0.6);
 }
 void Elevator::autoStopArm(){
-	if((angleAdjuster->Get()==1.0f)||(angleAdjuster->Get()==-1.0f))
+	float angleSpeed = angleAdjuster->Get();
+	if((-.5f>angleSpeed)&&(angleSpeed>-.7f))
+		isAngleAdjusterReady=true;
+	if((.5f<angleSpeed)&&(angleSpeed<.7f)&&!isAngleAdjusterReady)
 		isAngleAdjusterReady=true;
 	angleAdjuster->Set(0);
 }

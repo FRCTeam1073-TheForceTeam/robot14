@@ -17,12 +17,12 @@ void autoElevator::Initialize() {
 void autoElevator::Execute() {
 	puts("Moving the elevator down...\n");
 	Robot::elevator->autoDown();
-	Wait(1);
+	Wait(1.5);
 	puts("Should hit the Limit Switch now...\n");
 	Wait(1);
 	puts("Moving the elevator up...\n");
 	Robot::elevator->autoUp();
-	Wait(1);
+	Wait(1.5);
 	puts("Should hit the Limit Switch now...\n");
 	Wait(1);
 	Robot::elevator->autoStopArm();
