@@ -26,12 +26,15 @@ void autoLauncher::Execute() {
 	}
 	else{//assume there is no air in the compressor and the valve is closed
 		puts("Adding a small amount for the Laucher...\n");
+		Robot::launcher->compressor->Start();
 		Wait(2);
+		Robot::launcher->compressor->Stop();
 		puts("Lauching the Ball without air...\n");
 		Robot::launcher->OpenTank();
 		Wait(0.1);
 		Robot::launcher->autoStopLauch();
 		puts("Waiting for enough compressor for the shifters...\n");
+		Robot::launcher->compressor->Start();
 		Wait(5);
 		Robot::launcher->canCompress();
 	}

@@ -72,6 +72,7 @@ Robot::WhatRobot_t Robot::GetWhichRobot(){
 void Robot::AutonomousInit() {
 	//if button 11 on the drive stick is pressed, make it run the diagnostic else do not
 	if(Robot::oi->getDiagButton()->Get()){
+		Robot::launcher->compressor->Stop();
 		puts("Starting Self-Diagnostic Test...\n");
 		Wait(1);
 		if (debugAutoCommand != NULL){
